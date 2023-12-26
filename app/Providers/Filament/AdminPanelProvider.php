@@ -9,6 +9,7 @@ use Filament\PanelProvider;
 use App\Filament\Pages\Dashboard;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\MaxWidth;
+use Awcodes\LightSwitch\LightSwitchPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -53,6 +54,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
+                LightSwitchPlugin::make(),
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
             ])->maxContentWidth(MaxWidth::Full)
             ->spa();
