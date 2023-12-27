@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class UserSeeder extends Seeder
 {
@@ -14,6 +16,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // reset cached roles and permissions
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
         if (config('app.env') == 'production') {
             $user = User::create([
                 'name' => 'Super Admin',
@@ -21,22 +26,14 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('password'),
                 'email_verified_at' => now(),
             ]);
-            // $user->roles()->attach([1]);
+            $user->assignRole('super_admin');
         } else {
             $users = User::factory()->count(rand(100, 300))->create();
             $superAdmin = $users->first();
             $superAdmin->update([
                 'email' => 'superadmin@nacl.com',
             ]);
-
-            // foreach ($users as $user) {
-            //     if ($user->id == 1) {
-            //         $user->roles()->attach([1]);
-            //     }
-            //     if ($user->id != 1) {
-            //         $user->roles()->attach([rand(1, 3)]);
-            //     }
-            // }
+            $superAdmin->assignRole('super_admin');
         }
     }
 }

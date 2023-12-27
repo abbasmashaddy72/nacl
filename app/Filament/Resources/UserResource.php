@@ -16,6 +16,9 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\UserResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\UserResource\RelationManagers;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
+use Tapp\FilamentAuthenticationLog\RelationManagers\AuthenticationLogsRelationManager;
 
 class UserResource extends Resource
 {
@@ -51,6 +54,10 @@ class UserResource extends Resource
             ])
             ->columns([
                 TextColumn::make('name')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('roles.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('email_verified_at')->sortable()->since(),
             ])
@@ -66,13 +73,15 @@ class UserResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+                ExportBulkAction::make()
             ]);
     }
 
     public static function getRelations(): array
     {
         return [
-            //
+            AuthenticationLogsRelationManager::class,
+            // AuditsRelationManager::class,
         ];
     }
 

@@ -4,22 +4,31 @@ namespace App\Providers\Filament;
 
 use Filament\Pages;
 use Filament\Panel;
-use Filament\Widgets;
 use Filament\PanelProvider;
+use LaraZeus\Sky\SkyPlugin;
 use App\Filament\Pages\Dashboard;
+use Awcodes\Curator\CuratorPlugin;
 use Filament\Support\Colors\Color;
+use Awcodes\Overlook\OverlookPlugin;
 use Filament\Support\Enums\MaxWidth;
 use Awcodes\LightSwitch\LightSwitchPlugin;
 use Filament\Http\Middleware\Authenticate;
+use Awcodes\Overlook\Widgets\OverlookWidget;
+use Filament\SpatieLaravelTranslatablePlugin;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
+use FilipFonal\FilamentLogManager\FilamentLogManager;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Tapp\FilamentAuthenticationLog\FilamentAuthenticationLogPlugin;
+use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -27,6 +36,7 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->id('admin')
             ->path('admin')
             ->login()
@@ -55,8 +65,27 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 LightSwitchPlugin::make(),
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                FilamentShieldPlugin::make(),
+                OverlookPlugin::make()
+                    ->sort(2)
+                    ->columns([
+                        'default' => 1,
+                        'sm' => 2,
+                        'md' => 3,
+                        'lg' => 4,
+                        'xl' => 5,
+                        '2xl' => null,
+                    ]),
+                FilamentAuthenticationLogPlugin::make(),
+                FilamentSpatieLaravelHealthPlugin::make(),
+                FilamentProgressbarPlugin::make(),
+                FilamentLogManager::make(),
+                CuratorPlugin::make(),
+                new \RickDBCN\FilamentEmail\FilamentEmail(),
             ])->maxContentWidth(MaxWidth::Full)
-            ->spa();
+            ->spa()
+            ->widgets([
+                OverlookWidget::class,
+            ]);;
     }
 }
