@@ -12,11 +12,8 @@ use Filament\Forms\Form;
 use App\Enums\OrderStatus;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\OrderResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
-use App\Filament\Resources\OrderResource\RelationManagers;
 
 class OrderResource extends Resource
 {

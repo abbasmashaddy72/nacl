@@ -2,10 +2,8 @@
 
 namespace App\Providers\Filament;
 
-use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use LaraZeus\Sky\SkyPlugin;
 use App\Filament\Pages\Dashboard;
 use Awcodes\Curator\CuratorPlugin;
 use Filament\Support\Colors\Color;
@@ -14,7 +12,6 @@ use Filament\Support\Enums\MaxWidth;
 use Awcodes\LightSwitch\LightSwitchPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Awcodes\Overlook\Widgets\OverlookWidget;
-use Filament\SpatieLaravelTranslatablePlugin;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
@@ -28,7 +25,6 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Tapp\FilamentAuthenticationLog\FilamentAuthenticationLogPlugin;
-use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -77,7 +73,6 @@ class AdminPanelProvider extends PanelProvider
                         '2xl' => null,
                     ]),
                 FilamentAuthenticationLogPlugin::make(),
-                FilamentSpatieLaravelHealthPlugin::make(),
                 FilamentProgressbarPlugin::make(),
                 FilamentLogManager::make(),
                 CuratorPlugin::make(),

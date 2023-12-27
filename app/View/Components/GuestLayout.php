@@ -3,7 +3,6 @@
 namespace App\View\Components;
 
 use Illuminate\View\View;
-use Jenssegers\Agent\Agent;
 use Illuminate\View\Component;
 
 class GuestLayout extends Component

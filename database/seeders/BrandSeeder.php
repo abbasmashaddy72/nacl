@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class BrandSeeder extends Seeder
@@ -12,14 +11,14 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Brand::factory()->create([
+        \App\Models\Brand::create([
             'name' => 'Apple',
             'slug' => 'apple',
             'url' => 'https://www.apple.com',
             'description' => 'Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, and online services.',
         ]);
 
-        \App\Models\Brand::factory()->create([
+        \App\Models\Brand::create([
             'name' => 'Samsung',
             'slug' => 'samsung',
             'url' => 'https://www.samsung.com',
