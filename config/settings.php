@@ -1,7 +1,5 @@
 <?php
 
-use App\Settings\GeneralSettings;
-
 return [
 
     /*
@@ -9,7 +7,14 @@ return [
      * put them (manually) here.
      */
     'settings' => [
-        GeneralSettings::class,
+        App\Settings\AboutPage::class,
+        App\Settings\CommonSettings::class,
+        App\Settings\ContactUsPage::class,
+        App\Settings\HomePage::class,
+        App\Settings\LanePage::class,
+        App\Settings\ShopPage::class,
+        App\Settings\SportPage::class,
+        App\Settings\TrainingVideoPage::class,
     ],
 
     /*

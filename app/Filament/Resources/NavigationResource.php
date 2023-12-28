@@ -30,9 +30,9 @@ class NavigationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-queue-list';
 
-    protected static ?string $navigationGroup = 'CMS';
+    protected static ?string $navigationGroup = 'Site Management';
 
-    protected static ?int $navigationSort = 99;
+    protected static ?int $navigationSort = 0;
 
     protected static bool $showTimestamps = true;
 

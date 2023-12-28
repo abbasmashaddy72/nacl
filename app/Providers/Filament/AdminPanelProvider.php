@@ -44,6 +44,14 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
+            ->navigationGroups([
+                'Site Management',
+                'Slot Management',
+                'Shop',
+                'CMS',
+                'User Management',
+                'System'
+            ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->middleware([
                 EncryptCookies::class,

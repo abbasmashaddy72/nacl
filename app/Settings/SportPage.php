@@ -4,11 +4,10 @@ namespace App\Settings;
 
 use Spatie\LaravelSettings\Settings;
 
-class GeneralSettings extends Settings
+class SportPage extends Settings
 {
-    public ?string $copyright;
-    public ?string $label;
-    public ?string $url;
+    public ?string $sportBreadcrumbImage;
+    public ?bool $enableSportCTASection;
 
     public static function group(): string
     {
