@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             FaqSeeder::class,
             PageSeeder::class,
+            LaneSeeder::class,
+            SportSeeder::class,
+            LaneSportSeeder::class,
+            LaneStatusSeeder::class,
         ]);
     }
 }
