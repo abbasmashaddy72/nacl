@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             CustomerSeeder::class,
             OrderSeeder::class,
+            BlogCategorySeeder::class,
+            BlogSeeder::class,
+            FaqSeeder::class,
+            PageSeeder::class,
         ]);
     }
 }
