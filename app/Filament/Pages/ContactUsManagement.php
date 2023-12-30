@@ -15,6 +15,8 @@ class ContactUsManagement extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-user-plus';
 
+    protected static ?string $title = 'Contact Us Page';
+
     protected static string $settings = ContactUsPage::class;
 
     protected static ?string $navigationGroup = 'Site Management';

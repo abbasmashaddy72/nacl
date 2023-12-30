@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use App\Settings\HomePage;
 use Filament\Pages\SettingsPage;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Awcodes\Curator\PathGenerators\DatePathGenerator;
@@ -14,6 +15,8 @@ use Awcodes\Curator\PathGenerators\UserPathGenerator;
 class HomeManagement extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    protected static ?string $title = 'Home Page';
 
     protected static string $settings = HomePage::class;
 
@@ -31,7 +34,7 @@ class HomeManagement extends SettingsPage
                             ->label('Title')
                             ->required(),
 
-                        TextInput::make('card2Message')
+                        Textarea::make('card2Message')
                             ->label('Message')
                             ->required(),
 
@@ -49,20 +52,21 @@ class HomeManagement extends SettingsPage
                     ])->columns(2),
 
                     Forms\Components\Section::make('Welcome Section')->schema([
-                        TextInput::make('welcomeTitle')
-                            ->label('Title')
-                            ->required(),
+                        Forms\Components\Group::make()->schema([
+                            TextInput::make('welcomeTitle')
+                                ->label('Title')
+                                ->required(),
 
-                        TextInput::make('welcomeMessage')
+                            CuratorPicker::make('welcomeImage')
+                                ->label('Image')
+                                ->lazyLoad()
+                                ->listDisplay()
+                                ->constrained(true)
+                                ->visibility(true)
+                                ->required(),
+                        ]),
+                        Textarea::make('welcomeMessage')
                             ->label('Message')
-                            ->required(),
-
-                        CuratorPicker::make('welcomeImage')
-                            ->label('Image')
-                            ->lazyLoad()
-                            ->listDisplay()
-                            ->constrained(true)
-                            ->visibility(true)
                             ->required(),
                     ])->columns(2),
 
@@ -71,7 +75,7 @@ class HomeManagement extends SettingsPage
                             ->label('Title')
                             ->required(),
 
-                        TextInput::make('shopSectionMessage')
+                        Textarea::make('shopSectionMessage')
                             ->label('Message')
                             ->required(),
                     ])->columns(2),
@@ -79,54 +83,58 @@ class HomeManagement extends SettingsPage
 
                 Forms\Components\Group::make()->schema([
                     Forms\Components\Section::make('Sports Section')->schema([
-                        TextInput::make('sportSectionTitle')
-                            ->label('Title')
-                            ->required(),
-
-                        TextInput::make('sportSectionMessage')
-                            ->label('Message')
-                            ->required(),
-
-                        CuratorPicker::make('sportSectionImage')
-                            ->label('Image')
-                            ->lazyLoad()
-                            ->listDisplay()
-                            ->constrained(true)
-                            ->visibility(true)
-                            ->required(),
-
-                        Forms\Components\Section::make('Point 1')->schema([
-                            TextInput::make('sportSectionTitle1')
+                        Forms\Components\Group::make()->schema([
+                            TextInput::make('sportSectionTitle')
                                 ->label('Title')
                                 ->required(),
-                            TextInput::make('sportSectionMessage1')
-                                ->label('Message')
-                                ->required(),
 
-                            CuratorPicker::make('sportSectionImage1')
+                            CuratorPicker::make('sportSectionImage')
                                 ->label('Image')
                                 ->lazyLoad()
                                 ->listDisplay()
                                 ->constrained(true)
                                 ->visibility(true)
+                                ->required(),
+
+                        ]),
+                        Textarea::make('sportSectionMessage')
+                            ->label('Message')
+                            ->required(),
+                        Forms\Components\Section::make('Point 1')->schema([
+                            Forms\Components\Group::make()->schema([
+                                TextInput::make('sportSectionTitle1')
+                                    ->label('Title')
+                                    ->required(),
+
+                                CuratorPicker::make('sportSectionImage1')
+                                    ->label('Image')
+                                    ->lazyLoad()
+                                    ->listDisplay()
+                                    ->constrained(true)
+                                    ->visibility(true)
+                                    ->required(),
+                            ]),
+                            Textarea::make('sportSectionMessage1')
+                                ->label('Message')
                                 ->required(),
                         ])->columns(2),
 
                         Forms\Components\Section::make('Point 2')->schema([
-                            TextInput::make('sportSectionTitle2')
-                                ->label('Title')
-                                ->required(),
+                            Forms\Components\Group::make()->schema([
+                                TextInput::make('sportSectionTitle2')
+                                    ->label('Title')
+                                    ->required(),
 
-                            TextInput::make('sportSectionMessage2')
+                                CuratorPicker::make('sportSectionImage2')
+                                    ->label('Image')
+                                    ->lazyLoad()
+                                    ->listDisplay()
+                                    ->constrained(true)
+                                    ->visibility(true)
+                                    ->required(),
+                            ]),
+                            Textarea::make('sportSectionMessage2')
                                 ->label('Message')
-                                ->required(),
-
-                            CuratorPicker::make('sportSectionImage2')
-                                ->label('Image')
-                                ->lazyLoad()
-                                ->listDisplay()
-                                ->constrained(true)
-                                ->visibility(true)
                                 ->required(),
                         ])->columns(2),
                     ])->columns(2),

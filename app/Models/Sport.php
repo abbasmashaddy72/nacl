@@ -13,6 +13,7 @@ class Sport extends Model
     protected $fillable = [
         'name',
         'slug',
+        'max_lane',
         'short_description',
         'images',
         'description',
@@ -22,8 +23,8 @@ class Sport extends Model
         'images' => 'array'
     ];
 
-    public function lanes(): BelongsToMany
+    public function slots()
     {
-        return $this->belongsToMany(Lane::class, 'lane_sports');
+        return $this->belongsToMany(Slot::class);
     }
 }

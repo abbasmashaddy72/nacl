@@ -14,6 +14,8 @@ class SportManagement extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-cube-transparent';
 
+    protected static ?string $title = 'Sports Page';
+
     protected static string $settings = SportPage::class;
 
     protected static ?string $navigationGroup = 'Site Management';

@@ -8,10 +8,10 @@ use Filament\Forms\Components\Component;
 
 class TipTapEditor implements ContentEditor
 {
-    public static function component(): Component
+    public static function component(string $name = 'content'): Component
     {
         if (class_exists(\FilamentTiptapEditor\TiptapEditor::class)) {
-            return \FilamentTiptapEditor\TiptapEditor::make('content')
+            return \FilamentTiptapEditor\TiptapEditor::make($name)
                 ->profile('default')
                 // @phpstan-ignore-next-line
                 ->output(\FilamentTiptapEditor\Enums\TiptapOutput::Html)
@@ -19,7 +19,7 @@ class TipTapEditor implements ContentEditor
                 ->required();
         }
 
-        return Textarea::make('content')->required();
+        return Textarea::make($name)->required();
     }
 
     public static function render(string $content): string

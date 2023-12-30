@@ -33,6 +33,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Tables\Columns\SpatieTagsColumn;
 use App\Filament\Resources\PageResource\Pages;
 use Filament\Tables\Actions\ForceDeleteAction;
+use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Wallo\FilamentSelectify\Components\ButtonGroup;
 use App\Filament\Resources\PageResource\RelationManagers;
@@ -117,12 +118,13 @@ class PageResource extends Resource
                                 'url' => __('url'),
                             ])
                             ->default('upload'),
-                        SpatieMediaLibraryFileUpload::make('featured_image_upload')
-                            ->collection('pages')
-                            ->disk('public')
-                            ->directory('')
-                            ->visible(fn (Get $get) => $get('featured_image_type') === 'upload')
-                            ->label(''),
+                        CuratorPicker::make('featured_image_upload')
+                            ->label('Image')
+                            ->lazyLoad()
+                            ->listDisplay()
+                            ->constrained(true)
+                            ->visibility(true)
+                            ->required(),
                         TextInput::make('featured_image')
                             ->label(__('featured image url'))
                             ->visible(fn (Get $get) => $get('featured_image_type') === 'url')

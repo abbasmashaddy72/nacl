@@ -32,20 +32,20 @@ return new class extends SettingsMigration
 
         // Lane Page
         $this->migrator->add('general.laneBreadcrumbImage', '');
-        $this->migrator->add('general.enableFeatureSection', '');
-        $this->migrator->add('general.enableFAQSection', '');
-        $this->migrator->add('general.enableLaneCTASection', '');
+        $this->migrator->add('general.enableFeatureSection', true);
+        $this->migrator->add('general.enableFAQSection', true);
+        $this->migrator->add('general.enableLaneCTASection', true);
         // Sports Page
         $this->migrator->add('general.sportBreadcrumbImage', '');
-        $this->migrator->add('general.enableSportCTASection', '');
+        $this->migrator->add('general.enableSportCTASection', true);
         // Shop Page
         $this->migrator->add('general.shopBreadcrumbImage', '');
-        $this->migrator->add('general.enableShopAppSection', '');
+        $this->migrator->add('general.enableShopAppSection', true);
         $this->migrator->add('general.shopAppTitle', '');
         $this->migrator->add('general.shopAppMessage', '');
         $this->migrator->add('general.shopAppAppStoreURL', '');
         $this->migrator->add('general.shopAppGoogleStoreURL', '');
-        $this->migrator->add('general.enableShopCTASection', '');
+        $this->migrator->add('general.enableShopCTASection', true);
         // Training Video Page
         $this->migrator->add('general.trainingBreadcrumbImage', '');
         $this->migrator->add('general.flowTitle1', '');
@@ -63,7 +63,7 @@ return new class extends SettingsMigration
         $this->migrator->add('general.trainingVideoImages', '');
         $this->migrator->add('general.testimonialTitle', '');
         $this->migrator->add('general.testimonialMessage', '');
-        $this->migrator->add('general.enableTrainingVideoCTASection', '');
+        $this->migrator->add('general.enableTrainingVideoCTASection', true);
         // About Us Page
         $this->migrator->add('general.aboutUsBreadcrumbImage', '');
         $this->migrator->add('general.aboutUsImage', '');
@@ -71,7 +71,7 @@ return new class extends SettingsMigration
         $this->migrator->add('general.aboutUsMessage', '');
         $this->migrator->add('general.aboutUsButtonLabel', '');
         $this->migrator->add('general.aboutUsButtonURL', '');
-        $this->migrator->add('general.enableAboutUsSponsorSection', '');
+        $this->migrator->add('general.enableAboutUsSponsorSection', true);
         $this->migrator->add('general.aboutUsKeyFeatureTitle', '');
         $this->migrator->add('general.aboutUsKeyFeatureMessage', '');
         $this->migrator->add('general.aboutUsKeyFeaturePoints', '');
@@ -79,8 +79,8 @@ return new class extends SettingsMigration
         $this->migrator->add('general.aboutUsVideoURL', '');
         $this->migrator->add('general.aboutUsTeamSectionTitle', '');
         $this->migrator->add('general.aboutUsTeamSectionMessage', '');
-        $this->migrator->add('general.enableAboutUsTeamTestimonialSection', '');
-        $this->migrator->add('general.enableAboutUsCTASection', '');
+        $this->migrator->add('general.enableAboutUsTeamTestimonialSection', true);
+        $this->migrator->add('general.enableAboutUsCTASection', true);
         // Contact Us Page
         $this->migrator->add('general.contactUsBreadcrumbImage', '');
         $this->migrator->add('general.contactUsPhoneMessage', '');
@@ -89,6 +89,21 @@ return new class extends SettingsMigration
         $this->migrator->add('general.contactUsEmail', '');
         $this->migrator->add('general.contactUsLocationMessage', '');
         $this->migrator->add('general.contactUsMapLink', '');
-        $this->migrator->add('general.enableMapSection', '');
+        $this->migrator->add('general.enableMapSection', true);
+        // Common
+        $this->migrator->add('general.lightLogo', '');
+        $this->migrator->add('general.darkLogo', '');
+        $this->migrator->add('general.favicon', '');
+        $this->migrator->add('general.facebook', '');
+        $this->migrator->add('general.instagram', '');
+        $this->migrator->add('general.linkedIn', '');
+        $this->migrator->add('general.twitter', '');
+        $this->migrator->add('general.youtube', '');
+        $this->migrator->add('general.googleMaps', '');
+        $this->migrator->add('general.CTATopTitle', '');
+        $this->migrator->add('general.CTAHeading', '');
+        $this->migrator->add('general.CTAMessage', '');
+        $this->migrator->add('general.CTAButtonLabel', '');
+        $this->migrator->add('general.CTAButtonURL', '');
     }
 };

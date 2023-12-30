@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             LaneSeeder::class,
             SportSeeder::class,
-            LaneSportSeeder::class,
-            LaneStatusSeeder::class,
+            SlotSeeder::class,
+            LaneBookingSeeder::class,
         ]);
     }
 }

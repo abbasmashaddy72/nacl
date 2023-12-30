@@ -14,6 +14,8 @@ class LaneManagement extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-bars-4';
 
+    protected static ?string $title = 'Lane Page';
+
     protected static string $settings = LanePage::class;
 
     protected static ?string $navigationGroup = 'Site Management';

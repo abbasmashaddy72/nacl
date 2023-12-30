@@ -15,6 +15,8 @@ class TrainingVideoManagement extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
 
+    protected static ?string $title = 'Training Video Page';
+
     protected static string $settings = TrainingVideoPage::class;
 
     protected static ?string $navigationGroup = 'Site Management';
@@ -59,16 +61,18 @@ class TrainingVideoManagement extends SettingsPage
                     ])->columns(2),
 
                     Forms\Components\Section::make('Training Video Section')->schema([
-                        TextInput::make('trainingVideoTitle')
-                            ->label('Title')
-                            ->required(),
-                        CuratorPicker::make('trainingVideoImages')
-                            ->label('Image')
-                            ->lazyLoad()
-                            ->listDisplay()
-                            ->constrained(true)
-                            ->visibility(true)
-                            ->required(),
+                        Forms\Components\Group::make()->schema([
+                            TextInput::make('trainingVideoTitle')
+                                ->label('Title')
+                                ->required(),
+                            CuratorPicker::make('trainingVideoImages')
+                                ->label('Image')
+                                ->lazyLoad()
+                                ->listDisplay()
+                                ->constrained(true)
+                                ->visibility(true)
+                                ->required(),
+                        ]),
                         Textarea::make('trainingVideoMessage')
                             ->label('Message')
                             ->required(),

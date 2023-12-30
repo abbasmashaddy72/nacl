@@ -17,7 +17,7 @@ class LaneFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->text(),
+            'name' => fake()->unique()->company(),
             'slug' => fake()->slug(2),
             'short_description' => fake()->realText(),
             'images' => json_encode(['image1.jpg', 'image2.jpg', 'image3.jpg']),

@@ -23,18 +23,13 @@ class Lane extends Model
         'images' => 'array'
     ];
 
-    public function sports(): BelongsToMany
+    public function slots(): BelongsToMany
     {
-        return $this->belongsToMany(Sport::class, 'lane_sports');
+        return $this->belongsToMany(Slot::class);
     }
 
-    public function laneSports(): HasMany
+    public function laneBookings(): BelongsToMany
     {
-        return $this->hasMany(LaneSport::class);
-    }
-
-    public function laneStatuses(): HasMany
-    {
-        return $this->hasMany(LaneStatus::class);
+        return $this->belongsToMany(LaneBooking::class);
     }
 }

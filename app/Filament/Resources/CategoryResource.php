@@ -9,6 +9,7 @@ use App\Models\Category;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use App\Filament\Resources\CategoryResource\Pages;
 use App\Filament\Resources\CategoryResource\RelationManagers;
@@ -41,7 +42,7 @@ class CategoryResource extends Resource
                         ->disabled()
                         ->unique(ignoreRecord: true)
                         ->dehydrated(),
-                    Forms\Components\MarkdownEditor::make('description')
+                    TipTapEditor::component('description')
                         ->columnSpanFull()
                 ])->columns(2),
                 Forms\Components\Group::make()->schema([
@@ -52,7 +53,9 @@ class CategoryResource extends Resource
                             ->default(true),
                     ]),
                     Forms\Components\Section::make('Associations')->schema([
-                        Forms\Components\Select::make('parent_id')->relationship('parent', 'name'),
+                        Forms\Components\Select::make('parent_id')
+                            ->relationship('parent', 'name')
+                            ->searchable(),
                     ])
                 ])
             ]);

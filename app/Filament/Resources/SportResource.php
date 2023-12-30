@@ -7,6 +7,7 @@ use Filament\Tables;
 use App\Models\Sport;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\SportResource\Pages;
@@ -35,6 +36,10 @@ class SportResource extends Resource
                     Forms\Components\TextInput::make('slug')
                         ->required()
                         ->maxLength(255),
+                    Forms\Components\TextInput::make('max_lane')
+                        ->required()
+                        ->numeric()
+                        ->helperText('0 For None Lane Sport Activities'),
                     Forms\Components\TextInput::make('short_description')
                         ->required()
                         ->maxLength(255),
@@ -46,9 +51,7 @@ class SportResource extends Resource
                         ->visibility(true)
                         ->multiple()
                         ->required(),
-                    Forms\Components\Textarea::make('description')
-                        ->required()
-                        ->columnSpanFull(),
+                    TipTapEditor::component('description')->columnSpanFull(),
                 ])->columns(2)
             ]);
     }

@@ -32,7 +32,7 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->viteTheme('resources/css/filament/admin/theme.css')
+            ->viteTheme(['resources/css/filament/admin/theme.css', 'resources/js/filament/admin/scroll-fix.js'])
             ->id('admin')
             ->path('admin')
             ->login()
@@ -89,6 +89,6 @@ class AdminPanelProvider extends PanelProvider
             ->spa()
             ->widgets([
                 OverlookWidget::class,
-            ]);;
+            ])->sidebarCollapsibleOnDesktop();
     }
 }

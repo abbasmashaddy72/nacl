@@ -2,14 +2,16 @@
 
 namespace App\Filament\Resources\CategoryResource\RelationManagers;
 
-use App\Enums\ProductType;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Forms\Set;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
+use Filament\Forms\Set;
+use Filament\Forms\Form;
+use App\Enums\ProductType;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use App\Editors\TipTapEditor;
+use Awcodes\Curator\Components\Forms\CuratorPicker;
+use Filament\Resources\RelationManagers\RelationManager;
 
 class ProductsRelationManager extends RelationManager
 {
@@ -48,7 +50,7 @@ class ProductsRelationManager extends RelationManager
                                     ->searchable()
                                     ->columnSpanFull(),
 
-                                Forms\Components\MarkdownEditor::make('description')
+                                TipTapEditor::component('description')
                                     ->columnSpan('full'),
                             ])->columns(2),
 
@@ -99,11 +101,13 @@ class ProductsRelationManager extends RelationManager
                                     ->default([$this->getOwnerRecord()->id])
                                     ->required(),
 
-                                Forms\Components\FileUpload::make('image_url')
-                                    ->label(false)
-                                    ->image()
-                                    ->imageCropAspectRatio(null)
-                                    ->columnSpanFull(),
+                                CuratorPicker::make('image_url')
+                                    ->label('Image')
+                                    ->lazyLoad()
+                                    ->listDisplay()
+                                    ->constrained(true)
+                                    ->visibility(true)
+                                    ->required(),
                             ])->columns(2),
                     ])->columnSpanFull()
             ]);

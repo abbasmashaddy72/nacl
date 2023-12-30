@@ -7,6 +7,7 @@ export default defineConfig({
             input: [
                 "resources/js/app.js",
                 "resources/css/filament/admin/theme.css",
+                "resources/js/filament/admin/scroll-fix.js",
             ],
             refresh: true,
         }),

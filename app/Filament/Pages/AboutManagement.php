@@ -15,6 +15,8 @@ class AboutManagement extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-squares-plus';
 
+    protected static ?string $title = 'About Us Page';
+
     protected static string $settings = AboutPage::class;
 
     protected static ?string $navigationGroup = 'Site Management';
@@ -55,13 +57,15 @@ class AboutManagement extends SettingsPage
                             ->label('Title')
                             ->required(),
 
-                        Textarea::make('aboutUsKeyFeatureMessage')
-                            ->label('Message')
-                            ->required(),
+                        Forms\Components\Group::make()->schema([
+                            Textarea::make('aboutUsKeyFeatureMessage')
+                                ->label('Message')
+                                ->required(),
 
-                        Textarea::make('aboutUsKeyFeaturePoints')
-                            ->label('Points')
-                            ->required(),
+                            Textarea::make('aboutUsKeyFeaturePoints')
+                                ->label('Points')
+                                ->required(),
+                        ])->columnSpanFull()->columns(2),
                     ])->columns(2),
 
                     Forms\Components\Section::make('Video Section')->schema([
@@ -80,10 +84,19 @@ class AboutManagement extends SettingsPage
                 ]),
                 Forms\Components\Group::make()->schema([
                     Forms\Components\Section::make('About Section')->schema([
-                        TextInput::make('aboutUsTitle')
-                            ->label('Title')
-                            ->required(),
+                        Forms\Components\Group::make()->schema([
+                            TextInput::make('aboutUsTitle')
+                                ->label('Title')
+                                ->required(),
 
+                            CuratorPicker::make('aboutUsImage')
+                                ->label('Image')
+                                ->lazyLoad()
+                                ->listDisplay()
+                                ->constrained(true)
+                                ->visibility(true)
+                                ->required(),
+                        ]),
                         Textarea::make('aboutUsMessage')
                             ->label('Message')
                             ->required(),
@@ -94,14 +107,6 @@ class AboutManagement extends SettingsPage
 
                         TextInput::make('aboutUsButtonURL')
                             ->label('Button URL')
-                            ->required(),
-
-                        CuratorPicker::make('aboutUsImage')
-                            ->label('Image')
-                            ->lazyLoad()
-                            ->listDisplay()
-                            ->constrained(true)
-                            ->visibility(true)
                             ->required(),
                     ])->columns(2),
 

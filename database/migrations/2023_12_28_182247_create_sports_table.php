@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('slug')->unique();
+            $table->bigInteger('max_lane')->default(1);
             $table->string('short_description');
             $table->json('images')->nullable();
             $table->longText('description');

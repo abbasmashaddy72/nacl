@@ -7,6 +7,7 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
@@ -43,7 +44,7 @@ class FaqResource extends Resource
                             ->maxLength(65535)
                             ->columnSpan(2),
 
-                        RichEditor::make('answer')
+                        TipTapEditor::component('answer')
                             ->label(__('Answer'))
                             ->required()
                             ->maxLength(65535)

@@ -11,6 +11,7 @@ use Filament\Forms\Set;
 use Filament\Forms\Form;
 use App\Enums\OrderStatus;
 use Filament\Tables\Table;
+use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use App\Filament\Resources\OrderResource\Pages;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
@@ -47,7 +48,6 @@ class OrderResource extends Resource
                 Forms\Components\Wizard::make([
                     Forms\Components\Wizard\Step::make('Order Details')->schema([
                         Forms\Components\TextInput::make('number')
-                            //  generate random order number ie. OR-12345678
                             ->default('OR-' . random_int(100000, 99999999))
                             ->disabled()
                             ->required()
@@ -61,12 +61,14 @@ class OrderResource extends Resource
                             ->label('Shipping Cost')
                             ->required()
                             ->numeric()
+                            ->prefix('$')
                             ->dehydrated(),
                         Forms\Components\Select::make('status')
                             ->options(OrderStatus::options())
                             ->default(OrderStatus::Pending)
+                            ->native(false)
                             ->required(),
-                        Forms\Components\MarkdownEditor::make('notes')
+                        TipTapEditor::component('notes')
                             ->columnSpanFull()
 
                     ])->columns(2),
@@ -98,10 +100,11 @@ class OrderResource extends Resource
                                     ->required()
                                     ->disabled()
                                     ->numeric()
+                                    ->prefix('$')
                                     ->dehydrated(),
                                 Forms\Components\Placeholder::make('total_price')
                                     ->content(function (Get $get) {
-                                        return $get('quantity') * $get('unit_price');
+                                        return '$' . $get('quantity') * $get('unit_price');
                                     })
                             ])->columns(4)
                     ])

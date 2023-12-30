@@ -10,8 +10,10 @@ use Filament\Forms\Form;
 use App\Enums\ProductType;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use App\Filament\Resources\ProductResource\Pages;
+use Awcodes\Curator\Components\Forms\CuratorPicker;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 
 class ProductResource extends Resource
@@ -49,7 +51,7 @@ class ProductResource extends Resource
                             ->disabled()
                             ->unique(Product::class, 'slug', ignoreRecord: true)
                             ->dehydrated(),
-                        Forms\Components\MarkdownEditor::make('description')
+                        TipTapEditor::component('description')
                             ->columnSpan('full'),
                     ])->columns(2),
                     Forms\Components\Section::make('Pricing & Inventory')->schema([
@@ -67,7 +69,9 @@ class ProductResource extends Resource
                             ->maxValue(100)
                             ->default(1)
                             ->required(),
-                        Forms\Components\Select::make('type')->options(ProductType::options()),
+                        Forms\Components\Select::make('type')
+                            ->options(ProductType::options())
+                            ->native(false),
                     ])->columns(2),
                 ]),
                 Forms\Components\Group::make()->schema([
@@ -85,14 +89,18 @@ class ProductResource extends Resource
                             ->default(now()),
                     ]),
                     Forms\Components\Section::make('Image')->schema([
-                        Forms\Components\FileUpload::make('image_url')
-                            ->label(false)
-                            ->image()
-                            ->imageCropAspectRatio(null)
+                        CuratorPicker::make('image_url')
+                            ->label('Image')
+                            ->lazyLoad()
+                            ->listDisplay()
+                            ->constrained(true)
+                            ->visibility(true)
+                            ->required(),
                     ])->collapsible(),
                     Forms\Components\Section::make('Associations')->schema([
                         Forms\Components\Select::make('brand_id')
                             ->relationship('brand', 'name')
+                            ->native(false)
                             ->required(),
                         Forms\Components\Select::make('categories')
                             ->relationship('categories', 'name')

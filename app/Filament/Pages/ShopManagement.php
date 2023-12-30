@@ -14,6 +14,8 @@ class ShopManagement extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
 
+    protected static ?string $title = 'Shop Page';
+
     protected static string $settings = ShopPage::class;
 
     protected static ?string $navigationGroup = 'Site Management';

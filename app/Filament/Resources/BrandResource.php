@@ -9,6 +9,7 @@ use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use App\Filament\Resources\BrandResource\Pages;
 use App\Filament\Resources\BrandResource\RelationManagers;
@@ -51,7 +52,7 @@ class BrandResource extends Resource
                                     ->unique(ignoreRecord: true)
                                     ->columnSpan('full'),
 
-                                Forms\Components\MarkdownEditor::make('description')
+                                TipTapEditor::component('description')
                                     ->columnSpan('full'),
                             ])->columns(2),
                     ])->columnSpan(['lg' => 2]),

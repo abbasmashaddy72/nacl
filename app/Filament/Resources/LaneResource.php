@@ -7,6 +7,7 @@ use App\Models\Lane;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\LaneResource\Pages;
@@ -46,9 +47,7 @@ class LaneResource extends Resource
                         ->visibility(true)
                         ->multiple()
                         ->required(),
-                    Forms\Components\Textarea::make('description')
-                        ->required()
-                        ->columnSpanFull(),
+                    TipTapEditor::component('description')->columnSpanFull(),
                 ])->columns(2)
             ]);
     }
