@@ -2,11 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Faq;
+use App\Models\Sport;
+use App\Settings\CommonSettings;
+use App\Settings\HomePage;
+use App\Settings\LanePage;
+
 class FrontendController extends Controller
 {
-    public function index()
+    public function __construct(CommonSettings $settings)
     {
-        return view('pages.frontend.index');
+        view()->share('common_settings', $settings);
+    }
+
+    public function index(HomePage $settings)
+    {
+        $sports = Sport::get()->take(6);
+        $categories = Category::get()->take(4);
+
+        return view('pages.frontend.index', compact([
+            'settings',
+            'sports',
+            'categories',
+        ]));
     }
 
     public function sports()
@@ -21,10 +40,15 @@ class FrontendController extends Controller
         return view('pages.frontend.shop');
     }
 
-    public function laneRental()
+    public function laneRental(LanePage $settings)
     {
         view()->share('title', 'Lane Rental');
-        return view('pages.frontend.laneRental');
+        $faqs = Faq::get();
+
+        return view('pages.frontend.laneRental', compact([
+            'settings',
+            'faqs',
+        ]));
     }
 
     public function trainingVideo()

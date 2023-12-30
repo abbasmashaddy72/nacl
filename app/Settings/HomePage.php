@@ -18,17 +18,20 @@ class HomePage extends Settings
 
     public ?string $sportSectionTitle;
     public ?string $sportSectionMessage;
-    public ?string $sportSectionImage;
+    public ?int $sportSectionImage;
     // Repeating Data
     public ?string $sportSectionTitle1;
     public ?string $sportSectionMessage1;
-    public ?string $sportSectionImage1;
+    public ?int $sportSectionImage1;
     public ?string $sportSectionTitle2;
     public ?string $sportSectionMessage2;
-    public ?string $sportSectionImage2;
+    public ?int $sportSectionImage2;
 
     public ?string $shopSectionTitle;
     public ?string $shopSectionMessage;
+
+    public ?string $enableSponsorSection;
+    public ?array $sponsorImages;
 
     public static function group(): string
     {

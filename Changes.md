@@ -11,7 +11,7 @@
 - In Slot Adding Check if max_lane from sport and add it lane should nullable or default -1 - **Done**
 - Charges/Price - Base Price - **Done**
 - Base Time - Helper text for time (minutes) - **Done**
-- Add Repeater Selection
+- Add Repeater Selection - **Done**
 - dollar symbol - Where every amount - **Done**
 - Change Lane Statuses to Lane Status - **Done**
 - Add Sport Selection Multi Lane Selection - **in Lane Booking**
@@ -29,6 +29,23 @@
 ## Blog
 
 - Blog issue when Editing - **Done**
+
+## New Changes
+
+- Added New General Changes
+- Add short_description, image in Category
+- Min Date should be Today
+- Add Day in Slots
+- Lane Booking No of Players Field
+- Redirect to index page
+- Date Time Picker Need to Changed
+- Lane Booking Table Sport Name
+- Slug Need to Set Based on Title or Name
+- Image not Showing in Product Table After Selecting from Curator
+- Add New on Selecting Fields
+- Impersonation For Users
+- Orders total_price is showing null
+- Need to change Lane Section Just as the image one left & 2nd in Right
 
 ## Fix For Side Bar - Need to Add to Package
 

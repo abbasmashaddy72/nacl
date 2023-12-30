@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @include('layouts.fePartials.inner-top-section')
+    <x-frontend.inner-top-section />
     <section class="relative md:py-24 py-16">
         <div class="container">
             <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">

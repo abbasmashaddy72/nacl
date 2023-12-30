@@ -14,32 +14,32 @@ return new class extends SettingsMigration
 
         $this->migrator->add('general.welcomeTitle', '');
         $this->migrator->add('general.welcomeMessage', '');
-        $this->migrator->add('general.welcomeImage', '');
+        $this->migrator->add('general.welcomeImage', null);
 
         $this->migrator->add('general.sportSectionTitle', '');
         $this->migrator->add('general.sportSectionMessage', '');
-        $this->migrator->add('general.sportSectionImage', '');
+        $this->migrator->add('general.sportSectionImage', null);
         // Repeating Data
         $this->migrator->add('general.sportSectionTitle1', '');
         $this->migrator->add('general.sportSectionMessage1', '');
-        $this->migrator->add('general.sportSectionImage1', '');
+        $this->migrator->add('general.sportSectionImage1', null);
         $this->migrator->add('general.sportSectionTitle2', '');
         $this->migrator->add('general.sportSectionMessage2', '');
-        $this->migrator->add('general.sportSectionImage2', '');
+        $this->migrator->add('general.sportSectionImage2', null);
 
         $this->migrator->add('general.shopSectionTitle', '');
         $this->migrator->add('general.shopSectionMessage', '');
 
         // Lane Page
-        $this->migrator->add('general.laneBreadcrumbImage', '');
+        $this->migrator->add('general.laneBreadcrumbImage', null);
         $this->migrator->add('general.enableFeatureSection', true);
         $this->migrator->add('general.enableFAQSection', true);
         $this->migrator->add('general.enableLaneCTASection', true);
         // Sports Page
-        $this->migrator->add('general.sportBreadcrumbImage', '');
+        $this->migrator->add('general.sportBreadcrumbImage', null);
         $this->migrator->add('general.enableSportCTASection', true);
         // Shop Page
-        $this->migrator->add('general.shopBreadcrumbImage', '');
+        $this->migrator->add('general.shopBreadcrumbImage', null);
         $this->migrator->add('general.enableShopAppSection', true);
         $this->migrator->add('general.shopAppTitle', '');
         $this->migrator->add('general.shopAppMessage', '');
@@ -47,7 +47,7 @@ return new class extends SettingsMigration
         $this->migrator->add('general.shopAppGoogleStoreURL', '');
         $this->migrator->add('general.enableShopCTASection', true);
         // Training Video Page
-        $this->migrator->add('general.trainingBreadcrumbImage', '');
+        $this->migrator->add('general.trainingBreadcrumbImage', null);
         $this->migrator->add('general.flowTitle1', '');
         $this->migrator->add('general.flowMessage1', '');
         $this->migrator->add('general.flowTitle2', '');
@@ -57,16 +57,16 @@ return new class extends SettingsMigration
         $this->migrator->add('general.descriptionSectionTitle', '');
         $this->migrator->add('general.descriptionSectionMessage', '');
         $this->migrator->add('general.descriptionSectionPoints', '');
-        $this->migrator->add('general.descriptionSectionImage', '');
+        $this->migrator->add('general.descriptionSectionImage', null);
         $this->migrator->add('general.trainingVideoTitle', '');
         $this->migrator->add('general.trainingVideoMessage', '');
-        $this->migrator->add('general.trainingVideoImages', '');
+        $this->migrator->add('general.trainingVideoImages', null);
         $this->migrator->add('general.testimonialTitle', '');
         $this->migrator->add('general.testimonialMessage', '');
         $this->migrator->add('general.enableTrainingVideoCTASection', true);
         // About Us Page
-        $this->migrator->add('general.aboutUsBreadcrumbImage', '');
-        $this->migrator->add('general.aboutUsImage', '');
+        $this->migrator->add('general.aboutUsBreadcrumbImage', null);
+        $this->migrator->add('general.aboutUsImage', null);
         $this->migrator->add('general.aboutUsTitle', '');
         $this->migrator->add('general.aboutUsMessage', '');
         $this->migrator->add('general.aboutUsButtonLabel', '');
@@ -75,14 +75,14 @@ return new class extends SettingsMigration
         $this->migrator->add('general.aboutUsKeyFeatureTitle', '');
         $this->migrator->add('general.aboutUsKeyFeatureMessage', '');
         $this->migrator->add('general.aboutUsKeyFeaturePoints', '');
-        $this->migrator->add('general.aboutUsVideoImage', '');
+        $this->migrator->add('general.aboutUsVideoImage', null);
         $this->migrator->add('general.aboutUsVideoURL', '');
         $this->migrator->add('general.aboutUsTeamSectionTitle', '');
         $this->migrator->add('general.aboutUsTeamSectionMessage', '');
         $this->migrator->add('general.enableAboutUsTeamTestimonialSection', true);
         $this->migrator->add('general.enableAboutUsCTASection', true);
         // Contact Us Page
-        $this->migrator->add('general.contactUsBreadcrumbImage', '');
+        $this->migrator->add('general.contactUsBreadcrumbImage', null);
         $this->migrator->add('general.contactUsPhoneMessage', '');
         $this->migrator->add('general.contactUsPhoneNo', '');
         $this->migrator->add('general.contactUsEmailMessage', '');

@@ -11,22 +11,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            ShieldSeeder::class,
-            UserSeeder::class,
-            CategorySeeder::class,
-            BrandSeeder::class,
-            ProductSeeder::class,
-            CustomerSeeder::class,
-            OrderSeeder::class,
-            BlogCategorySeeder::class,
-            BlogSeeder::class,
-            FaqSeeder::class,
-            PageSeeder::class,
-            LaneSeeder::class,
-            SportSeeder::class,
-            SlotSeeder::class,
-            LaneBookingSeeder::class,
-        ]);
+        if (config('app.env') == 'production') {
+            $this->call([
+                ShieldSeeder::class,
+                UserSeeder::class,
+            ]);
+        } else {
+            $this->call([
+                ShieldSeeder::class,
+                UserSeeder::class,
+                CategorySeeder::class,
+                BrandSeeder::class,
+                ProductSeeder::class,
+                CustomerSeeder::class,
+                OrderSeeder::class,
+                BlogCategorySeeder::class,
+                BlogSeeder::class,
+                FaqSeeder::class,
+                PageSeeder::class,
+                LaneSeeder::class,
+                SportSeeder::class,
+                SlotSeeder::class,
+                LaneBookingSeeder::class,
+            ]);
+        }
     }
 }

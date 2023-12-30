@@ -104,7 +104,7 @@ class OrderResource extends Resource
                                     ->dehydrated(),
                                 Forms\Components\Placeholder::make('total_price')
                                     ->content(function (Get $get) {
-                                        return '$' . $get('quantity') * $get('unit_price');
+                                        return '$' . (int)$get('quantity') * (int)$get('unit_price');
                                     })
                             ])->columns(4)
                     ])

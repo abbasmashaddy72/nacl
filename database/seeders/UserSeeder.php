@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('password'),
                 'email_verified_at' => now(),
             ]);
-            $user->assignRole('super_admin');
+            User::find(1)->first()->assignRole('super_admin');
         } else {
             $users = User::factory()->count(rand(100, 300))->create();
             $superAdmin = $users->first();

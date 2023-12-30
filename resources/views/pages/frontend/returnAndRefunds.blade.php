@@ -1,4 +1,4 @@
 <x-guest-layout>
-    @include('layouts.fePartials.inner-top-section')
+    <x-frontend.inner-top-section />
     Return & Refunds
 </x-guest-layout>

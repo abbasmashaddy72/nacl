@@ -44,7 +44,7 @@ function fn() {
 /*********************/
 /* Toggle Menu */
 /*********************/
-function toggleMenu() {
+export function toggleMenu() {
     document.getElementById("isToggle").classList.toggle("open");
     var isOpen = document.getElementById("navigation");
     if (isOpen.style.display === "block") {

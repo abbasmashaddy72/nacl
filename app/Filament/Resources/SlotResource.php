@@ -39,12 +39,7 @@ class SlotResource extends Resource
                             ->relationship('lanes', 'name')
                             ->multiple()
                             ->searchable()
-                            ->required()
-                            ->helperText(
-                                function (Slot $sport_id): string {
-                                    return "Max " . $sport_id->sport->max_lane . " Lanes allowed";
-                                }
-                            )
+                            ->required(),
                     ])->columns(2),
                     Forms\Components\Section::make('Min Max Players')->schema([
                         Forms\Components\TextInput::make('min_players')

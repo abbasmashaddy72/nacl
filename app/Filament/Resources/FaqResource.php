@@ -47,7 +47,6 @@ class FaqResource extends Resource
                         TipTapEditor::component('answer')
                             ->label(__('Answer'))
                             ->required()
-                            ->maxLength(65535)
                             ->columnSpan(2),
                     ]),
             ]);

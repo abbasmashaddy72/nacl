@@ -29,7 +29,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations. git commit -m "Made some Functional Changes and Architecture Change"
+     * Reverse the migrations.
      */
     public function down(): void
     {

@@ -54,12 +54,7 @@ class LaneBookingResource extends Resource
                             ->relationship('lanes', 'name')
                             ->searchable()
                             ->multiple()
-                            ->required()
-                            ->helperText(
-                                function (LaneBooking $laneBooking): string {
-                                    return "Max " . $laneBooking->sport->max_lane . " Lanes allowed";
-                                }
-                            ),
+                            ->required(),
                     ])->columns(2),
                     Forms\Components\Section::make('User Details')->schema([
                         Forms\Components\Select::make('user_id')

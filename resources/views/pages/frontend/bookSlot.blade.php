@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @include('layouts.fePartials.inner-top-section')
+    <x-frontend.inner-top-section />
     <div class="container p-6 mx-auto">
         <div class="max-w-screen-md mx-auto">
             <h1 class="mb-6 text-3xl font-bold">Book an Appointment</h1>

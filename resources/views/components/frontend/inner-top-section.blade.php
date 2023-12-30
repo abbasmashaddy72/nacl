@@ -1,5 +1,11 @@
-<section
-    class="relative table w-full py-36 bg-[url('/assets/images/company/aboutus.jpg')] bg-center bg-no-repeat bg-cover">
+@props(['backgroundUrl', 'title'])
+@php
+    $backgroundUrl = \Awcodes\Curator\Models\Media::where('id', $backgroundUrl)
+        ->pluck('path')
+        ->first();
+@endphp
+<section class="relative table w-full bg-center bg-no-repeat bg-cover py-36"
+    style="background-image: url('{{ '/storage/' . $backgroundUrl }}')">
     <div class="absolute inset-0 bg-black opacity-75"></div>
     <div class="container relative">
         <div class="grid grid-cols-1 pb-8 mt-10 text-center">
