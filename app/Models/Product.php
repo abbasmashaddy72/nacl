@@ -16,7 +16,7 @@ class Product extends Model
         'name',
         'slug',
         'sku',
-        'image_url',
+        'images',
         'description',
         'price',
         'quantity',
@@ -24,6 +24,10 @@ class Product extends Model
         'is_featured',
         'type',
         'published_at',
+    ];
+
+    protected $casts = [
+        'images' => 'array'
     ];
 
     public function brand(): BelongsTo

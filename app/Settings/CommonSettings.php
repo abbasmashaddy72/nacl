@@ -16,10 +16,11 @@ class CommonSettings extends Settings
     public ?string $youtube;
     public ?string $googleMaps;
     public ?string $CTATopTitle;
-    public ?string $CTAHeading;
     public ?string $CTAMessage;
     public ?string $CTAButtonLabel;
     public ?string $CTAButtonURL;
+    public ?bool $enableSponsorSection;
+    public ?array $sponsorImages;
 
     public static function group(): string
     {

@@ -6,7 +6,7 @@
                 <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                     <div class="md:col-span-6 @if ($loop->even) order-1 md:order-2 @endif">
                         <div class="lg:ms-8">
-                            <x-curator-glider class="h-6" :media="(int) $sport->images[0]" />
+                            <x-curator-glider class="" :media="(int) $sport->images[0]" />
                         </div>
                     </div>
 

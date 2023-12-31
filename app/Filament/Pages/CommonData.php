@@ -53,9 +53,6 @@ class CommonData extends SettingsPage
                         TextInput::make('CTATopTitle')
                             ->label('Top Title')
                             ->required(),
-                        TextInput::make('CTAHeading')
-                            ->label('Heading')
-                            ->required(),
                         Textarea::make('CTAMessage')
                             ->label('Message')
                             ->required(),

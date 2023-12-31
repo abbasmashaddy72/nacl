@@ -21,7 +21,7 @@ class ProductFactory extends Factory
             'name' => fake()->word,
             'slug' => fake()->slug,
             'sku' => fake()->unique()->numberBetween(100000, 999999),
-            'image_url' => fake()->imageUrl(),
+            'images' => rand(1, 10),
             'description' => fake()->paragraph,
             'quantity' => fake()->numberBetween(1, 100),
             'price' => fake()->randomFloat(2, 100, 1000),

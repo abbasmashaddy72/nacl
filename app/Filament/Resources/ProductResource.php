@@ -89,7 +89,7 @@ class ProductResource extends Resource
                             ->default(now()),
                     ]),
                     Forms\Components\Section::make('Image')->schema([
-                        CuratorPicker::make('image_url')
+                        CuratorPicker::make('images')
                             ->label('Image')
                             ->lazyLoad()
                             ->listDisplay()
@@ -116,7 +116,7 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image_url')
+                Tables\Columns\ImageColumn::make('images')
                     ->label('Image'),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()

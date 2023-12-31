@@ -7,11 +7,12 @@
                         <div>
                             <label for="searchname" class="hidden font-semibold"></label>
                             <div class="relative">
-                                <i data-feather="search" class="absolute w-4 h-4 top-3 start-3"></i>
-
-                                <input name="search" id="searchname" type="text"
-                                    class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-9 dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
-                                    placeholder="Search">
+                                <input type="text" wire:model.live='search'
+                                    class="w-full h-10 py-2 pl-10 pr-4 bg-transparent border border-gray-200 rounded outline-none form-input dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
+                                    placeholder="Search" />
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <i class="text-gray-900 dark:text-white ri-search-line"></i>
+                                </div>
                             </div>
                         </div>
 
@@ -31,7 +32,7 @@
                                 <div class="block mt-2">
                                     <span class="flex items-center">
                                         <x-curator-glider class="w-12 rounded shadow dark:shadow-gray-800"
-                                            :media="(int) $featuredProduct->image_url" />
+                                            :media="(int) $featuredProduct->images[0]" />
                                         <span class="ms-3">
                                             <span class="block font-semibold">{{ $featuredProduct->name }}</span>
                                             <span
@@ -72,7 +73,7 @@
                     <div class="group">
                         <div
                             class="relative overflow-hidden duration-500 rounded-md shadow dark:shadow-gray-800 group-hover:shadow-lg group-hover:dark:shadow-gray-800">
-                            <x-curator-glider :media="(int) $product->image_url" />
+                            <x-curator-glider :media="(int) $product->images[0]" />
 
                             <div class="absolute duration-500 -bottom-20 group-hover:bottom-3 start-3 end-3">
                                 <a href="shop-cart.html"

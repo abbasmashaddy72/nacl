@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Sport;
+use App\Settings\AboutPage;
 use App\Settings\CommonSettings;
+use App\Settings\ContactUsPage;
 use App\Settings\HomePage;
 use App\Settings\LanePage;
 use App\Settings\ShopPage;
@@ -34,7 +36,7 @@ class FrontendController extends Controller
     public function laneRental(LanePage $settings)
     {
         view()->share('title', 'Lane Rental');
-        $faqs = Faq::get();
+        $faqs = Faq::limit(10)->get();
 
         return view('pages.frontend.laneRental', compact([
             'settings',
@@ -46,7 +48,7 @@ class FrontendController extends Controller
     public function sports(SportPage $settings)
     {
         view()->share('title', 'Sports');
-        $sports = Sport::get();
+        $sports = Sport::limit(6)->get();
 
         return view('pages.frontend.sports', compact([
             'settings',
@@ -72,20 +74,27 @@ class FrontendController extends Controller
         ]));
     }
 
-    public function aboutUs()
+    public function aboutUs(AboutPage $settings)
     {
         view()->share('title', 'About Us');
-        return view('pages.frontend.aboutUs');
+
+        return view('pages.frontend.aboutUs', compact([
+            'settings',
+        ]));
     }
 
-    public function contactUs()
+    public function contactUs(ContactUsPage $settings)
     {
         view()->share('title', 'Contact Us');
-        return view('pages.frontend.contactUs');
+
+        return view('pages.frontend.contactUs', compact([
+            'settings',
+        ]));
     }
 
     public function bookSlot()
     {
+        return redirect('lane-rental');
         view()->share('title', 'Book Slot');
         return view('pages.frontend.bookSlot');
     }

@@ -7,6 +7,8 @@ use Filament\Forms\Form;
 use App\Settings\LanePage;
 use Filament\Pages\SettingsPage;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 
@@ -46,6 +48,27 @@ class LaneManagement extends SettingsPage
                     Toggle::make('enableLaneCTASection')
                         ->label('Enable CTA Section')
                         ->required(),
+                    Forms\Components\Section::make('Features')->schema([
+                        Repeater::make('laneFeatures')
+                            ->schema([
+                                Forms\Components\Group::make()->schema([
+                                    TextInput::make('title')
+                                        ->label('Title')
+                                        ->required(),
+
+                                    CuratorPicker::make('image')
+                                        ->label('Image')
+                                        ->lazyLoad()
+                                        ->listDisplay()
+                                        ->constrained(true)
+                                        ->visibility(true)
+                                        ->required(),
+                                ]),
+                                Textarea::make('message')
+                                    ->label('Message')
+                                    ->required(),
+                            ])->columns(2),
+                    ]),
                 ])->columns(4),
             ]);
     }

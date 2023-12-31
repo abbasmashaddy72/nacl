@@ -1,9 +1,9 @@
 @props(['backgroundUrl', 'title'])
 @php
-    $backgroundUrl = '' ?? \Awcodes\Curator\Models\Media::findOrFail($backgroundUrl)->pluck('path');
+    $backgroundUrl = \Awcodes\Curator\Models\Media::findOrFail($backgroundUrl);
 @endphp
 <section class="relative table w-full bg-center bg-no-repeat bg-cover py-36"
-    style="background-image: url('{{ '/storage/' . $backgroundUrl }}')">
+    style="background-image: url('{{ '/storage/' . $backgroundUrl->path }}')">
     <div class="absolute inset-0 bg-black opacity-75"></div>
     <div class="container relative">
         <div class="grid grid-cols-1 pb-8 mt-10 text-center">
@@ -20,7 +20,7 @@
                 <a href="{{ route('homepage') }}">{{ config('app.name', 'Laravel') }}</a>
             </li>
             <li class="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180"><i
-                    class="uil uil-angle-right-b"></i></li>
+                    class="ri-arrow-right-s-line"></i></li>
             <li class="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white"
                 aria-current="page">{{ $title }}</li>
         </ul>

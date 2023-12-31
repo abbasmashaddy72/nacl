@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
                         'brand_id' => $brand->id,
                         'slug' => \Illuminate\Support\Str::slug($productName),
                         'sku' => \Illuminate\Support\Str::slug($productName),
-                        'image_url' => 'https://via.placeholder.com/300x300',
+                        'images' => array_map(fn () => rand(1, 10), range(1, rand(2, 5))),
                         'description' => $productName . '. Description.',
                         // add random timestamp from beginning of this year
                         'created_at' => now()->startOfYear()->addDays(rand(0, 365)),

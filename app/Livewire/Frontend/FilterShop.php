@@ -7,10 +7,11 @@ use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Shop extends Component
+class FilterShop extends Component
 {
     use WithPagination;
 
+    public $search;
     public $categories;
     public $selectedCategories;
     public $minPrice;
@@ -22,6 +23,14 @@ class Shop extends Component
     {
         $this->categories = Category::where('is_visible', true)->get();
         $products = Product::query();
+
+        // Apply search
+        if ($this->search) {
+            $products->where(function ($query) {
+                $query->where('name', 'like', '%' . $this->search . '%')
+                    ->orWhere('description', 'like', '%' . $this->search . '%');
+            });
+        }
 
         // Apply filters
         if (!empty($this->selectedCategories)) {
@@ -55,7 +64,7 @@ class Shop extends Component
         // Fetch featured products (customize this logic based on your requirements)
         $this->featuredProducts = Product::where('is_featured', true)->limit(5)->get();
 
-        return view('livewire.frontend.shop', compact([
+        return view('livewire.frontend.filter-shop', compact([
             'products',
         ]));
     }

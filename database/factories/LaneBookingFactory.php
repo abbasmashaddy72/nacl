@@ -55,8 +55,9 @@ class LaneBookingFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (LaneBooking $slot) {
-            $lanes = LaneBooking::inRandomOrder()->limit(rand(1, 3))->pluck('id')->toArray();
-            $slot->lanes()->sync($lanes);
+            // Get existing lane IDs and associate them with LaneBooking
+            $laneIds = Lane::inRandomOrder()->limit(rand(1, 3))->pluck('id')->toArray();
+            $slot->lanes()->attach($laneIds);
         });
     }
 }

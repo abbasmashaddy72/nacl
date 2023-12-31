@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-frontend.inner-top-section backgroundUrl="{{ $settings->shopBreadcrumbImage }}" />
     <section class="relative py-16 md:py-24">
-        @livewire('frontend.shop')
+        @livewire('frontend.filter-shop')
 
         @if ($settings->enableShopAppSection)
             <div class="container relative mt-16 md:mt-24">

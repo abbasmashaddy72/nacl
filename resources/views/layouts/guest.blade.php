@@ -16,8 +16,8 @@
     </title>
 
     @wireUiScripts
-    @livewireStyles
     @vite('resources/js/app.js')
+    @livewireStyles
     @stack('styles')
 </head>
 

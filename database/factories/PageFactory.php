@@ -23,7 +23,7 @@ class PageFactory extends Factory
             'slug' => fake()->slug(2),
             'description' => fake()->sentence,
             'content' => fake()->sentence,
-            'featured_image' => fake()->imageUrl(),
+            'featured_image' => rand(1, 10),
             'published_at' => now(),
         ];
     }

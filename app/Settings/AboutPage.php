@@ -15,8 +15,8 @@ class AboutPage extends Settings
     public ?bool $enableAboutUsSponsorSection;
     public ?string $aboutUsKeyFeatureTitle;
     public ?string $aboutUsKeyFeatureMessage;
-    public ?string $aboutUsKeyFeaturePoints;
-    public ?string $aboutUsVideoImage;
+    public ?array $aboutUsKeyFeaturePoints;
+    public ?int $aboutUsVideoImage;
     public ?string $aboutUsVideoURL;
     public ?string $aboutUsTeamSectionTitle;
     public ?string $aboutUsTeamSectionMessage;

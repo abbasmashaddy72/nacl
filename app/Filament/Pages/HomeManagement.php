@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use App\Settings\HomePage;
 use Filament\Pages\SettingsPage;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
@@ -29,6 +30,20 @@ class HomeManagement extends SettingsPage
         return $form
             ->schema([
                 Forms\Components\Group::make()->schema([
+                    Forms\Components\Section::make('Sliders')->schema([
+                        Repeater::make('sliders')
+                            ->schema([
+                                TextInput::make('url')->required(),
+                                CuratorPicker::make('image')
+                                    ->label('Image')
+                                    ->lazyLoad()
+                                    ->listDisplay()
+                                    ->constrained(true)
+                                    ->visibility(true)
+                                    ->required(),
+                            ])
+                            ->columns(2),
+                    ]),
                     Forms\Components\Section::make('Hero Card 2')->schema([
                         TextInput::make('card2Title')
                             ->label('Title')
@@ -46,7 +61,7 @@ class HomeManagement extends SettingsPage
                             ->label('Button URL')
                             ->required(),
 
-                        TextInput::make('card2YoutubeURL')
+                        TextInput::make('card2YoutubeId')
                             ->label('Youtube URL')
                             ->required(),
                     ])->columns(2),
@@ -82,13 +97,13 @@ class HomeManagement extends SettingsPage
                 ]),
 
                 Forms\Components\Group::make()->schema([
-                    Forms\Components\Section::make('Sports Section')->schema([
+                    Forms\Components\Section::make('Video Recording Section')->schema([
                         Forms\Components\Group::make()->schema([
-                            TextInput::make('sportSectionTitle')
+                            TextInput::make('videoRecordingTitle')
                                 ->label('Title')
                                 ->required(),
 
-                            CuratorPicker::make('sportSectionImage')
+                            CuratorPicker::make('videoRecordingImage')
                                 ->label('Image')
                                 ->lazyLoad()
                                 ->listDisplay()
@@ -97,46 +112,30 @@ class HomeManagement extends SettingsPage
                                 ->required(),
 
                         ]),
-                        Textarea::make('sportSectionMessage')
+                        Textarea::make('videoRecordingMessage')
                             ->label('Message')
                             ->required(),
-                        Forms\Components\Section::make('Point 1')->schema([
-                            Forms\Components\Group::make()->schema([
-                                TextInput::make('sportSectionTitle1')
-                                    ->label('Title')
-                                    ->required(),
+                        Forms\Components\Section::make('Points')->schema([
+                            Repeater::make('sliders')
+                                ->schema([
+                                    Forms\Components\Group::make()->schema([
+                                        TextInput::make('title')
+                                            ->label('Title')
+                                            ->required(),
 
-                                CuratorPicker::make('sportSectionImage1')
-                                    ->label('Image')
-                                    ->lazyLoad()
-                                    ->listDisplay()
-                                    ->constrained(true)
-                                    ->visibility(true)
-                                    ->required(),
-                            ]),
-                            Textarea::make('sportSectionMessage1')
-                                ->label('Message')
-                                ->required(),
-                        ])->columns(2),
-
-                        Forms\Components\Section::make('Point 2')->schema([
-                            Forms\Components\Group::make()->schema([
-                                TextInput::make('sportSectionTitle2')
-                                    ->label('Title')
-                                    ->required(),
-
-                                CuratorPicker::make('sportSectionImage2')
-                                    ->label('Image')
-                                    ->lazyLoad()
-                                    ->listDisplay()
-                                    ->constrained(true)
-                                    ->visibility(true)
-                                    ->required(),
-                            ]),
-                            Textarea::make('sportSectionMessage2')
-                                ->label('Message')
-                                ->required(),
-                        ])->columns(2),
+                                        CuratorPicker::make('image')
+                                            ->label('Image')
+                                            ->lazyLoad()
+                                            ->listDisplay()
+                                            ->constrained(true)
+                                            ->visibility(true)
+                                            ->required(),
+                                    ]),
+                                    Textarea::make('message')
+                                        ->label('Message')
+                                        ->required(),
+                                ])->columns(2),
+                        ]),
                     ])->columns(2),
                 ]),
 

@@ -7,6 +7,7 @@ use Filament\Forms\Form;
 use App\Settings\AboutPage;
 use Filament\Pages\SettingsPage;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
@@ -62,9 +63,18 @@ class AboutManagement extends SettingsPage
                                 ->label('Message')
                                 ->required(),
 
-                            Textarea::make('aboutUsKeyFeaturePoints')
-                                ->label('Points')
-                                ->required(),
+                            Repeater::make('aboutUsKeyFeaturePoints')->schema([
+                                Textarea::make('title')
+                                    ->label('Title')
+                                    ->required(),
+                                CuratorPicker::make('image')
+                                    ->label('Image')
+                                    ->lazyLoad()
+                                    ->listDisplay()
+                                    ->constrained(true)
+                                    ->visibility(true)
+                                    ->required(),
+                            ])->columns(2),
                         ])->columnSpanFull()->columns(2),
                     ])->columns(2),
 

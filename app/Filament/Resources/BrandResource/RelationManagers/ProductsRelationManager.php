@@ -95,7 +95,7 @@ class ProductsRelationManager extends RelationManager
                                     ->multiple()
                                     ->required(),
 
-                                CuratorPicker::make('image_url')
+                                CuratorPicker::make('images')
                                     ->label('Image')
                                     ->lazyLoad()
                                     ->listDisplay()
@@ -112,7 +112,7 @@ class ProductsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                Tables\Columns\ImageColumn::make('image_url')
+                Tables\Columns\ImageColumn::make('images')
                     ->label('Image'),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()

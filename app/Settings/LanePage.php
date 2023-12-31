@@ -10,6 +10,7 @@ class LanePage extends Settings
     public ?bool $enableFeatureSection;
     public ?bool $enableFAQSection;
     public ?bool $enableLaneCTASection;
+    public ?array $laneFeatures;
 
     public static function group(): string
     {
