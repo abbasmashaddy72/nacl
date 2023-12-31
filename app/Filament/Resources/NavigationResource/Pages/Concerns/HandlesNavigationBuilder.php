@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\NavigationResource;
+namespace App\Filament\Resources\NavigationResource\Pages\Concerns;
 
 use Closure;
 use Filament\Forms\Get;

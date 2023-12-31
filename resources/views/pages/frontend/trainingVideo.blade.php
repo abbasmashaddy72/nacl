@@ -24,7 +24,7 @@
                 <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                     <div class="order-1 md:col-span-6 md:order-2">
                         <div class="lg:ms-8">
-                            <x-curator-glider class="" :media="$settings->descriptionSectionImage" />
+                            <x-curator-glider class="aspect-[3/4] object-cover" :media="$settings->descriptionSectionImage" />
                         </div>
                     </div>
 
@@ -67,11 +67,11 @@
                 <div class="tiny-six-item">
                     @foreach ($settings->trainingVideoImages as $item)
                         @php
-                            $image_path = '' ?? \Awcodes\Curator\Models\Media::findOrFail($item)->pluck('path');
+                            $image = \Awcodes\Curator\Models\Media::findOrFail($item);
                         @endphp
                         <div class="tiny-slide">
                             <div class="relative block mx-2 overflow-hidden duration-500 rounded-md group">
-                                <a href="{{ asset('/storage/' . $image_path) }}"
+                                <a href="{{ asset('/storage/' . $image->path) }}"
                                     class="duration-500 lightbox group-hover:scale-105" title="">
                                     <x-curator-glider class="" :media="$item" />
                                 </a>

@@ -32,19 +32,19 @@
 
 ## New Changes
 
-- Added New Sliders in Homepage
-- Added New General Changes Common Data
+- Added New Sliders in Homepage - **Done**
+- Added New General Changes Common Data - **Done**
 - Add short_description, image in Category
 - Min Date should be Today
 - Add Day in Slots
 - Lane Booking No of Players Field
 - Redirect to index page on Create & Edit
 - Date Time Picker Need to Changed
-- Lane Booking List Sport Name
+- Lane Booking List Sport Name - **Done**
 - Slug Need to Set Based on Title or Name
 - Image not Showing in Product Table After Selecting from Curator
 - Add New on Selecting Fields
-- Impersonation For Users
+- Impersonation For Users - **Done**
 - Orders total_price is showing null
 - Need to change Lane Section with booking Lane Section to change Description and Images where Book Slot will be at left and Lane Data wil lbe at right or vice versa
 

@@ -28,17 +28,19 @@ class SlotFactory extends Factory
             $endTime = fake()->time();
         }
 
+        $time = fake()->randomElement([30, 45, 60]);
+
         return [
             'sport_id' => fake()->randomElement(Sport::get()->pluck('id')->toArray()),
             'min_players' => 2,
             'max_players' => rand(7, 12),
             'base_price' => rand(10, 50),
-            'base_time' => fake()->randomElement([30, 45, 60]),
+            'base_time' => $time,
             'weekend_amount_percentage' => rand(10, 30),
             'per_player_percentage' => rand(10, 30),
             'start_time' => $startTime,
             'end_time' => $endTime,
-            'slot_minutes' => fake()->randomElement([30, 45, 60]),
+            'slot_minutes' => $time,
         ];
     }
 

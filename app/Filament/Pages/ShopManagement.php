@@ -41,7 +41,7 @@ class ShopManagement extends SettingsPage
                                 ->label('Enable APP Section')
                                 ->required(),
 
-                            Toggle::make('enableShopAppSection')
+                            Toggle::make('enableShopCTASection')
                                 ->label('Enable CTA Section')
                                 ->required(),
                         ]),

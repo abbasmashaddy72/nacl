@@ -28,26 +28,33 @@ class LaneManagement extends SettingsPage
     {
         return $form
             ->schema([
-                Forms\Components\Section::make()->schema([
-                    CuratorPicker::make('laneBreadcrumbImage')
-                        ->label('Breadcrumb Image')
-                        ->lazyLoad()
-                        ->listDisplay()
-                        ->constrained(true)
-                        ->visibility(true)
-                        ->required(),
+                Forms\Components\Group::make()->schema([
+                    Forms\Components\Section::make()->schema([
+                        CuratorPicker::make('laneBreadcrumbImage')
+                            ->label('Breadcrumb Image')
+                            ->lazyLoad()
+                            ->listDisplay()
+                            ->constrained(true)
+                            ->visibility(true)
+                            ->required(),
 
-                    Toggle::make('enableFeatureSection')
-                        ->label('Enable Feature Section')
-                        ->required(),
+                        Forms\Components\Group::make()->schema([
+                            Toggle::make('enableFeatureSection')
+                                ->label('Enable Feature Section')
+                                ->required(),
 
-                    Toggle::make('enableFAQSection')
-                        ->label('Enable FAQ Section')
-                        ->required(),
+                            Toggle::make('enableFAQSection')
+                                ->label('Enable FAQ Section')
+                                ->required(),
 
-                    Toggle::make('enableLaneCTASection')
-                        ->label('Enable CTA Section')
-                        ->required(),
+                            Toggle::make('enableLaneCTASection')
+                                ->label('Enable CTA Section')
+                                ->required()
+                        ]),
+                    ])->columns(2),
+                ]),
+
+                Forms\Components\Group::make()->schema([
                     Forms\Components\Section::make('Features')->schema([
                         Repeater::make('laneFeatures')
                             ->schema([
@@ -67,7 +74,7 @@ class LaneManagement extends SettingsPage
                                 Textarea::make('message')
                                     ->label('Message')
                                     ->required(),
-                            ])->columns(2),
+                            ])->columns(2)->maxItems(3),
                     ]),
                 ])->columns(4),
             ]);

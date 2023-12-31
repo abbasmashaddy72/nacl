@@ -41,8 +41,7 @@ class HomeManagement extends SettingsPage
                                     ->constrained(true)
                                     ->visibility(true)
                                     ->required(),
-                            ])
-                            ->columns(2),
+                            ])->columns(2)->maxItems(5),
                     ]),
                     Forms\Components\Section::make('Hero Card 2')->schema([
                         TextInput::make('card2Title')
@@ -116,7 +115,7 @@ class HomeManagement extends SettingsPage
                             ->label('Message')
                             ->required(),
                         Forms\Components\Section::make('Points')->schema([
-                            Repeater::make('sliders')
+                            Repeater::make('videoRecordingPoints')
                                 ->schema([
                                     Forms\Components\Group::make()->schema([
                                         TextInput::make('title')
@@ -134,7 +133,7 @@ class HomeManagement extends SettingsPage
                                     Textarea::make('message')
                                         ->label('Message')
                                         ->required(),
-                                ])->columns(2),
+                                ])->columns(2)->maxItems(2),
                         ]),
                     ])->columns(2),
                 ]),

@@ -57,12 +57,10 @@ class AboutManagement extends SettingsPage
                         TextInput::make('aboutUsKeyFeatureTitle')
                             ->label('Title')
                             ->required(),
-
+                        Textarea::make('aboutUsKeyFeatureMessage')
+                            ->label('Message')
+                            ->required(),
                         Forms\Components\Group::make()->schema([
-                            Textarea::make('aboutUsKeyFeatureMessage')
-                                ->label('Message')
-                                ->required(),
-
                             Repeater::make('aboutUsKeyFeaturePoints')->schema([
                                 Textarea::make('title')
                                     ->label('Title')
@@ -75,9 +73,10 @@ class AboutManagement extends SettingsPage
                                     ->visibility(true)
                                     ->required(),
                             ])->columns(2),
-                        ])->columnSpanFull()->columns(2),
+                        ])->columnSpanFull(),
                     ])->columns(2),
-
+                ]),
+                Forms\Components\Group::make()->schema([
                     Forms\Components\Section::make('Video Section')->schema([
                         CuratorPicker::make('aboutUsVideoImage')
                             ->label('Image')
@@ -91,8 +90,6 @@ class AboutManagement extends SettingsPage
                             ->label('Youtube URL')
                             ->required(),
                     ])->columns(2),
-                ]),
-                Forms\Components\Group::make()->schema([
                     Forms\Components\Section::make('About Section')->schema([
                         Forms\Components\Group::make()->schema([
                             TextInput::make('aboutUsTitle')

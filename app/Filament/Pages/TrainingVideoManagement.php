@@ -60,25 +60,7 @@ class TrainingVideoManagement extends SettingsPage
                             Textarea::make('point')
                                 ->label('Point')
                                 ->required(),
-                        ])->columns(2),
-                    ])->columns(2),
-
-                    Forms\Components\Section::make('Training Video Section')->schema([
-                        Forms\Components\Group::make()->schema([
-                            TextInput::make('trainingVideoTitle')
-                                ->label('Title')
-                                ->required(),
-                            CuratorPicker::make('trainingVideoImages')
-                                ->label('Image')
-                                ->lazyLoad()
-                                ->listDisplay()
-                                ->constrained(true)
-                                ->visibility(true)
-                                ->required(),
-                        ]),
-                        Textarea::make('trainingVideoMessage')
-                            ->label('Message')
-                            ->required(),
+                        ])->columnSpanFull()->maxItems(5),
                     ])->columns(2),
 
                     Forms\Components\Section::make('Testimonial Section')->schema([
@@ -99,7 +81,25 @@ class TrainingVideoManagement extends SettingsPage
                             Textarea::make('message')
                                 ->label('Message')
                                 ->required(),
-                        ])->columns(2),
+                        ])->columnSpanFull()->maxItems(3),
+                    ])->columns(2),
+
+                    Forms\Components\Section::make('Training Video Section')->schema([
+                        Forms\Components\Group::make()->schema([
+                            TextInput::make('trainingVideoTitle')
+                                ->label('Title')
+                                ->required(),
+                            CuratorPicker::make('trainingVideoImages')
+                                ->label('Image')
+                                ->lazyLoad()
+                                ->listDisplay()
+                                ->constrained(true)
+                                ->visibility(true)
+                                ->required(),
+                        ]),
+                        Textarea::make('trainingVideoMessage')
+                            ->label('Message')
+                            ->required(),
                     ])->columns(2),
                 ]),
             ]);

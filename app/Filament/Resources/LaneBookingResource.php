@@ -115,6 +115,9 @@ class LaneBookingResource extends Resource
                 Tables\Columns\TextColumn::make('lanes.name')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('sport.name')
+                    ->numeric()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),

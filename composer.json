@@ -42,6 +42,7 @@
         "spatie/laravel-medialibrary": "^11.0.0",
         "spatie/laravel-tags": "^4.5",
         "spatie/security-advisories-health-check": "^1.1",
+        "stechstudio/filament-impersonate": "^3.5",
         "tapp/filament-auditing": "^3.0",
         "tapp/filament-authentication-log": "^3.0",
         "torann/geoip": "^3.0",

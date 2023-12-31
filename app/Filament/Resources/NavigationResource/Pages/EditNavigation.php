@@ -2,12 +2,13 @@
 
 namespace App\Filament\Resources\NavigationResource\Pages;
 
-use App\Filament\Resources\NavigationResource;
 use Filament\Resources\Pages\EditRecord;
+use App\Filament\Resources\NavigationResource;
+use App\Filament\Resources\NavigationResource\Pages\Concerns\HandlesNavigationBuilder;
 
 class EditNavigation extends EditRecord
 {
-    use \App\Filament\Resources\NavigationResource\HandlesNavigationBuilder;
+    use HandlesNavigationBuilder;
 
     protected static string $resource = NavigationResource::class;
 }

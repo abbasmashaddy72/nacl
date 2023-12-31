@@ -25,6 +25,7 @@
         "animate.css": "^4.1.1",
         "choices.js": "^10.2.0",
         "feather-icons": "^4.29.1",
+        "flowbite-datepicker": "^1.2.6",
         "gumshoejs": "^5.1.2",
         "jarallax": "^2.1.4",
         "js-datepicker": "^5.18.2",
