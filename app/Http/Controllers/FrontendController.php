@@ -8,6 +8,9 @@ use App\Models\Sport;
 use App\Settings\CommonSettings;
 use App\Settings\HomePage;
 use App\Settings\LanePage;
+use App\Settings\ShopPage;
+use App\Settings\SportPage;
+use App\Settings\TrainingVideoPage;
 
 class FrontendController extends Controller
 {
@@ -28,18 +31,6 @@ class FrontendController extends Controller
         ]));
     }
 
-    public function sports()
-    {
-        view()->share('title', 'Sports');
-        return view('pages.frontend.sports');
-    }
-
-    public function shop()
-    {
-        view()->share('title', 'Shop');
-        return view('pages.frontend.shop');
-    }
-
     public function laneRental(LanePage $settings)
     {
         view()->share('title', 'Lane Rental');
@@ -51,10 +42,34 @@ class FrontendController extends Controller
         ]));
     }
 
-    public function trainingVideo()
+
+    public function sports(SportPage $settings)
+    {
+        view()->share('title', 'Sports');
+        $sports = Sport::get();
+
+        return view('pages.frontend.sports', compact([
+            'settings',
+            'sports',
+        ]));
+    }
+
+    public function shop(ShopPage $settings)
+    {
+        view()->share('title', 'Shop');
+
+        return view('pages.frontend.shop', compact([
+            'settings',
+        ]));
+    }
+
+    public function trainingVideo(TrainingVideoPage $settings)
     {
         view()->share('title', 'Training Video');
-        return view('pages.frontend.trainingVideo');
+
+        return view('pages.frontend.trainingVideo', compact([
+            'settings',
+        ]));
     }
 
     public function aboutUs()

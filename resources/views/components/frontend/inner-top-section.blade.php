@@ -1,8 +1,6 @@
 @props(['backgroundUrl', 'title'])
 @php
-    $backgroundUrl = \Awcodes\Curator\Models\Media::where('id', $backgroundUrl)
-        ->pluck('path')
-        ->first();
+    $backgroundUrl = '' ?? \Awcodes\Curator\Models\Media::findOrFail($backgroundUrl)->pluck('path');
 @endphp
 <section class="relative table w-full bg-center bg-no-repeat bg-cover py-36"
     style="background-image: url('{{ '/storage/' . $backgroundUrl }}')">

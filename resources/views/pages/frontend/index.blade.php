@@ -2,25 +2,20 @@
 
     <section class="relative flex items-center py-24 pb-0 overflow-hidden md:h-3/6" id="home">
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
-            <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                <!-- Item 1 -->
                 <a href="https://Youtube.com" class="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src="assets/images/nacl/1.jpg"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </a>
-                <!-- Item 2 -->
                 <a href="https://Youtube.com" class="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src="assets/images/nacl/2.jpg"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </a>
-                <!-- Item 3 -->
                 <a href="https://Youtube.com" class="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src="assets/images/nacl/3.jpg"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </a>
             </div>
-            <!-- Slider indicators -->
             <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 rtl:space-x-reverse">
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
                     data-carousel-slide-to="0"></button>
@@ -29,7 +24,6 @@
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
                     data-carousel-slide-to="2"></button>
             </div>
-            <!-- Slider controls -->
             <button type="button"
                 class="absolute top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer start-0 group focus:outline-none"
                 data-carousel-prev>

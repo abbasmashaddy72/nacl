@@ -16,6 +16,7 @@
     </title>
 
     @wireUiScripts
+    @livewireStyles
     @vite('resources/js/app.js')
     @stack('styles')
 </head>
@@ -31,7 +32,7 @@
 
     @include('layouts.fePartials.footer')
 
-    @livewireScriptConfig
+    @livewireScripts
     @livewire('livewire-ui-modal')
     @env('production')
     <script>

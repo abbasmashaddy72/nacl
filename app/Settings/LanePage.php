@@ -6,7 +6,7 @@ use Spatie\LaravelSettings\Settings;
 
 class LanePage extends Settings
 {
-    public ?string $laneBreadcrumbImage;
+    public ?int $laneBreadcrumbImage;
     public ?bool $enableFeatureSection;
     public ?bool $enableFAQSection;
     public ?bool $enableLaneCTASection;

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-frontend.inner-top-section backgroundUrl="6" />
+    <x-frontend.inner-top-section backgroundUrl="{{ $settings->laneBreadcrumbImage }}" />
     @if ($settings->enableFeatureSection)
         <section class="relative py-16 bg-gray-50 dark:bg-slate-800">
             <div class="container relative">
@@ -132,9 +132,9 @@
                 </div>
             </div>
         @endif
-
-        @if ($settings->enableLaneCTASection)
-            <x-frontend.cta />
-        @endif
     </section>
+
+    @if ($settings->enableLaneCTASection)
+        <x-frontend.cta />
+    @endif
 </x-guest-layout>
