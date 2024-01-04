@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +33,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('return-and-refunds', 'FrontendController@returnAndRefunds')->name('return-and-refunds');
 });
 
-Route::redirect('/login', '/admin/login')
-    ->name('login');
+Route::middleware(['auth:customer', 'verified'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+
+require __DIR__ . '/guest-auth.php';

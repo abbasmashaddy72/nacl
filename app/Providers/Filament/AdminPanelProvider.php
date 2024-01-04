@@ -65,7 +65,7 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                Authenticate::class,
+                'auth'
             ])
             ->plugins([
                 LightSwitchPlugin::make(),

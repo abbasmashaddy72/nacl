@@ -11,6 +11,10 @@ class CustomerSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Customer::factory(rand(20, 50))->create();
+        $customers = \App\Models\Customer::factory(rand(20, 50))->create();
+        $customer = $customers->first();
+        $customer->update([
+            'email' => 'customer@nacl.com',
+        ]);
     }
 }
