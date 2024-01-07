@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -31,13 +32,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('terms-and-conditions', 'FrontendController@termsAndConditions')->name('terms-and-conditions');
     Route::get('privacy-policies', 'FrontendController@privacyPolicies')->name('privacy-policies');
     Route::get('return-and-refunds', 'FrontendController@returnAndRefunds')->name('return-and-refunds');
+
+    Route::get('stripe/pay', 'StripePaymentController@index')->name('stripe.pay');
+    Route::get('stripe/token', 'StripePaymentController@payment_process_3d')->name('stripe.token');
+    Route::get('stripe/success', 'StripePaymentController@success')->name('stripe.success');
 });
 
 Route::middleware(['auth:customer', 'verified'])->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 require __DIR__ . '/guest-auth.php';

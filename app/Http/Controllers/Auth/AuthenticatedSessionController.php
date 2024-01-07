@@ -21,9 +21,15 @@ class AuthenticatedSessionController extends Controller
 
     /**
      * Display the login view.
+     *
+     * @return View|RedirectResponse
      */
-    public function create(): View
+    public function create()
     {
+        if (Auth::guard('customer')->check()) {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
+
         return view('auth.login');
     }
 

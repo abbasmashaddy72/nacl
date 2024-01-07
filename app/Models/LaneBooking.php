@@ -13,7 +13,7 @@ class LaneBooking extends Model
 
     protected $fillable = [
         'sport_id',
-        'user_id',
+        'customer_id',
         'name',
         'contact_number',
         'advance_amount',
@@ -40,8 +40,8 @@ class LaneBooking extends Model
         return $this->belongsTo(Sport::class);
     }
 
-    public function user(): BelongsTo
+    public function customer(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Customer::class);
     }
 }

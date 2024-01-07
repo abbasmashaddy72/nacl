@@ -3,9 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\Lane;
-use App\Models\LaneBooking;
 use App\Models\User;
 use App\Models\Sport;
+use App\Models\Customer;
+use App\Models\LaneBooking;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -34,7 +35,7 @@ class LaneBookingFactory extends Factory
 
         return [
             'sport_id' => fake()->randomElement(Sport::get()->pluck('id')->toArray()),
-            'user_id' => fake()->randomElement(User::get()->pluck('id')->toArray()),
+            'customer_id' => fake()->randomElement(Customer::get()->pluck('id')->toArray()),
             'name' => fake()->name(),
             'contact_number' => rand(7777777777, 9999999999),
             'total_amount' => $totalAmount,

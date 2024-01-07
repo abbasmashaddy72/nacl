@@ -23,6 +23,7 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
+use Saade\FilamentFullCalendar\FilamentFullCalendarPlugin;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Tapp\FilamentAuthenticationLog\FilamentAuthenticationLogPlugin;
 
@@ -85,6 +86,7 @@ class AdminPanelProvider extends PanelProvider
                 FilamentLogManager::make(),
                 CuratorPlugin::make(),
                 new \RickDBCN\FilamentEmail\FilamentEmail(),
+                FilamentFullCalendarPlugin::make(),
             ])->maxContentWidth(MaxWidth::Full)
             ->spa()
             ->widgets([

@@ -13,6 +13,7 @@ use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\LaneBookingResource\Pages;
+use Coolsam\FilamentFlatpickr\Forms\Components\Flatpickr;
 use App\Filament\Resources\LaneBookingResource\RelationManagers;
 
 class LaneBookingResource extends Resource
@@ -56,9 +57,9 @@ class LaneBookingResource extends Resource
                             ->multiple()
                             ->required(),
                     ])->columns(2),
-                    Forms\Components\Section::make('User Details')->schema([
-                        Forms\Components\Select::make('user_id')
-                            ->relationship('user', 'name')
+                    Forms\Components\Section::make('Customer Details')->schema([
+                        Forms\Components\Select::make('customer_id')
+                            ->relationship('customer', 'name')
                             ->searchable(),
                         Forms\Components\TextInput::make('name')
                             ->required()
@@ -89,15 +90,15 @@ class LaneBookingResource extends Resource
                             ->options(LaneAmountStatus::options()),
                     ])->columns(2),
                     Forms\Components\Section::make('Booking Timing')->schema([
-                        Forms\Components\DateTimePicker::make('start_date_time')
-                            ->seconds(false)
-                            ->closeOnDateSelection()
-                            ->native(false)
+                        Flatpickr::make('start_date_time')
+                            ->enableTime()
+                            ->minDate(today())
+                            ->minTime(now()->format('H:i:s'))
                             ->required(),
-                        Forms\Components\DateTimePicker::make('end_date_time')
-                            ->seconds(false)
-                            ->closeOnDateSelection()
-                            ->native(false)
+                        Flatpickr::make('end_date_time')
+                            ->enableTime()
+                            ->minDate(today())
+                            ->minTime(now()->format('H:i:s'))
                             ->required(),
                         Forms\Components\Select::make('status')
                             ->required()

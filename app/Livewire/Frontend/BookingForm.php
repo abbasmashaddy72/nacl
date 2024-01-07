@@ -5,10 +5,13 @@ namespace App\Livewire\Frontend;
 use Carbon\Carbon;
 use App\Models\Slot;
 use App\Models\Sport;
+use App\Traits\StripePaymentTrait;
 use Livewire\Component;
 
 class BookingForm extends Component
 {
+    use StripePaymentTrait;
+
     public $sports;
     public $selectedSport;
     public $availableSlots = [];
@@ -108,6 +111,25 @@ class BookingForm extends Component
         } else {
             // Don't apply the per_player_percentage
             $this->currentPrice = $selectedTrueCount * $basePrice;
+        }
+    }
+
+    public function submitForm()
+    {
+        $cardDetails = [
+            'fullName' => 'Test Name',
+            'cardNumber' => '4242424242424242',
+            'month' => '12',
+            'year' => '36',
+            'cvv' => '123'
+        ];
+
+        $token = $this->createToken($cardDetails);
+        $charge = $this->createCharge($token['id'], 2000);
+        if (!empty($charge) && $charge['status'] == 'succeeded') {
+            dd('success', 'Payment completed.');
+        } else {
+            dd('danger', 'Payment failed.');
         }
     }
 }

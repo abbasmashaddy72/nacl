@@ -14,7 +14,7 @@
 - Add Repeater Selection - **Done**
 - dollar symbol - Where every amount - **Done**
 - Change Lane Statuses to Lane Status - **Done**
-- Add Sport Selection Multi Lane Selection - **in Lane Booking**
+- Add Sport Selection Multi Lane Selection - **Done**
 
 ## Shop
 

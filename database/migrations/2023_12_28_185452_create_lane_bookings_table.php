@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lane_bookings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sport_id')->constrained('sports')->cascadeOnDelete();
-            $table->foreignId('user_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->foreignId('customer_id')->nullable()->constrained('customers')->cascadeOnDelete();
             $table->string('name');
             $table->string('contact_number');
             $table->decimal('advance_amount', 8, 2);
