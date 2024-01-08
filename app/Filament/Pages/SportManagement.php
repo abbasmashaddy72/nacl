@@ -7,7 +7,6 @@ use Filament\Forms\Form;
 use App\Settings\SportPage;
 use Filament\Pages\SettingsPage;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\TextInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 
 class SportManagement extends SettingsPage

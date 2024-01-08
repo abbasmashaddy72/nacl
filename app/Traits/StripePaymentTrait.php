@@ -2,14 +2,7 @@
 
 namespace App\Traits;
 
-use Exception;
-use Carbon\Carbon;
-use Stripe\Charge;
 use Stripe\Stripe;
-use Stripe\StripeClient;
-use Illuminate\Http\Request;
-use Stripe\Exception\CardException;
-use Illuminate\Support\Facades\Validator;
 
 trait StripePaymentTrait
 {

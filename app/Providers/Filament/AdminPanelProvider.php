@@ -10,7 +10,6 @@ use Filament\Support\Colors\Color;
 use Awcodes\Overlook\OverlookPlugin;
 use Filament\Support\Enums\MaxWidth;
 use Awcodes\LightSwitch\LightSwitchPlugin;
-use Filament\Http\Middleware\Authenticate;
 use Awcodes\Overlook\Widgets\OverlookWidget;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -85,7 +84,7 @@ class AdminPanelProvider extends PanelProvider
                 FilamentProgressbarPlugin::make(),
                 FilamentLogManager::make(),
                 CuratorPlugin::make(),
-                new \RickDBCN\FilamentEmail\FilamentEmail(),
+                new \RickDBCN\FilamentEmail\FilamentEmail,
                 FilamentFullCalendarPlugin::make(),
             ])->maxContentWidth(MaxWidth::Full)
             ->spa()

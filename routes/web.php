@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -20,10 +19,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('', 'FrontendController@index')->name('homepage');
     Route::get('sports', 'FrontendController@sports')->name('sports');
     Route::get('shop', 'FrontendController@shop')->name('shop');
-    Route::get('blog/{slug}', 'FrontendController@blog')->name('blog');
-    Route::get('blog-categories', 'FrontendController@blog-categories')->name('blog-categories');
-    Route::get('blog-category/{slug}', 'FrontendController@blog-category')->name('blog-category');
-    Route::get('page/{slug}', 'FrontendController@page')->name('page');
+    // Route::get('blog/{slug}', 'FrontendController@blog')->name('blog');
+    // Route::get('blog-categories', 'FrontendController@blog-categories')->name('blog-categories');
+    // Route::get('blog-category/{slug}', 'FrontendController@blog-category')->name('blog-category');
+    // Route::get('page/{slug}', 'FrontendController@page')->name('page');
     Route::get('lane-rental', 'FrontendController@laneRental')->name('lane-rental');
     Route::get('training-video', 'FrontendController@trainingVideo')->name('training-video');
     Route::get('about-us', 'FrontendController@aboutUs')->name('about-us');
@@ -33,8 +32,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('privacy-policies', 'FrontendController@privacyPolicies')->name('privacy-policies');
     Route::get('return-and-refunds', 'FrontendController@returnAndRefunds')->name('return-and-refunds');
 
-    Route::get('stripe/pay', 'StripePaymentController@index')->name('stripe.pay');
-    Route::get('stripe/token', 'StripePaymentController@payment_process_3d')->name('stripe.token');
+    // Route::get('stripe/pay', 'StripePaymentController@index')->name('stripe.pay');
+    // Route::get('stripe/token', 'StripePaymentController@payment_process_3d')->name('stripe.token');
     Route::get('stripe/success', 'StripePaymentController@success')->name('stripe.success');
     Route::get('stripe/cancel', 'StripePaymentController@cancel')->name('stripe.cancel');
 });

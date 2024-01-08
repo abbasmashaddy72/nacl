@@ -8,7 +8,6 @@ use App\Models\Slot;
 use App\Models\Sport;
 use Livewire\Component;
 use Stripe\Checkout\Session;
-use App\Traits\StripePaymentTrait;
 
 class BookingForm extends Component
 {
@@ -41,17 +40,20 @@ class BookingForm extends Component
         $this->timeSlots = [];
         $this->updatePrice();
 
-        if (!empty($this->selectedSlot)) {
-            $slot = Slot::findOrFail($this->selectedSlot);
-            if ($slot) {
-                $start = Carbon::parse($slot->start_time);
-                $end = Carbon::parse($slot->end_time);
+        if (empty($this->selectedSlot)) {
+            return;
+        }
+        $slot = Slot::findOrFail($this->selectedSlot);
+        if (!$slot) {
 
-                while ($start->lt($end)) {
-                    $this->timeSlots[] = $start->format('h:i A'); // 'h' for 12-hour format, 'i' for minutes, 'A' for AM/PM
-                    $start->addMinutes($slot->slot_minutes);
-                }
-            }
+            return;
+        }
+        $start = Carbon::parse($slot->start_time);
+        $end = Carbon::parse($slot->end_time);
+
+        while ($start->lt($end)) {
+            $this->timeSlots[] = $start->format('h:i A'); // 'h' for 12-hour format, 'i' for minutes, 'A' for AM/PM
+            $start->addMinutes($slot->slot_minutes);
         }
     }
 
@@ -65,20 +67,24 @@ class BookingForm extends Component
     {
         $selectedTimes = array_keys(array_filter($this->selectedTimes));
 
-        if (count($selectedTimes) >= 2) {
-            $start = min(array_map([$this, 'convertToMinutes'], $selectedTimes));
-            $end = max(array_map([$this, 'convertToMinutes'], $selectedTimes));
+        if (count($selectedTimes) < 2) {
 
-            // Set all times between start and end to true
-            for ($i = $start + 1; $i < $end; $i++) {
-                $time = $this->convertToTime($i);
+            $this->updatePrice();
+            return;
+        }
+        $start = min(array_map([$this, 'convertToMinutes'], $selectedTimes));
+        $end = max(array_map([$this, 'convertToMinutes'], $selectedTimes));
 
-                // Check if the time is in the original timeSlots array
-                if (in_array($time, $this->timeSlots)) {
-                    $this->selectedTimes[$time] = true;
-                }
+        // Set all times between start and end to true
+        for ($i = $start + 1; $i < $end; $i++) {
+            $time = $this->convertToTime($i);
+
+            // Check if the time is in the original timeSlots array
+            if (in_array($time, $this->timeSlots)) {
+                $this->selectedTimes[$time] = true;
             }
         }
+
 
         $this->updatePrice();
     }

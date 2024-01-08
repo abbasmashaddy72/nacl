@@ -9,11 +9,8 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\LaneResource\Pages;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\LaneResource\RelationManagers;
 
 class LaneResource extends Resource
 {

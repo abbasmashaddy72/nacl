@@ -10,11 +10,8 @@ use App\Models\LaneBooking;
 use App\Enums\LaneAmountStatus;
 use App\Enums\LaneBookingStatus;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\LaneBookingResource\Pages;
 use Coolsam\FilamentFlatpickr\Forms\Components\Flatpickr;
-use App\Filament\Resources\LaneBookingResource\RelationManagers;
 
 class LaneBookingResource extends Resource
 {

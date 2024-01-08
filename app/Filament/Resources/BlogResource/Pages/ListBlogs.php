@@ -2,12 +2,9 @@
 
 namespace App\Filament\Resources\BlogResource\Pages;
 
-use App\Models\Blog;
 use Filament\Actions;
 use App\Filament\Resources\BlogResource;
 use Filament\Resources\Pages\ListRecords;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ListBlogs extends ListRecords
 {

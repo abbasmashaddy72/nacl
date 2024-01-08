@@ -2,18 +2,13 @@
 
 namespace App\Traits;
 
-use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\App;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Foundation\Application;
-use App\Models\Setting;
-use Illuminate\Support\Facades\Storage;
 use App\Models\PaymentRequest;
 
-trait  Processor
+trait Processor
 {
     public function response_formatter($constant, $content = null, $errors = []): array
     {

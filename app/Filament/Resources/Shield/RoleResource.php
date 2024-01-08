@@ -396,15 +396,17 @@ class RoleResource extends Resource implements HasShieldPermissions
         if (blank($record)) {
             return;
         }
-        if ($component->isVisible() && count($permissions) > 0) {
-            $component->state(
-                collect($permissions)
-                    /** @phpstan-ignore-next-line */
-                    ->filter(fn ($value, $key) => $record->checkPermissionTo($key))
-                    ->keys()
-                    ->toArray()
-            );
+        if (!($component->isVisible() && count($permissions) > 0)) {
+            return;
         }
+        $component->state(
+            collect($permissions)
+                /** @phpstan-ignore-next-line */
+                ->filter(fn ($value, $key) => $record->checkPermissionTo($key))
+                ->keys()
+                ->toArray()
+        );
+
     }
 
     public static function toggleEntitiesViaSelectAll($livewire, Forms\Set $set, bool $state): void

@@ -9,11 +9,8 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\SportResource\Pages;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\SportResource\RelationManagers;
 
 class SportResource extends Resource
 {

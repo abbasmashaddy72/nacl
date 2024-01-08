@@ -2,21 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
 use App\Models\Page;
 use Filament\Tables;
-use Filament\Forms\Get;
-use Filament\Forms\Set;
+use Filament\Forms\{Get, Set};
 use Filament\Forms\Form;
 use App\Models\BlogStatus;
-use App\Models\PageStatus;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use App\Editors\TipTapEditor;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Tabs;
 use Filament\Tables\Actions\Action;
-use Filament\Tables\Filters\Filter;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -24,20 +20,15 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ViewColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
 use Filament\Tables\Actions\RestoreAction;
-use Filament\Tables\Filters\TrashedFilter;
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Tables\Columns\SpatieTagsColumn;
 use App\Filament\Resources\PageResource\Pages;
 use Filament\Tables\Actions\ForceDeleteAction;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Wallo\FilamentSelectify\Components\ButtonGroup;
-use App\Filament\Resources\PageResource\RelationManagers;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class PageResource extends Resource
 {

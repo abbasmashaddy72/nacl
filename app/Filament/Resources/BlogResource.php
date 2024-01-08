@@ -4,8 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Models\Blog;
 use Filament\Tables;
-use Filament\Forms\Get;
-use Filament\Forms\Set;
+use Filament\Forms\{Get, Set};
 use Filament\Forms\Form;
 use App\Models\BlogStatus;
 use Filament\Tables\Table;
@@ -34,7 +33,6 @@ use Filament\Tables\Actions\ForceDeleteAction;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Wallo\FilamentSelectify\Components\ButtonGroup;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class BlogResource extends Resource
 {

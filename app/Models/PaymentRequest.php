@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PaymentRequest extends Model
 {
-    use HasFactory, HasUuid;
+    use HasFactory;
+    use HasUuid;
 }

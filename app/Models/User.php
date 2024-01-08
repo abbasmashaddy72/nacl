@@ -14,7 +14,12 @@ use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, HasRoles, HasPanelShield, Notifiable, AuthenticationLoggable;
+    use HasApiTokens;
+    use HasFactory;
+    use HasRoles;
+    use HasPanelShield;
+    use Notifiable;
+    use AuthenticationLoggable;
 
     /**
      * The attributes that are mass assignable.

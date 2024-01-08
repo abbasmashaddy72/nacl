@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Models\Faq;
-use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
@@ -12,14 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\RichEditor;
-use Filament\Tables\Filters\SelectFilter;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\FaqResource\Pages;
-use Filament\Tables\Columns\SpatieTagsColumn;
-use Filament\Forms\Components\SpatieTagsInput;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\FaqResource\RelationManagers;
 
 class FaqResource extends Resource
 {

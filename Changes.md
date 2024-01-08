@@ -76,7 +76,11 @@
 
 - Logo Change - **Done**
 - Dynamic Nav Bar
-- Login Button - **Done** Some Functionality Pending
+- Login Button - **Done** Need to show other screen after Login
+
+### Customer Dashboard
+
+- Need to change all the internal details as current is static
 
 ### Footer Section
 

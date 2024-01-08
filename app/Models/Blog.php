@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Spatie\Tags\HasTags;
-use App\Models\BlogScope;
 use App\Editors\TipTapEditor;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Support\Collection;
@@ -17,7 +16,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Blog extends Model implements HasMedia
 {
-    use HasFactory, HasTags, InteractsWithMedia, BlogScope, SoftDeletes;
+    use HasFactory;
+    use HasTags;
+    use InteractsWithMedia;
+    use BlogScope;
+    use SoftDeletes;
 
     protected $fillable = [
         'user_id',
@@ -76,9 +79,9 @@ class Blog extends Model implements HasMedia
     {
         if (!$this->getMedia($collection)->isEmpty()) {
             return $this->getFirstMediaUrl($collection);
-        } else {
-            return $this->featured_image;
         }
+        return $this->featured_image;
+
     }
 
     public function getContent(): string

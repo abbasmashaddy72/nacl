@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Blog;
 use Illuminate\Database\Eloquent\Builder;
 
 trait BlogScope
@@ -72,17 +71,17 @@ trait BlogScope
      */
     public function scopeForCategory(Builder $query, ?string $category = null): Builder
     {
-        if ($category !== null) {
-            return $query->where(
-                function ($query) use ($category) {
-                    $query->withAnyTags([$category], 'category');
+        if ($category === null) {
 
-                    return $query;
-                }
-            );
+            return $query;
         }
+        return $query->where(
+            function ($query) use ($category) {
+                $query->withAnyTags([$category], 'category');
 
-        return $query;
+                return $query;
+            }
+        );
     }
 
     /**
@@ -90,17 +89,20 @@ trait BlogScope
      */
     public function scopeSearch(Builder $query, ?string $term): Builder
     {
-        if ($term !== null) {
-            return $query->where(
-                function ($query) use ($term) {
-                    foreach (['title', 'slug', 'content', 'description'] as $attribute) {
-                        $query->orWhere($attribute, 'like', "%{$term}%");
-                    }
+        if ($term === null) {
 
-                    return $query;
-                }
-            );
+            return $query;
         }
+        return $query->where(
+            function ($query) use ($term) {
+                foreach (['title', 'slug', 'content', 'description'] as $attribute) {
+                    $query->orWhere($attribute, 'like', "%{$term}%");
+                }
+
+                return $query;
+            }
+        );
+
 
         return $query;
     }

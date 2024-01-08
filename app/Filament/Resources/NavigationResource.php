@@ -16,12 +16,8 @@ use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\ViewField;
-use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Placeholder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\NavigationResource\Pages;
-use App\Filament\Resources\NavigationResource\RelationManagers;
 use Saade\FilamentAdjacencyList\Forms\Components\AdjacencyList;
 
 class NavigationResource extends Resource

@@ -12,7 +12,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Page extends Model implements HasMedia
 {
-    use HasFactory, HasTags, InteractsWithMedia, SoftDeletes;
+    use HasFactory;
+    use HasTags;
+    use InteractsWithMedia;
+    use SoftDeletes;
 
     protected $fillable = [
         'user_id',

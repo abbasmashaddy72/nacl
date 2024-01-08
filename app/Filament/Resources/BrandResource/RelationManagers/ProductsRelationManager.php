@@ -4,8 +4,7 @@ namespace App\Filament\Resources\BrandResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Forms\Set;
-use Filament\Forms\Form;
+use Filament\Forms\{Set, Form};
 use App\Enums\ProductType;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;

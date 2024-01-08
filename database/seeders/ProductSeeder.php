@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
 {
-    const SAMPLE_MAP = [
+    public const SAMPLE_MAP = [
         'apple' => [
             'phone' => [
                 'iPhone 12',

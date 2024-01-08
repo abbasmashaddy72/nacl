@@ -5,14 +5,10 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use App\Models\Slot;
 use Filament\Tables;
-use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\SlotResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\SlotResource\RelationManagers;
 use HusamTariq\FilamentTimePicker\Forms\Components\TimePickerField;
 
 class SlotResource extends Resource

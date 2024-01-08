@@ -10,8 +10,6 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Awcodes\Curator\PathGenerators\DatePathGenerator;
-use Awcodes\Curator\PathGenerators\UserPathGenerator;
 
 class HomeManagement extends SettingsPage
 {

@@ -23,7 +23,7 @@ class Sport extends Model
         'images' => 'array'
     ];
 
-    public function slots()
+    public function slots(): BelongsToMany
     {
         return $this->belongsToMany(Slot::class);
     }
