@@ -21,12 +21,47 @@
         </div>
 
         <ul class="mb-0 list-none buy-button">
-            <li class="inline mb-0">
-                <a href="{{ route('login') }}"
-                    class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">
-                    Login
-                </a>
-            </li>
+            @auth
+                <li class="inline-block my-auto">
+                    <div id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
+                        class="flex items-center justify-center w-10 h-10 text-sm bg-indigo-600 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        role="button" tabindex="0">
+                        <div class="text-base font-bold text-center text-white">
+                            {{ auth()->user()->initials() }}
+                        </div>
+                    </div>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatar"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                            <div>{{ auth()->user()->name }}</div>
+                            <div class="font-medium truncate">{{ auth()->user()->email }}</div>
+                        </div>
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="{{ route('dashboard') }}"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                        </ul>
+                        <div class="py-2">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit"
+                                    class="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                    out</button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            @else
+                <li class="inline mb-0">
+                    <a href="{{ route('login') }}"
+                        class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">
+                        Login
+                    </a>
+                </li>
+            @endauth
         </ul>
         <div id="navigation">
             <ul class="navigation-menu nav-light">

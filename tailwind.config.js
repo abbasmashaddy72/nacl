@@ -2,7 +2,10 @@ const colors = require("tailwindcss/colors");
 const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 export default {
-    presets: [require("./vendor/wireui/wireui/tailwind.config.js")],
+    presets: [
+        require("./vendor/wireui/wireui/tailwind.config.js"),
+        require("flowbite/plugin"),
+    ],
     content: [
         "./node_modules/flowbite/**/*.js",
         "./resources/**/*.blade.php",

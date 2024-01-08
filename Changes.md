@@ -76,7 +76,7 @@
 
 - Logo Change - **Done**
 - Dynamic Nav Bar
-- Login Button - **Done** Need to show other screen after Login
+- Login Button - **Done**
 
 ### Customer Dashboard
 

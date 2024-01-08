@@ -13,3 +13,7 @@ window.easy_background = easy_background;
 window.addEventListener("popstate", function (event) {
     window.location.reload();
 });
+
+import "flowbite";
+
+import "flowbite-datepicker";

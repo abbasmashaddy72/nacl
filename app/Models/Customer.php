@@ -36,4 +36,14 @@ class Customer extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(LaneBooking::class);
     }
+
+    public function initials()
+    {
+        $words = explode(" ", $this->name);
+        $initials = null;
+        foreach ($words as $w) {
+            $initials .= $w[0];
+        }
+        return strtoupper($initials);
+    }
 }

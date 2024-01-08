@@ -17,8 +17,8 @@
 
     @wireUiScripts
     @vite('resources/js/app.js')
-    @livewireStyles
     @stack('styles')
+    @livewireStyles
 </head>
 
 <body class="text-base text-black font-nunito dark:text-white dark:bg-slate-900">
