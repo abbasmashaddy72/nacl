@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use Exception;
+use Carbon\Carbon;
 use Stripe\Charge;
 use Stripe\Stripe;
 use Stripe\StripeClient;
@@ -12,47 +13,60 @@ use Illuminate\Support\Facades\Validator;
 
 trait StripePaymentTrait
 {
-    private $stripe;
+    // private $stripe;
+    // private $endpoint_secret;
 
     public function __construct()
     {
         Stripe::setApiKey(config('stripe.stripe_secret_key'));
-        $this->stripe = new StripeClient(config('stripe.stripe_publish_key'));
+        // new StripeClient(config('stripe.stripe_publish_key'));
+        // $this->endpoint_secret = config('stripe.stripe_webhook_secret');
     }
 
-    private function createToken($cardData)
-    {
-        $token = null;
-        try {
-            $token = $this->stripe->tokens->create([
-                'card' => [
-                    'number' => $cardData['cardNumber'],
-                    'exp_month' => $cardData['month'],
-                    'exp_year' => $cardData['year'],
-                    'cvc' => $cardData['cvv']
-                ]
-            ]);
-        } catch (CardException $e) {
-            $token['error'] = $e->getError()->message;
-        } catch (Exception $e) {
-            $token['error'] = $e->getMessage();
-        }
-        return $token;
-    }
+    // public function web_go_hooks()
+    // {
+    //     // Log::info("11211-------");
+    //     $payload = @file_get_contents('php://input');
+    //     $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
+    //     $event = null;
+    //     //  Log::info("payload----" . $payload);
 
-    private function createCharge($tokenId, $amount)
-    {
-        $charge = null;
-        try {
-            $charge = Charge::create([
-                'amount' => $amount,
-                'currency' => 'usd',
-                'source' => $tokenId,
-                'description' => 'My first payment'
-            ]);
-        } catch (Exception $e) {
-            $charge['error'] = $e->getMessage();
-        }
-        return $charge;
-    }
+    //     try {
+    //         $event = \Stripe\Webhook::constructEvent(
+    //             $payload,
+    //             $sig_header,
+    //             $this->endpoint_secret
+    //         );
+    //     } catch (\UnexpectedValueException $e) {
+    //         // Invalid payload
+    //         //  Log::info("UnexpectedValueException" . $e);
+    //         http_response_code(400);
+    //         exit();
+    //     } catch (\Stripe\Exception\SignatureVerificationException $e) {
+    //         // Invalid signature
+    //         //    Log::info("SignatureVerificationException" . $e);
+    //         http_response_code(400);
+    //         exit();
+    //     }
+    //     //   Log::info("event---->" . $event);
+    //     // Handle the checkout.session.completed event
+    //     if ($event->type == 'checkout.session.completed') {
+    //         $session = $event->data->object;
+    //         // Log::info("event->data->object---->" . $session);
+    //         $metadata = $session["metadata"];
+    //         $order_num = $metadata->order_num;
+    //         $user_token = $metadata->user_token;
+    //         //  Log::info("order_id---->" . $order_num);
+    //         $map = [];
+    //         $map["status"] = 1;
+    //         $map["updated_at"] = Carbon::now();
+    //         $whereMap = [];
+    //         $whereMap["user_token"] = $user_token;
+    //         $whereMap["id"] = $order_num;
+    //         // Order::where($whereMap)->update($map);
+    //     }
+
+
+    //     http_response_code(200);
+    // }
 }

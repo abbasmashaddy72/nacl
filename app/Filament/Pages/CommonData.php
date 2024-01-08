@@ -25,7 +25,7 @@ class CommonData extends SettingsPage
         return $form
             ->schema([
                 Forms\Components\Group::make()->schema([
-                    Forms\Components\Section::make('Images')->schema([
+                    Forms\Components\Section::make('Images & Short Description')->schema([
                         CuratorPicker::make('lightLogo')
                             ->label('Light Logo')
                             ->lazyLoad()
@@ -47,6 +47,10 @@ class CommonData extends SettingsPage
                             ->constrained(true)
                             ->visibility(true)
                             ->required(),
+                        Textarea::make('companyShortDescription')
+                            ->label('Company Short Description')
+                            ->required()
+                            ->columnSpanFull(),
                     ])->columns(3),
 
                     Forms\Components\Section::make('Call to Action')->schema([
@@ -85,6 +89,14 @@ class CommonData extends SettingsPage
                             ->required(),
                         TextInput::make('googleMaps')
                             ->label('Google Maps')
+                            ->required(),
+                    ])->columns(2),
+                    Forms\Components\Section::make('Whats App Details')->schema([
+                        TextInput::make('whatsAppPhoneNumber')
+                            ->label('Phone Number')
+                            ->required(),
+                        Textarea::make('whatsAppMessage')
+                            ->label('Message')
                             ->required(),
                     ])->columns(2),
                 ]),

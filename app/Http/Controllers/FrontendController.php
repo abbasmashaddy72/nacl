@@ -24,7 +24,7 @@ class FrontendController extends Controller
     public function index(HomePage $settings)
     {
         $sports = Sport::get()->take(6);
-        $categories = Category::get()->take(4);
+        $categories = Category::where('is_visible', true)->get()->take(4);
 
         return view('pages.frontend.index', compact([
             'settings',

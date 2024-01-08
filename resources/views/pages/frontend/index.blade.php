@@ -51,8 +51,9 @@
                 <div class="order-2 lg:col-span-5 md:col-span-6 md:order-1">
                     <div
                         class="p-6 overflow-hidden rounded-md shadow dark:shadow-gray-800 bg-gray-50 dark:bg-slate-800 bg-opacity-90 dark:bg-opacity-90">
-                        <img src="assets/images/logo-icon-64.png" class="mx-auto" alt="">
-                        <h5 class="mt-3 text-2xl font-semibold text-center">NACL Launch Date</h5>
+                        <x-curator-glider :media="(int) $common_settings->lightLogo" class="w-auto h-32 mx-auto" />
+                        <h5 class="mt-3 text-2xl font-semibold text-center">{{ config('app.name', 'Laravel') }} Launch
+                            Date</h5>
                         <div class="grid grid-col-1">
                             <div class="text-center">
                                 <div id="token-sale">
@@ -219,29 +220,33 @@
                 <p class="max-w-xl mx-auto text-slate-400">{{ $settings->shopSectionMessage }}</p>
             </div>
 
-            <div class="grid md:grid-cols-12 grid-cols-1 mt-8 gap-[30px]">
-                @foreach ($categories as $category)
-                    <div class="lg:col-span-3 md:col-span-6">
-                        <a href="">
-                            <div class="text-center group">
-                                <div
-                                    class="relative inline-block mx-auto overflow-hidden rounded-full shadow-md h-52 w-52 dark:shadow-gray-800">
-                                    <x-curator-glider class="object-cover w-full h-full" :media="$category->image" />
+            @if (count($categories) > 0)
+                <div class="grid md:grid-cols-12 grid-cols-1 mt-8 gap-[30px]">
+                    @foreach ($categories as $category)
+                        <div class="lg:col-span-3 md:col-span-6">
+                            <a href="">
+                                <div class="text-center group">
                                     <div
-                                        class="absolute inset-0 duration-500 rounded-full opacity-0 bg-gradient-to-b from-transparent to-black h-52 w-52 group-hover:opacity-100">
+                                        class="relative inline-block mx-auto overflow-hidden rounded-full shadow-md h-52 w-52 dark:shadow-gray-800">
+                                        <x-curator-glider class="object-cover w-full h-full" :media="$category->image" />
+                                        <div
+                                            class="absolute inset-0 duration-500 rounded-full opacity-0 bg-gradient-to-b from-transparent to-black h-52 w-52 group-hover:opacity-100">
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-3 content">
+                                        <div class="text-lg font-semibold duration-500 hover:text-indigo-600">
+                                            {{ $category->name }}</div>
+                                        <p class="text-slate-400">{{ $category->short_description }}</p>
                                     </div>
                                 </div>
-
-                                <div class="mt-3 content">
-                                    <div class="text-lg font-semibold duration-500 hover:text-indigo-600">
-                                        {{ $category->name }}</div>
-                                    <p class="text-slate-400">{{ $category->short_description }}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="text-3xl font-bold text-center">Comming Soon</div>
+            @endif
         </div>
     </section>
 </x-guest-layout>

@@ -164,8 +164,9 @@ return new class extends SettingsMigration
         $this->migrator->add('general.enableMapSection', true);
         // Common
         $this->migrator->add('general.lightLogo', 1);
-        $this->migrator->add('general.darkLogo', 2);
-        $this->migrator->add('general.favicon', 3);
+        $this->migrator->add('general.darkLogo', 1);
+        $this->migrator->add('general.favicon', 2);
+        $this->migrator->add('general.companyShortDescription', 'NACL: Where passion for sports meets the power of community, celebrating the spirit of competition and camaraderie on and off the field.');
         $this->migrator->add('general.facebook', 'https://fb.com');
         $this->migrator->add('general.instagram', 'https://instagram.com');
         $this->migrator->add('general.linkedIn', 'https://linkedin.com');
@@ -176,6 +177,22 @@ return new class extends SettingsMigration
         $this->migrator->add('general.CTAMessage', "Have questions or need assistance? Contact us, and our team will be delighted to help you navigate your NACL experience.");
         $this->migrator->add('general.CTAButtonLabel', 'Contact Us');
         $this->migrator->add('general.CTAButtonURL', 'contact-us');
+        $this->migrator->add('general.whatsAppPhoneNumber', '+12409375963');
+        $this->migrator->add('general.whatsAppMessage', "🏆 Welcome to NACL - Your Sports Community! 🏆
+
+        At NACL, we're more than just a sports platform; we're a vibrant community where passion for sports meets the power of togetherness. 🌐 Dive into our journey, fueled by a commitment to uniting athletes, fans, and enthusiasts like you.
+
+        🌟 Explore our Story:
+        Discover the heartbeat of NACL - our story, mission, and the vibrant community that defines us. Learn how we're dedicated to creating a dynamic platform that celebrates the spirit of competition and camaraderie.
+
+        🤝 Join the Celebration:
+        Be a part of something extraordinary! Join us in celebrating the joy that sports bring to every player, both on and off the field. Whether you're an athlete, a fan, or just passionate about sports, NACL is the place where your love for the game comes to life.
+
+        🚀 Let's make sports history together at NACL! 🚀
+
+        [Include contact information or any specific call-to-action if necessary]
+
+        #NACL #SportsCommunity #PassionUnitesUs");
         $this->migrator->add('general.enableSponsorSection', false);
         $this->migrator->add('general.sponsorImages', [1, 4, 6, 7, 9]);
     }

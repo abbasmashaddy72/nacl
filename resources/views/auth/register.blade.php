@@ -4,20 +4,43 @@
         <div class="container relative">
             <div class="flex justify-center">
                 <div
-                    class="max-w-[400px] w-full m-auto p-6 bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-800 rounded-md">
-                    <a href="index.html"><img src="assets/images/logo-icon-64.png" class="mx-auto" alt=""></a>
-                    <h5 class="my-6 text-xl font-semibold">Login</h5>
+                    class="w-full max-w-xl p-6 m-auto bg-white rounded-md shadow-md dark:bg-slate-900 dark:shadow-gray-800">
+                    <a href="{{ route('homepage') }}">
+                        <x-curator-glider :media="(int) $common_settings->lightLogo" class="w-auto h-32 mx-auto" />
+                    </a>
+                    <h5 class="my-6 text-xl font-semibold">Register</h5>
                     <form class="text-start" method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="grid grid-cols-1">
+                        <div class="grid grid-cols-2 gap-4">
                             <div class="mb-4">
                                 <x-input type="name" name="name" label='Name' :value="old('name')" required
-                                    autofocus autocomplete="username" />
+                                    autofocus />
                             </div>
 
                             <div class="mb-4">
                                 <x-input type="email" name="email" label='Email' :value="old('email')" required
-                                    autofocus autocomplete="username" />
+                                    autocomplete="email" />
+                            </div>
+
+                            <div class="mb-4">
+                                <x-input type="phone" name="phone" label='Phone' :value="old('phone')" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <x-input type="date" name="date_of_birth" label='Date of Birth' :value="old('date_of_birth')"
+                                    required />
+                            </div>
+
+                            <div class="col-span-2 mb-4">
+                                <x-textarea name='address' label="Address" placeholder="Your Address" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <x-input type="number" name="zip_code" label='Zip Code' :value="old('zip_code')" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <x-input type="text" name="city" label='City' :value="old('city')" required />
                             </div>
 
                             <div class="mb-4">
@@ -29,7 +52,9 @@
                                 <x-inputs.password name="password_confirmation" label='Confirm Password' required
                                     autocomplete="new-password" />
                             </div>
+                        </div>
 
+                        <div class="grid grid-cols-1">
                             <div class="mb-4">
                                 <div class="flex items-center w-full mb-0">
                                     <x-checkbox id="AcceptT&C" value="" />

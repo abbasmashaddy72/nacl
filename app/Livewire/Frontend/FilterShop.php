@@ -22,7 +22,7 @@ class FilterShop extends Component
     public function render()
     {
         $this->categories = Category::where('is_visible', true)->get();
-        $products = Product::query();
+        $products = Product::query()->where('is_visible', true);
 
         // Apply search
         if ($this->search) {

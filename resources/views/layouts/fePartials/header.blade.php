@@ -2,10 +2,10 @@
     <div class="container relative">
         <a class="logo" href="{{ route('homepage') }}">
             <span class="inline-block dark:hidden">
-                <img src="assets/images/logo-dark.png" class="l-dark" height="24" alt="">
-                <img src="assets/images/logo-light.png" class="l-light" height="24" alt="">
+                <x-curator-glider :media="(int) $common_settings->darkLogo" class="w-auto h-12 l-dark" />
+                <x-curator-glider :media="(int) $common_settings->lightLogo" class="w-auto h-12 l-light" />
             </span>
-            <img src="assets/images/logo-light.png" height="24" class="hidden dark:inline-block" alt="">
+            <x-curator-glider :media="(int) $common_settings->lightLogo" class="hidden w-auto h-12 dark:inline-block" />
         </a>
 
         <div class="menu-extras">
@@ -22,9 +22,9 @@
 
         <ul class="mb-0 list-none buy-button">
             <li class="inline mb-0">
-                <a href="{{ route('book-slot') }}"
+                <a href="{{ route('login') }}"
                     class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">
-                    Book Now
+                    Login
                 </a>
             </li>
         </ul>

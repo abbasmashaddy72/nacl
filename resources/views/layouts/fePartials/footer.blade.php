@@ -5,11 +5,10 @@
                 <div class="py-[60px] px-0">
                     <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
                         <div class="lg:col-span-4 md:col-span-12">
-                            <a href="#" class="text-[22px] focus:outline-none">
-                                <img src="assets/images/logo-light.png" alt="">
+                            <a href="{{ route('homepage') }}" class="text-[22px] focus:outline-none">
+                                <x-curator-glider :media="(int) $common_settings->lightLogo" class="w-auto h-28" />
                             </a>
-                            <p class="mt-6 text-gray-300">Start working with Tailwind CSS that can provide everything
-                                you need to generate awareness, drive traffic, connect.</p>
+                            <p class="mt-6 text-gray-300">{{ $common_settings->companyShortDescription }}</p>
                             <ul class="mt-6 list-none">
                                 <li class="inline">
                                     <a href="{{ $common_settings->facebook }}" target="_blank"
@@ -120,25 +119,13 @@
                         </div><!--end col-->
 
                         <div class="lg:col-span-3 md:col-span-4">
-                            <h5 class="tracking-[1px] text-gray-100 font-semibold">Newsletter</h5>
-                            <p class="mt-6">Sign up and receive the latest tips via email.</p>
-                            <form>
-                                <div class="grid grid-cols-1">
-                                    <div class="my-3">
-                                        <label class="form-label">Write your email <span
-                                                class="text-red-600">*</span></label>
-                                        <div class="relative mt-2 form-icon">
-                                            <i data-feather="mail" class="absolute w-4 h-4 top-3 start-4"></i>
-                                            <input type="email"
-                                                class="w-full h-10 px-3 py-2 text-gray-100 bg-gray-800 border-0 rounded form-input ps-12 focus:shadow-none focus:ring-0 placeholder:text-gray-200"
-                                                placeholder="Email" name="email" required="">
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" id="submitsubscribe" name="send"
-                                        class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">Subscribe</button>
-                                </div>
-                            </form>
+                            <h5 class="tracking-[1px] text-gray-100 font-semibold">Contact Us</h5>
+                            <p class="mt-6">{{ $common_settings->CTAMessage }}</p>
+                            <div class="w-full mt-4">
+                                <a href='{{ route('contact-us') }}'
+                                    class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">Contact
+                                    Us Now</a>
+                            </div>
                         </div><!--end col-->
                     </div><!--end grid-->
                 </div><!--end col-->
@@ -153,8 +140,7 @@
                     <p class="mb-0">©
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> NACL. Design with <i class="text-red-600 mdi mdi-heart"></i> by <a
-                            href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.
+                        </script> {{ config('app.name', 'Laravel') }}.
                     </p>
                 </div>
 
@@ -194,7 +180,14 @@
 <!-- Back to top -->
 <a href="#" onclick="topFunction()" id="back-to-top"
     class="fixed z-10 hidden text-lg leading-9 text-center text-white bg-indigo-600 rounded-full back-to-top bottom-5 end-5 h-9 w-9">
-    <i class="uil uil-arrow-up"></i></a>
-<!-- Back to top -->
+    <i class="ri-arrow-up-line"></i>
+</a>
+
+<div class="fixed bottom-5 left-5">
+    <a href="https://wa.me/{{ $common_settings->whatsAppPhoneNumber }}?text={{ urlencode($common_settings->whatsAppMessage) }}"
+        target="_blank" rel="noopener noreferrer">
+        <i class="text-4xl text-green-500 ri-whatsapp-line"></i>
+    </a>
+</div>
 
 @include('layouts.fePartials.darkMode')

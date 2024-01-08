@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Customer;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Settings\CommonSettings;
@@ -40,12 +41,22 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'phone' => ['required'],
+            'date_of_birth' => ['required'],
+            'address' => ['required'],
+            'zip_code' => ['required'],
+            'city' => ['required'],
         ]);
 
-        $user = User::create([
+        $user = Customer::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'date_of_birth' => $request->date_of_birth,
+            'address' => $request->address,
+            'zip_code' => $request->zip_code,
+            'city' => $request->city,
         ]);
 
         event(new Registered($user));

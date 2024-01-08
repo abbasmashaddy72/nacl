@@ -14,4 +14,13 @@ use Illuminate\Support\Facades\Validator;
 
 class StripePaymentController extends Controller
 {
+    public function success()
+    {
+        dd('Success');
+    }
+
+    public function cancel()
+    {
+        dd('Cancelled');
+    }
 }

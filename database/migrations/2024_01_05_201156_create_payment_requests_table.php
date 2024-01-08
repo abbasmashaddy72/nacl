@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('payment_method')->nullable();
             $table->longText('additional_data')->nullable()->charset('utf8mb4')->collation('utf8mb4_bin');
             $table->boolean('is_paid')->default(0);
-            $table->timestamps();
             $table->longText('payer_information')->nullable()->charset('utf8mb4')->collation('utf8mb4_bin');
             $table->string('external_redirect_link')->nullable();
             $table->longText('receiver_information')->nullable()->charset('utf8mb4')->collation('utf8mb4_bin');

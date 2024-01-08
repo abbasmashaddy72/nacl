@@ -3,15 +3,15 @@
 namespace App\Livewire\Frontend;
 
 use Carbon\Carbon;
+use Stripe\Stripe;
 use App\Models\Slot;
 use App\Models\Sport;
-use App\Traits\StripePaymentTrait;
 use Livewire\Component;
+use Stripe\Checkout\Session;
+use App\Traits\StripePaymentTrait;
 
 class BookingForm extends Component
 {
-    use StripePaymentTrait;
-
     public $sports;
     public $selectedSport;
     public $availableSlots = [];
@@ -116,20 +116,26 @@ class BookingForm extends Component
 
     public function submitForm()
     {
-        $cardDetails = [
-            'fullName' => 'Test Name',
-            'cardNumber' => '4242424242424242',
-            'month' => '12',
-            'year' => '36',
-            'cvv' => '123'
-        ];
 
-        $token = $this->createToken($cardDetails);
-        $charge = $this->createCharge($token['id'], 2000);
-        if (!empty($charge) && $charge['status'] == 'succeeded') {
-            dd('success', 'Payment completed.');
-        } else {
-            dd('danger', 'Payment failed.');
-        }
+        Stripe::setApiKey(config('stripe.stripe_secret_key'));
+
+        $checkout_session = Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => 'usd',
+                    'product_data' => [
+                        'name' => 'T-shirt',
+                    ],
+                    'unit_amount' => $this->currentPrice * 100,
+                ],
+                'quantity' => 1,
+            ]],
+            'mode' => 'payment',
+            'success_url' => route('stripe.success'),
+            'cancel_url' => route('stripe.cancel'),
+        ]);
+
+        return redirect()->away($checkout_session->url);
     }
 }
