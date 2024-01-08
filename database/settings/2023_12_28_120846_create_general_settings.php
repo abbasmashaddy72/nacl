@@ -2,7 +2,8 @@
 
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
-return new class extends SettingsMigration {
+return new class extends SettingsMigration
+{
     public function up(): void
     {
         // Home Page
@@ -16,17 +17,17 @@ return new class extends SettingsMigration {
                 "image" => 3
             ]
         ]);
-        $this->migrator->add('general.card2Title', 'NACL - Where Sports Dreams Take Flight!');
-        $this->migrator->add('general.card2Message', "Get ready to experience the thrill of victory! Book your sports slot at NACL and make every moment a championship moment. Don't miss out – reserve your spot now!");
+        $this->migrator->add('general.card2Title', 'NACL Sports Center- Where Sports Dreams Take Flight!');
+        $this->migrator->add('general.card2Message', "Get ready to experience the thrill of victory! Book your sports slot at NACL Sports Centerand make every moment a championship moment. Don't miss out – reserve your spot now!");
         $this->migrator->add('general.card2ButtonLabel', 'Book Slot');
         $this->migrator->add('general.card2ButtonURL', 'book-slot');
         $this->migrator->add('general.card2YoutubeId', 'UYFAYonq46I');
 
-        $this->migrator->add('general.welcomeTitle', 'Greetings, Athletes! NACL Opens Its Doors to Your Sporting Journey!');
+        $this->migrator->add('general.welcomeTitle', 'Greetings, Athletes! NACL Sports CenterOpens Its Doors to Your Sporting Journey!');
         $this->migrator->add('general.welcomeMessage', "Welcome to NACL, the heartbeat of sports excitement! Whether you're a seasoned athlete or just starting, our doors are wide open for you. Join us in the pursuit of victory and let the games begin!");
         $this->migrator->add('general.welcomeImage', 4);
 
-        $this->migrator->add('general.videoRecordingTitle', 'Lights, Camera, Action: NACL Premium Video Recording!');
+        $this->migrator->add('general.videoRecordingTitle', 'Lights, Camera, Action: NACL Sports CenterPremium Video Recording!');
         $this->migrator->add('general.videoRecordingMessage', "Upgrade Your Game with NACL's Premium Video Recording! For a small fee, unlock the power to capture and relive your best moments on the field. Opt for our exclusive recording feature and turn every play into a highlight reel. Your sports journey deserves the spotlight – start recording today!");
         $this->migrator->add('general.videoRecordingImage', 5);
         $this->migrator->add('general.videoRecordingPoints', [
@@ -45,7 +46,7 @@ return new class extends SettingsMigration {
         $this->migrator->add('general.shopSectionTitle', "Gear Up for Greatness: NACL's Sports Pro Shop!");
         $this->migrator->add('general.shopSectionMessage', "Step into NACL's Sports Pro Shop and gear up for success! Explore a curated selection of top-quality sports equipment, apparel, and accessories. Whether you're a player or a fan, find your winning look here!");
         // Lane Page
-        $this->migrator->add('general.laneBreadcrumbImage', 1);
+        $this->migrator->add('general.laneBreadcrumbImage', 2);
         $this->migrator->add('general.enableFeatureSection', true);
         $this->migrator->add('general.enableFAQSection', true);
         $this->migrator->add('general.enableLaneCTASection', true);
@@ -63,17 +64,17 @@ return new class extends SettingsMigration {
             [
                 "title" => 'Boundless Sporting Possibilities',
                 "image" => 9,
-                "message" => 'Unlock boundless possibilities at NACL with sports lanes that serve as building blocks for a world of diverse play.',
+                "message" => 'Unlock boundless possibilities at NACL Sports Centerwith sports lanes that serve as building blocks for a world of diverse play.',
             ]
         ]);
         // Sports Page
-        $this->migrator->add('general.sportBreadcrumbImage', 1);
+        $this->migrator->add('general.sportBreadcrumbImage', 2);
         $this->migrator->add('general.enableSportCTASection', true);
         // Shop Page
-        $this->migrator->add('general.shopBreadcrumbImage', 3);
+        $this->migrator->add('general.shopBreadcrumbImage', 2);
         $this->migrator->add('general.enableShopAppSection', false);
-        $this->migrator->add('general.shopAppTitle', 'Unlock Your Sports Journey: Install the NACL App Today!');
-        $this->migrator->add('general.shopAppMessage', 'Take your sports experience to the next level! Download the NACL app now to access exclusive features, real-time updates, and a seamless platform for booking, recording, and staying connected with your sports community. Your game, your rules – install the app and elevate your play!');
+        $this->migrator->add('general.shopAppTitle', 'Unlock Your Sports Journey: Install the NACL Sports CenterApp Today!');
+        $this->migrator->add('general.shopAppMessage', 'Take your sports experience to the next level! Download the NACL Sports Centerapp now to access exclusive features, real-time updates, and a seamless platform for booking, recording, and staying connected with your sports community. Your game, your rules – install the app and elevate your play!');
         $this->migrator->add('general.shopAppAppStoreURL', '#!');
         $this->migrator->add('general.shopAppGoogleStoreURL', '#!');
         $this->migrator->add('general.enableShopCTASection', true);
@@ -108,10 +109,10 @@ return new class extends SettingsMigration {
         $this->migrator->add('general.trainingVideoMessage', "Explore the essence of your sports journey with NACL's Video Showcase. Preview the excitement in stunning shot images – relive the intensity, celebrate victories, and get ready for more thrilling moments on our platform.");
         $this->migrator->add('general.trainingVideoImages', [1, 4, 6, 7, 9]);
         $this->migrator->add('general.testimonialTitle', 'Voices of Victory');
-        $this->migrator->add('general.testimonialMessage', "Discover the impact of NACL through the voices of our community. In our Testimonials section, players and enthusiasts share their journey, victories, and the unparalleled sports experience they found on our platform. Join the chorus of success stories and let their voices inspire your own triumphs at NACL.");
-        $this->migrator->add('general.enableTrainingVideoCTASection', true);
+        $this->migrator->add('general.testimonialMessage', "Discover the impact of NACL Sports Centerthrough the voices of our community. In our Testimonials section, players and enthusiasts share their journey, victories, and the unparalleled sports experience they found on our platform. Join the chorus of success stories and let their voices inspire your own triumphs at NACL.");
+        $this->migrator->add('general.enableTrainingVideoCTASection', false);
         // About Us Page
-        $this->migrator->add('general.aboutUsBreadcrumbImage', 4);
+        $this->migrator->add('general.aboutUsBreadcrumbImage', 2);
         $this->migrator->add('general.aboutUsImage', 2);
         $this->migrator->add('general.aboutUsTitle', 'Our Sporting Saga');
         $this->migrator->add('general.aboutUsMessage', "Welcome to NACL, where the passion for sports meets the power of community. Our journey is fueled by a commitment to providing a dynamic platform that unites athletes, fans, and enthusiasts. Explore our story, mission, and the vibrant community that defines NACL. Join us as we celebrate the spirit of competition, camaraderie, and the joy that sports bring to every player, on and off the field.");
@@ -119,7 +120,7 @@ return new class extends SettingsMigration {
         $this->migrator->add('general.aboutUsButtonURL', 'contact-us');
         $this->migrator->add('general.enableAboutUsSponsorSection', false);
         $this->migrator->add('general.aboutUsKeyFeatureTitle', "Unlocking Excellence: NACL's Key Features");
-        $this->migrator->add('general.aboutUsKeyFeatureMessage', "Discover the core elements that make NACL a game-changer in the world of sports. From cutting-edge technology to community-driven initiatives, our key features are designed to elevate your sports experience. Explore the essence of what sets NACL apart and empowers you to play, connect, and succeed like never before.");
+        $this->migrator->add('general.aboutUsKeyFeatureMessage', "Discover the core elements that make NACL Sports Centera game-changer in the world of sports. From cutting-edge technology to community-driven initiatives, our key features are designed to elevate your sports experience. Explore the essence of what sets NACL Sports Centerapart and empowers you to play, connect, and succeed like never before.");
         $this->migrator->add('general.aboutUsKeyFeaturePoints', [
             [
                 "title" => 'Real-Time Booking',
@@ -148,12 +149,12 @@ return new class extends SettingsMigration {
         ]);
         $this->migrator->add('general.aboutUsVideoImage', 14);
         $this->migrator->add('general.aboutUsVideoURL', 'sHXcWvZr-9c');
-        $this->migrator->add('general.aboutUsTeamSectionTitle', 'United in Victory: Meet the NACL Teams');
-        $this->migrator->add('general.aboutUsTeamSectionMessage', "Discover the heart of NACL through our diverse and dedicated teams. Each member brings passion and skill, contributing to the vibrant community that defines our sports platform. Explore the stories that bind us together in the pursuit of victory.");
+        $this->migrator->add('general.aboutUsTeamSectionTitle', 'United in Victory: Meet the NACL Sports CenterTeams');
+        $this->migrator->add('general.aboutUsTeamSectionMessage', "Discover the heart of NACL Sports Centerthrough our diverse and dedicated teams. Each member brings passion and skill, contributing to the vibrant community that defines our sports platform. Explore the stories that bind us together in the pursuit of victory.");
         $this->migrator->add('general.enableAboutUsTeamTestimonialSection', false);
         $this->migrator->add('general.enableAboutUsCTASection', true);
         // Contact Us Page
-        $this->migrator->add('general.contactUsBreadcrumbImage', 12);
+        $this->migrator->add('general.contactUsBreadcrumbImage', 2);
         $this->migrator->add('general.contactUsPhoneMessage', 'Our team is ready to help you with any questions you may have about NACL.');
         $this->migrator->add('general.contactUsPhoneNo', '+1-XXX-XXX-XXXX');
         $this->migrator->add('general.contactUsEmailMessage', 'Send us an email for detailed queries, feedback, or partnership opportunities.');
@@ -164,7 +165,6 @@ return new class extends SettingsMigration {
         // Common
         $this->migrator->add('general.lightLogo', 1);
         $this->migrator->add('general.darkLogo', 1);
-        $this->migrator->add('general.favicon', 2);
         $this->migrator->add('general.companyShortDescription', 'NACL: Where passion for sports meets the power of community, celebrating the spirit of competition and camaraderie on and off the field.');
         $this->migrator->add('general.facebook', 'https://fb.com');
         $this->migrator->add('general.instagram', 'https://instagram.com');
@@ -173,25 +173,25 @@ return new class extends SettingsMigration {
         $this->migrator->add('general.youtube', 'https://youtube.com');
         $this->migrator->add('general.googleMaps', 'https://maps.google.com');
         $this->migrator->add('general.CTATopTitle', 'Have Question ? Get in touch!');
-        $this->migrator->add('general.CTAMessage', "Have questions or need assistance? Contact us, and our team will be delighted to help you navigate your NACL experience.");
+        $this->migrator->add('general.CTAMessage', "Have questions or need assistance? Contact us, and our team will be delighted to help you navigate your NACL Sports Centerexperience.");
         $this->migrator->add('general.CTAButtonLabel', 'Contact Us');
         $this->migrator->add('general.CTAButtonURL', 'contact-us');
         $this->migrator->add('general.whatsAppPhoneNumber', '+12409375963');
-        $this->migrator->add('general.whatsAppMessage', "🏆 Welcome to NACL - Your Sports Community! 🏆
+        $this->migrator->add('general.whatsAppMessage', "🏆 Welcome to NACL Sports Center- Your Sports Community! 🏆
 
         At NACL, we're more than just a sports platform; we're a vibrant community where passion for sports meets the power of togetherness. 🌐 Dive into our journey, fueled by a commitment to uniting athletes, fans, and enthusiasts like you.
 
         🌟 Explore our Story:
-        Discover the heartbeat of NACL - our story, mission, and the vibrant community that defines us. Learn how we're dedicated to creating a dynamic platform that celebrates the spirit of competition and camaraderie.
+        Discover the heartbeat of NACL Sports Center- our story, mission, and the vibrant community that defines us. Learn how we're dedicated to creating a dynamic platform that celebrates the spirit of competition and camaraderie.
 
         🤝 Join the Celebration:
-        Be a part of something extraordinary! Join us in celebrating the joy that sports bring to every player, both on and off the field. Whether you're an athlete, a fan, or just passionate about sports, NACL is the place where your love for the game comes to life.
+        Be a part of something extraordinary! Join us in celebrating the joy that sports bring to every player, both on and off the field. Whether you're an athlete, a fan, or just passionate about sports, NACL Sports Centeris the place where your love for the game comes to life.
 
         🚀 Let's make sports history together at NACL! 🚀
 
         [Include contact information or any specific call-to-action if necessary]
 
-        #NACL #SportsCommunity #PassionUnitesUs");
+        #NACL Sports Center#SportsCommunity #PassionUnitesUs");
         $this->migrator->add('general.enableSponsorSection', false);
         $this->migrator->add('general.sponsorImages', [1, 4, 6, 7, 9]);
     }

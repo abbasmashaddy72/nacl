@@ -125,14 +125,14 @@
                                 <div class="flex items-center">
                                     <i data-feather="mail" class="fea icon-ex-md text-slate-400 me-3"></i>
                                     <div class="flex-1">
-                                        <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Email :</h6>
+                                        <h6 class="text-blue-600 dark:text-white font-medium mb-0">Email :</h6>
                                         <a href="" class="text-slate-400">jennyhot@hotmail.com</a>
                                     </div>
                                 </div>
                                 <div class="flex items-center mt-3">
                                     <i data-feather="bookmark" class="fea icon-ex-md text-slate-400 me-3"></i>
                                     <div class="flex-1">
-                                        <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Skills :</h6>
+                                        <h6 class="text-blue-600 dark:text-white font-medium mb-0">Skills :</h6>
                                         <a href="" class="text-slate-400">html</a>, <a href=""
                                             class="text-slate-400">css</a>, <a href=""
                                             class="text-slate-400">js</a>, <a href=""
@@ -142,7 +142,7 @@
                                 <div class="flex items-center mt-3">
                                     <i data-feather="italic" class="fea icon-ex-md text-slate-400 me-3"></i>
                                     <div class="flex-1">
-                                        <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Language :</h6>
+                                        <h6 class="text-blue-600 dark:text-white font-medium mb-0">Language :</h6>
                                         <a href="" class="text-slate-400">English</a>, <a href=""
                                             class="text-slate-400">Japanese</a>, <a href=""
                                             class="text-slate-400">Chinese</a>
@@ -151,28 +151,28 @@
                                 <div class="flex items-center mt-3">
                                     <i data-feather="globe" class="fea icon-ex-md text-slate-400 me-3"></i>
                                     <div class="flex-1">
-                                        <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Website :</h6>
+                                        <h6 class="text-blue-600 dark:text-white font-medium mb-0">Website :</h6>
                                         <a href="" class="text-slate-400">www.kristajoseph.com</a>
                                     </div>
                                 </div>
                                 <div class="flex items-center mt-3">
                                     <i data-feather="gift" class="fea icon-ex-md text-slate-400 me-3"></i>
                                     <div class="flex-1">
-                                        <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Birthday :</h6>
+                                        <h6 class="text-blue-600 dark:text-white font-medium mb-0">Birthday :</h6>
                                         <p class="text-slate-400 mb-0">2nd March, 1996</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center mt-3">
                                     <i data-feather="map-pin" class="fea icon-ex-md text-slate-400 me-3"></i>
                                     <div class="flex-1">
-                                        <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Location :</h6>
+                                        <h6 class="text-blue-600 dark:text-white font-medium mb-0">Location :</h6>
                                         <a href="" class="text-slate-400">Beijing, China</a>
                                     </div>
                                 </div>
                                 <div class="flex items-center mt-3">
                                     <i data-feather="phone" class="fea icon-ex-md text-slate-400 me-3"></i>
                                     <div class="flex-1">
-                                        <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Cell No :</h6>
+                                        <h6 class="text-blue-600 dark:text-white font-medium mb-0">Cell No :</h6>
                                         <a href="" class="text-slate-400">(+12) 1254-56-4896</a>
                                     </div>
                                 </div>
@@ -191,7 +191,7 @@
                                     <h4 class="text-lg text-medium">Senior Web Developer</h4>
                                     <p class="text-slate-400 mb-0">3 Years Experience</p>
                                     <p class="text-slate-400 mb-0"><a href=""
-                                            class="text-indigo-600">CircleCi</a> @London, UK</p>
+                                            class="text-blue-600">CircleCi</a> @London, UK</p>
                                 </div>
                             </div>
 
@@ -204,7 +204,7 @@
                                     <h4 class="text-lg text-medium">Web Designer</h4>
                                     <p class="text-slate-400 mb-0">2 Years Experience</p>
                                     <p class="text-slate-400 mb-0"><a href=""
-                                            class="text-indigo-600">Facebook</a> @Washington D.C, USA</p>
+                                            class="text-blue-600">Facebook</a> @Washington D.C, USA</p>
                                 </div>
                             </div>
 
@@ -217,7 +217,7 @@
                                     <h4 class="text-lg text-medium">UI Designer</h4>
                                     <p class="text-slate-400 mb-0">2 Years Experience</p>
                                     <p class="text-slate-400 mb-0"><a href=""
-                                            class="text-indigo-600">Spotify</a> @Perth, Australia</p>
+                                            class="text-blue-600">Spotify</a> @Perth, Australia</p>
                                 </div>
                             </div>
                         </div>
@@ -238,14 +238,14 @@
                                 <div
                                     class="icon absolute z-10 opacity-0 group-hover:opacity-100 top-6 end-6 duration-500">
                                     <a href="assets/images/portfolio/1.jpg"
-                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full lightbox"><i
+                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white rounded-full lightbox"><i
                                             class="uil uil-camera"></i></a>
                                 </div>
 
                                 <div
                                     class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
                                     <a href="portfolio-detail-three.html"
-                                        class="h6 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">Mockup
+                                        class="h6 text-lg font-medium hover:text-blue-600 duration-500 ease-in-out">Mockup
                                         Collection</a>
                                     <p class="text-slate-400 mb-0">Abstract</p>
                                 </div>
@@ -264,14 +264,14 @@
                                 <div
                                     class="icon absolute z-10 opacity-0 group-hover:opacity-100 top-6 end-6 duration-500">
                                     <a href="assets/images/portfolio/2.jpg"
-                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full lightbox"><i
+                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white rounded-full lightbox"><i
                                             class="uil uil-camera"></i></a>
                                 </div>
 
                                 <div
                                     class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
                                     <a href="portfolio-detail-three.html"
-                                        class="h6 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">Mockup
+                                        class="h6 text-lg font-medium hover:text-blue-600 duration-500 ease-in-out">Mockup
                                         Collection</a>
                                     <p class="text-slate-400 mb-0">Abstract</p>
                                 </div>
@@ -290,14 +290,14 @@
                                 <div
                                     class="icon absolute z-10 opacity-0 group-hover:opacity-100 top-6 end-6 duration-500">
                                     <a href="assets/images/portfolio/3.jpg"
-                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full lightbox"><i
+                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white rounded-full lightbox"><i
                                             class="uil uil-camera"></i></a>
                                 </div>
 
                                 <div
                                     class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
                                     <a href="portfolio-detail-three.html"
-                                        class="h6 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">Mockup
+                                        class="h6 text-lg font-medium hover:text-blue-600 duration-500 ease-in-out">Mockup
                                         Collection</a>
                                     <p class="text-slate-400 mb-0">Abstract</p>
                                 </div>
@@ -316,14 +316,14 @@
                                 <div
                                     class="icon absolute z-10 opacity-0 group-hover:opacity-100 top-6 end-6 duration-500">
                                     <a href="assets/images/portfolio/4.jpg"
-                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full lightbox"><i
+                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white rounded-full lightbox"><i
                                             class="uil uil-camera"></i></a>
                                 </div>
 
                                 <div
                                     class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
                                     <a href="portfolio-detail-three.html"
-                                        class="h6 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">Mockup
+                                        class="h6 text-lg font-medium hover:text-blue-600 duration-500 ease-in-out">Mockup
                                         Collection</a>
                                     <p class="text-slate-400 mb-0">Abstract</p>
                                 </div>
@@ -342,14 +342,14 @@
                                 <div
                                     class="icon absolute z-10 opacity-0 group-hover:opacity-100 top-6 end-6 duration-500">
                                     <a href="assets/images/portfolio/5.jpg"
-                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full lightbox"><i
+                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white rounded-full lightbox"><i
                                             class="uil uil-camera"></i></a>
                                 </div>
 
                                 <div
                                     class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
                                     <a href="portfolio-detail-three.html"
-                                        class="h6 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">Mockup
+                                        class="h6 text-lg font-medium hover:text-blue-600 duration-500 ease-in-out">Mockup
                                         Collection</a>
                                     <p class="text-slate-400 mb-0">Abstract</p>
                                 </div>
@@ -368,14 +368,14 @@
                                 <div
                                     class="icon absolute z-10 opacity-0 group-hover:opacity-100 top-6 end-6 duration-500">
                                     <a href="assets/images/portfolio/6.jpg"
-                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full lightbox"><i
+                                        class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-center bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white rounded-full lightbox"><i
                                             class="uil uil-camera"></i></a>
                                 </div>
 
                                 <div
                                     class="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
                                     <a href="portfolio-detail-three.html"
-                                        class="h6 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">Mockup
+                                        class="h6 text-lg font-medium hover:text-blue-600 duration-500 ease-in-out">Mockup
                                         Collection</a>
                                     <p class="text-slate-400 mb-0">Abstract</p>
                                 </div>

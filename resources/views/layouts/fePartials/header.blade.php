@@ -21,21 +21,21 @@
         </div>
 
         <ul class="mb-0 list-none buy-button">
-            @auth
+            @auth('customer')
                 <li class="inline-block my-auto">
                     <div id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
-                        class="flex items-center justify-center w-10 h-10 text-sm bg-indigo-600 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        class="flex items-center justify-center w-10 h-10 text-sm bg-blue-600 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         role="button" tabindex="0">
                         <div class="text-base font-bold text-center text-white">
-                            {{ auth()->user()->initials() }}
+                            {{ auth('customer')->user()->initials() }}
                         </div>
                     </div>
                     <!-- Dropdown menu -->
                     <div id="dropdownAvatar"
                         class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                            <div>{{ auth()->user()->name }}</div>
-                            <div class="font-medium truncate">{{ auth()->user()->email }}</div>
+                            <div>{{ auth('customer')->user()->name }}</div>
+                            <div class="font-medium truncate">{{ auth('customer')->user()->email }}</div>
                         </div>
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                             aria-labelledby="dropdownUserAvatarButton">
@@ -57,7 +57,7 @@
             @else
                 <li class="inline mb-0">
                     <a href="{{ route('login') }}"
-                        class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">
+                        class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700">
                         Login
                     </a>
                 </li>

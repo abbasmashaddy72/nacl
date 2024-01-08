@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Lane;
-use App\Models\Sport;
+use App\Models\Slot;
 use App\Models\Customer;
 use App\Models\LaneBooking;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -22,7 +22,20 @@ class LaneBookingFactory extends Factory
     {
         $amountStatus = fake()->randomElement(['paid', 'partialPaid', 'due', 'refund', 'partialRefund']);
         $startDate = fake()->dateTimeBetween('-1 week', '+1 week');
-        $endDate = fake()->dateTimeBetween($startDate, '+2 weeks');
+        $startTime = $startDate->format('H:i:s');
+
+        // Set the end date to be the same as the start date
+        $endDate = clone $startDate;
+
+        // Add a random number of hours to ensure end time is later on the same day
+        $hoursToAdd = fake()->numberBetween(1, 12); // Adjust the range as needed
+        $endDate->modify("+{$hoursToAdd} hours");
+
+        $endTime = $endDate->format('H:i:s');
+
+        // Format dates for database insertion
+        $startDateFormatted = $startDate->format('Y-m-d H:i:s');
+        $endDateFormatted = $endDate->format('Y-m-d H:i:s');
 
         // Generate total_amount and advance_amount
         $totalAmount = fake()->randomFloat(2, 100, 1000); // Example range, adjust as needed
@@ -32,8 +45,11 @@ class LaneBookingFactory extends Factory
         $refundAmount = ($amountStatus == 'Refund' || $amountStatus == 'Partial Refund') ?
             fake()->randomFloat(2, 0, $advanceAmount) : 0;
 
+        $randomSlot = Slot::inRandomOrder()->first();
+
         return [
-            'sport_id' => fake()->randomElement(Sport::get()->pluck('id')->toArray()),
+            'sport_id' => $randomSlot->sport_id,
+            'slot_id' => $randomSlot->id,
             'customer_id' => fake()->randomElement(Customer::get()->pluck('id')->toArray()),
             'name' => fake()->name(),
             'contact_number' => rand(7777777777, 9999999999),
@@ -41,8 +57,8 @@ class LaneBookingFactory extends Factory
             'advance_amount' => $advanceAmount,
             'refund_amount' => $refundAmount,
             'amount_status' => $amountStatus,
-            'start_date_time' => $startDate,
-            'end_date_time' => $endDate,
+            'start_date_time' => $startDateFormatted,
+            'end_date_time' => $endDateFormatted,
             'status' => fake()->randomElement(['open', 'booked', 'closed', 'canceled']),
         ];
     }

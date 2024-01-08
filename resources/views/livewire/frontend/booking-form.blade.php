@@ -4,14 +4,14 @@
 
         <div class="mb-8">
             <p class="mb-4 text-xl font-bold">Select Sport</p>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap items-center justify-center gap-4">
                 @foreach ($sports as $sport)
                     <label for="{{ $sport->id }}" class="cursor-pointer">
                         <div
                             class="py-2 px-4 rounded-full
-                        {{ $selectedSport == $sport->id ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500' }}
-                        dark:{{ $selectedSport == $sport->id ? 'bg-indigo-600 text-white' : 'bg-gray-700 text-white' }}
-                        hover:bg-indigo-700 hover:text-white border border-indigo-500 transition duration-300">
+                        {{ $selectedSport == $sport->id ? 'bg-blue-500 text-white' : 'bg-white text-blue-500' }}
+                        dark:{{ $selectedSport == $sport->id ? 'bg-blue-600 text-white' : 'bg-gray-700 text-white' }}
+                        hover:bg-blue-700 hover:text-white border border-blue-500 transition duration-300">
                             <input type="radio" id="{{ $sport->id }}" name="selectedSport"
                                 value="{{ $sport->id }}" wire:model.live='selectedSport' wire:click='updateLane'
                                 class="hidden">
@@ -32,9 +32,9 @@
                         wire:model.live="selectedSlot" wire:click="generateSlots" value="{{ $availableSlot->id }}">
                     <label
                         class="p-4 rounded-md
-                    {{ $selectedSlot == $availableSlot->id ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500' }}
-                    dark:{{ $selectedSlot == $availableSlot->id ? 'bg-indigo-600 text-white' : 'bg-gray-700 text-white' }}
-                    hover:bg-indigo-700 hover:text-white border border-indigo-500 transition duration-300 cursor-pointer"
+                    {{ $selectedSlot == $availableSlot->id ? 'bg-blue-500 text-white' : 'bg-white text-blue-500' }}
+                    dark:{{ $selectedSlot == $availableSlot->id ? 'bg-blue-600 text-white' : 'bg-gray-700 text-white' }}
+                    hover:bg-blue-700 hover:text-white border border-blue-500 transition duration-300 cursor-pointer"
                         for="radio_{{ $availableSlot->id }}">
                         <span class="text-sm font-semibold uppercase">{{ $availableSlot->name }}</span>
                         <span class="mt-2 text-lg font-bold">
@@ -70,11 +70,21 @@
                     required>
             </div>
             <div>
+                @if ($slot)
+                    @php
+                        $minPlayers = $slot->min_players;
+                        $maxPlayers = $slot->max_players;
+                    @endphp
+                @endif
                 <label for="numberOfPlayers" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Select No of Players</label>
                 <input type="number" wire:model.live='numberOfPlayers' name="numberOfPlayers" id="numberOfPlayers"
                     wire:change='updatePrice'
+                    @if ($slot) min='{{ $minPlayers }}' max="{{ $maxPlayers }}" @endif
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                @if ($slot)
+                    <span>Min. Players: {{ $minPlayers }} | Max. Players {{ $maxPlayers }}</span>
+                @endif
             </div>
         </div>
 
@@ -89,9 +99,9 @@
                             wire:model="selectedTimes.{{ $item }}" class="hidden">
                         <button type="button"
                             class="p-3 rounded-lg
-                                {{ isset($selectedTimes[$item]) && $selectedTimes[$item] ? 'bg-indigo-500 text-white' : 'bg-white text-indigo-500' }}
-                        dark:{{ isset($selectedTimes[$item]) && $selectedTimes[$item] ? 'bg-indigo-600 text-white' : 'bg-gray-700 text-white' }}
-                        hover:bg-indigo-700 hover:text-white border border-indigo-500 transition duration-300"
+                                {{ isset($selectedTimes[$item]) && $selectedTimes[$item] ? 'bg-blue-500 text-white' : 'bg-white text-blue-500' }}
+                        dark:{{ isset($selectedTimes[$item]) && $selectedTimes[$item] ? 'bg-blue-600 text-white' : 'bg-gray-700 text-white' }}
+                        hover:bg-blue-700 hover:text-white border border-blue-500 transition duration-300"
                             wire:click="$toggle('selectedTimes.{{ $item }}')">
                             {{ $item }}
                         </button>
@@ -110,16 +120,58 @@
             <p class="mb-2 text-xl font-bold">Current Price: <span class="ml-2">$ {{ $currentPrice ?? 0 }}</span></p>
         </div>
 
-        <div id="card-element" class="h-8 my-4">
-            <!-- A Stripe Element will be inserted here. -->
-        </div>
+        @guest('customer')
+            <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Type of User</h3>
+            <ul
+                class="items-center w-full mb-8 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                    <div class="flex items-center ps-3">
+                        <input id="horizontal-list-radio-license" type="radio" value="('customer')" name="typeOfUser"
+                            wire:model.live='typeOfUser'
+                            class="w-4 h-4 text-blue-600 bg-blue-600 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                        <label for="horizontal-list-radio-license"
+                            class="w-full py-3 text-sm font-medium text-gray-900 cursor-pointer ms-2 dark:text-gray-300">
+                            Guest User
+                        </label>
+                    </div>
+                </li>
+                <li class="w-full dark:border-gray-600">
+                    <div class="flex items-center ps-3">
+                        <input id="horizontal-list-radio-passport" type="radio" value="login" name="typeOfUser"
+                            wire:model.live='typeOfUser'
+                            class="w-4 h-4 text-blue-600 bg-blue-600 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                        <label for="horizontal-list-radio-passport"
+                            class="w-full py-3 text-sm font-medium text-gray-900 cursor-pointer ms-2 dark:text-gray-300">
+                            Login / Register
+                        </label>
+                    </div>
+                </li>
+            </ul>
+
+            @if ($typeOfUser == 'guest')
+                <div class="grid grid-cols-1 mb-8 md:grid-cols-2 md:gap-2">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Name:
+                        </label>
+                        <input type="text" id="name" wire:model='name'
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            required>
+                    </div>
+                    <div>
+                        <label for="contactNo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Contact No.:
+                        </label>
+                        <input type="number" id="contactNo" wire:model='contactNo'
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            required>
+                    </div>
+                </div>
+            @endif
+        @endguest
 
         <button type="submit"
-            class="w-full px-4 py-3 font-bold text-white transition duration-300 bg-indigo-500 rounded-lg hover:bg-indigo-700">Book
+            class="w-full px-4 py-3 font-bold text-white transition duration-300 bg-blue-500 rounded-lg hover:bg-blue-700">Book
             Now</button>
     </form>
 </div>
-
-@push('scripts')
-    <script src="https://js.stripe.com/v3/"></script>
-@endpush

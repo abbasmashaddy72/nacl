@@ -1,40 +1,42 @@
 <x-guest-layout>
     <x-frontend.inner-top-section backgroundUrl="{{ $settings->laneBreadcrumbImage }}" />
-    @if ($settings->enableFeatureSection)
-        <section class="relative py-16 bg-gray-50 dark:bg-slate-800">
-            <div class="container relative">
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px]">
-                    @foreach ($settings->laneFeatures as $item)
-                        <div class="flex">
-                            <div
-                                class="flex align-middle justify-center items-center min-w-[56px] h-[56px] bg-indigo-600/5 border-2 border-indigo-600/20 text-indigo-600 rounded-lg text-xl shadow-sm dark:shadow-gray-800">
-                                <x-curator-glider class="object-cover w-full h-full" :media="$item['image']" />
-                            </div>
+    <div class="grid grid-cols-1">
+        @if ($settings->enableFeatureSection)
+            <section class="relative order-last py-16 bg-gray-50 dark:bg-slate-800 md:order-none">
+                <div class="container relative">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px]">
+                        @foreach ($settings->laneFeatures as $item)
+                            <div class="flex">
+                                <div
+                                    class="flex align-middle justify-center items-center min-w-[56px] h-[56px] bg-blue-600/5 border-2 border-blue-600/20 text-blue-600 rounded-lg text-xl shadow-sm dark:shadow-gray-800">
+                                    <x-curator-glider class="object-cover w-full h-full" :media="$item['image']" />
+                                </div>
 
-                            <div class="content ms-6">
-                                <div class="text-lg font-medium hover:text-indigo-600">{{ $item['title'] }}</div>
-                                <p class="mt-3 text-slate-400">{{ $item['message'] }}</p>
+                                <div class="content ms-6">
+                                    <div class="text-lg font-medium hover:text-blue-600">{{ $item['title'] }}</div>
+                                    <p class="mt-3 text-slate-400">{{ $item['message'] }}</p>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
+            </section>
+        @endif
+
+        <section class="relative py-16 md:py-24">
+            <div class="container p-6 mx-auto">
+                @livewire('frontend.booking-form')
             </div>
         </section>
-    @endif
-
-    <section class="relative py-16 md:py-24">
-        <div class="container p-6 mx-auto">
-            @livewire('frontend.booking-form')
-        </div>
-    </section>
+    </div>
 
     <section class="relative py-16 md:py-24">
         @if ($settings->enableFAQSection)
             <div class="container relative mt-16 md:mt-24">
                 <div class="grid grid-cols-1 pb-8 text-center">
-                    <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">Frequently
-                        Asked
-                        Questions</h3>
+                    <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
+                        Frequently Asked Questions
+                    </h3>
                 </div>
 
                 <div id="accordion-collapse" data-accordion="collapse"

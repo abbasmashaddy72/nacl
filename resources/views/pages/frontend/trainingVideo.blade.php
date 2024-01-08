@@ -12,7 +12,7 @@
 
                         @if (!$loop->last)
                             <span
-                                class="absolute flex items-center justify-center w-8 h-8 text-white bg-indigo-600 rounded-full ri-arrow-right-s-line md:top-2/4 md:-translate-y-2/4 -bottom-4 md:-end-0 end-2/4 ltr:translate-x-2/4 rtl:-translate-x-2/4 rtl:rotate-180 z-1"></span>
+                                class="absolute flex items-center justify-center w-8 h-8 text-white bg-blue-600 rounded-full ri-arrow-right-s-line md:top-2/4 md:-translate-y-2/4 -bottom-4 md:-end-0 end-2/4 ltr:translate-x-2/4 rtl:-translate-x-2/4 rtl:rotate-180 z-1"></span>
                         @endif
                     </div>
                 @endforeach
@@ -40,13 +40,13 @@
                             <ul class="my-6 list-none text-slate-400">
                                 @foreach ($settings->descriptionSectionPoints as $item)
                                     <li class="flex mb-1"><i
-                                            class="text-xl text-indigo-600 ri-checkbox-circle-line me-2"></i>
+                                            class="text-xl text-blue-600 ri-checkbox-circle-line me-2"></i>
                                         {{ $item['point'] }}</li>
                                 @endforeach
                             </ul>
 
                             <a href="{{ route('book-slot') }}"
-                                class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-indigo-600 align-middle duration-500 border rounded-full bg-indigo-600/5 hover:bg-indigo-600 border-indigo-600/10 hover:border-indigo-600 hover:text-white">Book
+                                class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-blue-600 align-middle duration-500 border rounded-full bg-blue-600/5 hover:bg-blue-600 border-blue-600/10 hover:border-blue-600 hover:text-white">Book
                                 Now</a>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                         <div class="customer-testi cursor-e-resize">
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
-                                <i class="text-indigo-600 mdi mdi-format-quote-open mdi-48px"></i>
+                                <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
                                 <p class="text-slate-400">" It seems that only fragments of the original text remain in
                                     the Lorem Ipsum texts used today. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
@@ -122,7 +122,7 @@
                         <div class="customer-testi cursor-e-resize">
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
-                                <i class="text-indigo-600 mdi mdi-format-quote-open mdi-48px"></i>
+                                <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
                                 <p class="text-slate-400">" The most well-known dummy text is the 'Lorem Ipsum', which
                                     is said to have originated in the 16th century. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
@@ -147,7 +147,7 @@
                         <div class="customer-testi cursor-e-resize">
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
-                                <i class="text-indigo-600 mdi mdi-format-quote-open mdi-48px"></i>
+                                <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
                                 <p class="text-slate-400">" One disadvantage of Lorum Ipsum is that in Latin certain
                                     letters appear more frequently than others. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
@@ -172,7 +172,7 @@
                         <div class="customer-testi cursor-e-resize">
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
-                                <i class="text-indigo-600 mdi mdi-format-quote-open mdi-48px"></i>
+                                <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
                                 <p class="text-slate-400">" Thus, Lorem Ipsum has only limited suitability as a visual
                                     filler for German texts. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
@@ -197,7 +197,7 @@
                         <div class="customer-testi cursor-e-resize">
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
-                                <i class="text-indigo-600 mdi mdi-format-quote-open mdi-48px"></i>
+                                <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
                                 <p class="text-slate-400">" There is now an abundance of readable dummy texts. These
                                     are usually used when a text is required. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
@@ -222,7 +222,7 @@
                         <div class="customer-testi cursor-e-resize">
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
-                                <i class="text-indigo-600 mdi mdi-format-quote-open mdi-48px"></i>
+                                <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
                                 <p class="text-slate-400">" According to most sources, Lorum Ipsum can be traced back
                                     to a text composed by Cicero. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">

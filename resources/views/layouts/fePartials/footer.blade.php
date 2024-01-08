@@ -12,38 +12,38 @@
                             <ul class="mt-6 list-none">
                                 <li class="inline">
                                     <a href="{{ $common_settings->facebook }}" target="_blank"
-                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 dark:hover:bg-blue-600">
                                         <i class="align-middle ri-facebook-line" title="facebook"></i>
                                     </a>
                                 </li>
                                 <li class="inline">
                                     <a href="{{ $common_settings->instagram }}" target="_blank"
-                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 dark:hover:bg-blue-600">
                                         <i class="align-middle ri-instagram-line" title="instagram"></i>
                                     </a>
                                 </li>
 
                                 <li class="inline">
                                     <a href="{{ $common_settings->linkedIn }}" target="_blank"
-                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 dark:hover:bg-blue-600">
                                         <i class="align-middle ri-linkedin-line" title="linkedIn"></i>
                                     </a>
                                 </li>
                                 <li class="inline">
                                     <a href="{{ $common_settings->twitter }}" target="_blank"
-                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 dark:hover:bg-blue-600">
                                         <i class="align-middle ri-twitter-line" title="twitter"></i>
                                     </a>
                                 </li>
                                 <li class="inline">
                                     <a href="{{ $common_settings->youtube }}" target="_blank"
-                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 dark:hover:bg-blue-600">
                                         <i class="align-middle ri-youtube-line" title="youtube"></i>
                                     </a>
                                 </li>
                                 <li class="inline">
                                     <a href="{{ $common_settings->googleMaps }}" target="_blank"
-                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                                        class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-800 rounded-md hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 dark:hover:bg-blue-600">
                                         <i class="align-middle ri-google-line" title="googleMaps"></i>
                                     </a>
                                 </li>
@@ -90,7 +90,7 @@
                         </div><!--end col-->
 
                         <div class="lg:col-span-3 md:col-span-4">
-                            <h5 class="tracking-[1px] text-gray-100 font-semibold">Usefull Links</h5>
+                            <h5 class="tracking-[1px] text-gray-100 font-semibold">Useful Links</h5>
                             <ul class="mt-6 list-none footer-list">
                                 <li><a href="page-terms.html"
                                         class="text-gray-300 duration-500 ease-in-out hover:text-gray-400">
@@ -123,7 +123,7 @@
                             <p class="mt-6">{{ $common_settings->CTAMessage }}</p>
                             <div class="w-full mt-4">
                                 <a href='{{ route('contact-us') }}'
-                                    class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">Contact
+                                    class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700">Contact
                                     Us Now</a>
                             </div>
                         </div><!--end col-->
@@ -179,7 +179,7 @@
 
 <!-- Back to top -->
 <a href="#" onclick="topFunction()" id="back-to-top"
-    class="fixed z-10 hidden text-lg leading-9 text-center text-white bg-indigo-600 rounded-full back-to-top bottom-5 end-5 h-9 w-9">
+    class="fixed z-10 hidden text-lg leading-9 text-center text-white bg-blue-600 rounded-full back-to-top bottom-5 end-5 h-9 w-9">
     <i class="ri-arrow-up-line"></i>
 </a>
 

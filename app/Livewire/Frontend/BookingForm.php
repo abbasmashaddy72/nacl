@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Frontend;
 
+use App\Models\LaneBooking;
 use Carbon\Carbon;
 use Stripe\Stripe;
 use App\Models\Slot;
@@ -20,6 +21,10 @@ class BookingForm extends Component
     public $selectedTimes = [];
     public $currentPrice;
     public $numberOfPlayers;
+    public $slot;
+    public $typeOfUser = 'guest';
+    public $name;
+    public $contactNo;
 
     public function render()
     {
@@ -43,13 +48,14 @@ class BookingForm extends Component
         if (empty($this->selectedSlot)) {
             return;
         }
-        $slot = Slot::findOrFail($this->selectedSlot);
+        $this->slot = $slot = Slot::findOrFail($this->selectedSlot);
         if (!$slot) {
 
             return;
         }
         $start = Carbon::parse($slot->start_time);
         $end = Carbon::parse($slot->end_time);
+        $this->numberOfPlayers = $this->slot->min_players;
 
         while ($start->lt($end)) {
             $this->timeSlots[] = $start->format('h:i A'); // 'h' for 12-hour format, 'i' for minutes, 'A' for AM/PM
@@ -61,6 +67,13 @@ class BookingForm extends Component
     {
         // Handle the logic when selectedTimes array is updated
         $this->selectMiddleSlots();
+    }
+
+    public function updatedTypeOfUser()
+    {
+        if ($this->typeOfUser == 'login') {
+            redirect()->away(route('login'));
+        }
     }
 
     public function selectMiddleSlots()
@@ -122,16 +135,35 @@ class BookingForm extends Component
 
     public function submitForm()
     {
+        // Extract time strings, convert to timestamps, find max and min timestamps
+        $timeStamps = array_map('strtotime', array_keys($this->selectedTimes));
+        $maxTimestamp = max($timeStamps);
+        $minTimestamp = min($timeStamps);
+
+        $laneBooking = LaneBooking::create([
+            'sport_id' => $this->selectedSport,
+            'slot_id' => $this->selectedSlot,
+            'customer_id' => auth()->user()->id ?? null,
+            'name' => $this->name,
+            'contact_number' => $this->contactNo,
+            'advance_amount' => 0,
+            'total_amount' => $this->currentPrice,
+            'refund_amount' => 0,
+            'amount_status' => 'due',
+            'start_date_time' => $this->selectedDate . ' ' . date("H:i:s", $minTimestamp),
+            'end_date_time' => $this->selectedDate . ' ' . date("H:i:s", $maxTimestamp),
+            'status' => 'open',
+        ]);
 
         Stripe::setApiKey(config('stripe.stripe_secret_key'));
 
         $checkout_session = Session::create([
-            'payment_method_types' => ['card'],
+            // 'payment_method_types' => ['card', 'wallet'],
             'line_items' => [[
                 'price_data' => [
                     'currency' => 'usd',
                     'product_data' => [
-                        'name' => 'T-shirt',
+                        'name' => 'Lane Booking',
                     ],
                     'unit_amount' => $this->currentPrice * 100,
                 ],

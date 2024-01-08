@@ -18,7 +18,7 @@
                             <p class="max-w-xl mb-6 text-slate-400">{!! $sport->description !!}</p>
 
                             <a href="{{ route('book-slot') }}"
-                                class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-indigo-600 align-middle duration-500 border rounded-full bg-indigo-600/5 hover:bg-indigo-600 border-indigo-600/10 hover:border-indigo-600 hover:text-white">Book
+                                class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-blue-600 align-middle duration-500 border rounded-full bg-blue-600/5 hover:bg-blue-600 border-blue-600/10 hover:border-blue-600 hover:text-white">Book
                                 Now</a>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
                 <div class="px-6 mt-6 text-center">
                     <div
-                        class="flex items-center justify-center w-20 h-20 mx-auto text-3xl text-indigo-600 align-middle shadow-sm bg-indigo-600/5 rounded-xl dark:shadow-gray-800">
+                        class="flex items-center justify-center w-20 h-20 mx-auto text-3xl text-blue-600 align-middle shadow-sm bg-blue-600/5 rounded-xl dark:shadow-gray-800">
                         <i class="ri-phone-line"></i>
                     </div>
 
@@ -15,14 +15,14 @@
 
                         <div class="mt-5">
                             <a href="tel:{{ $settings->contactUsPhoneNo }}"
-                                class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">{{ $settings->contactUsPhoneNo }}</a>
+                                class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-blue-600 hover:text-blue-600 after:bg-blue-600 duration-500 ease-in-out">{{ $settings->contactUsPhoneNo }}</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="px-6 mt-6 text-center">
                     <div
-                        class="flex items-center justify-center w-20 h-20 mx-auto text-3xl text-indigo-600 align-middle shadow-sm bg-indigo-600/5 rounded-xl dark:shadow-gray-800">
+                        class="flex items-center justify-center w-20 h-20 mx-auto text-3xl text-blue-600 align-middle shadow-sm bg-blue-600/5 rounded-xl dark:shadow-gray-800">
                         <i class="ri-mail-line"></i>
                     </div>
 
@@ -32,14 +32,14 @@
 
                         <div class="mt-5">
                             <a href="mailto:{{ $settings->contactUsEmail }}"
-                                class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">{{ $settings->contactUsEmail }}</a>
+                                class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-blue-600 hover:text-blue-600 after:bg-blue-600 duration-500 ease-in-out">{{ $settings->contactUsEmail }}</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="px-6 mt-6 text-center">
                     <div
-                        class="flex items-center justify-center w-20 h-20 mx-auto text-3xl text-indigo-600 align-middle shadow-sm bg-indigo-600/5 rounded-xl dark:shadow-gray-800">
+                        class="flex items-center justify-center w-20 h-20 mx-auto text-3xl text-blue-600 align-middle shadow-sm bg-blue-600/5 rounded-xl dark:shadow-gray-800">
                         <i class="ri-map-pin-line"></i>
                     </div>
 
@@ -49,7 +49,7 @@
 
                         <div class="mt-5">
                             <a href="{{ $settings->contactUsMapLink }}" data-type="iframe"
-                                class="video-play-icon read-more lightbox relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">View
+                                class="video-play-icon read-more lightbox relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-blue-600 hover:text-blue-600 after:bg-blue-600 duration-500 ease-in-out">View
                                 on Google map</a>
                         </div>
                     </div>

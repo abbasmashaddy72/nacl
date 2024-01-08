@@ -28,7 +28,7 @@
 
                         <div class="inline-block">
                             <div class="flex items-center pt-4 border-t border-gray-100 dark:border-gray-700">
-                                <i data-feather="smartphone" class="w-10 h-10 text-indigo-600 me-2"></i>
+                                <i data-feather="smartphone" class="w-10 h-10 text-blue-600 me-2"></i>
                                 <div class="content">
                                     <h6 class="text-base font-medium">Install app now on your cellphones</h6>
                                 </div>

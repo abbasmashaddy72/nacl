@@ -31,7 +31,7 @@
                             <div class="relative mt-2 form-icon">
                                 <i data-feather="user" class="absolute w-4 h-4 top-3 start-4"></i>
                                 <input wire:model='name' name="name" id="name" type="text"
-                                    class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
+                                    class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 dark:bg-slate-900 dark:text-slate-200 focus:border-blue-600 dark:border-gray-800 dark:focus:border-blue-600 focus:ring-0"
                                     placeholder="Name :">
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div class="relative mt-2 form-icon">
                                 <i data-feather="mail" class="absolute w-4 h-4 top-3 start-4"></i>
                                 <input wire:model='email' name="email" id="email" type="email"
-                                    class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
+                                    class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 dark:bg-slate-900 dark:text-slate-200 focus:border-blue-600 dark:border-gray-800 dark:focus:border-blue-600 focus:ring-0"
                                     placeholder="Email :">
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             <div class="relative mt-2 form-icon">
                                 <i data-feather="phone" class="absolute w-4 h-4 top-3 start-4"></i>
                                 <input wire:model='contact_no' name="contact_no" id="contact_no"
-                                    class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
+                                    class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 dark:bg-slate-900 dark:text-slate-200 focus:border-blue-600 dark:border-gray-800 dark:focus:border-blue-600 focus:ring-0"
                                     placeholder="Contact No :">
                             </div>
                         </div>
@@ -69,14 +69,14 @@
                             <div class="relative mt-2 form-icon">
                                 <i data-feather="message-circle" class="absolute w-4 h-4 top-3 start-4"></i>
                                 <textarea wire:model='message' name="message" id="message"
-                                    class="w-full px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 h-28 dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
+                                    class="w-full px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-input ps-11 h-28 dark:bg-slate-900 dark:text-slate-200 focus:border-blue-600 dark:border-gray-800 dark:focus:border-blue-600 focus:ring-0"
                                     placeholder="Message :"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button type="submit"
-                    class="flex items-center justify-center px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">Send
+                    class="flex items-center justify-center px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700">Send
                     Message</button>
             </form>
         </div>

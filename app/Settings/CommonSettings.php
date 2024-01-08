@@ -8,7 +8,6 @@ class CommonSettings extends Settings
 {
     public ?string $lightLogo;
     public ?string $darkLogo;
-    public ?string $favicon;
     public ?string $companyShortDescription;
     public ?string $facebook;
     public ?string $instagram;

@@ -15,6 +15,7 @@ class CustomerSeeder extends Seeder
         $customer = $customers->first();
         $customer->update([
             'email' => 'customer@nacl.com',
+            'email_verified_at' => now(),
         ]);
     }
 }

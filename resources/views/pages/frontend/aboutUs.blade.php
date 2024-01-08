@@ -22,7 +22,7 @@
 
                         <div class="mt-6">
                             <a href="{{ $settings->aboutUsButtonURL }}"
-                                class="inline-block px-5 py-2 mt-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700 me-2"><i
+                                class="inline-block px-5 py-2 mt-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700 me-2"><i
                                     class="ri-mail-line"></i> {{ $settings->aboutUsButtonLabel }}</a>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <div
                         class="flex items-center p-3 duration-500 ease-in-out bg-white rounded-md shadow hover:scale-105 dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 dark:bg-slate-900">
                         <div
-                            class="flex items-center justify-center h-[45px] min-w-[45px] bg-gradient-to-r from-transparent to-indigo-600/10 text-indigo-600 text-center rounded-full me-3">
+                            class="flex items-center justify-center h-[45px] min-w-[45px] bg-gradient-to-r from-transparent to-blue-600/10 text-blue-600 text-center rounded-full me-3">
                             <x-curator-glider :media="(int) $item['image']" class="w-full h-full rounded-md shadow" />
                         </div>
                         <div class="flex-1">
@@ -97,7 +97,7 @@
                                 <x-curator-glider :media="$settings->aboutUsVideoImage" class="rounded-md shadow-lg" />
                                 <div class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
                                     <a href="#!" data-type="youtube" data-id="{{ $settings->aboutUsVideoURL }}"
-                                        class="inline-flex items-center justify-center w-20 h-20 text-indigo-600 bg-white rounded-full shadow-lg lightbox dark:shadow-gray-800 dark:bg-slate-900 dark:text-white">
+                                        class="inline-flex items-center justify-center w-20 h-20 text-blue-600 bg-white rounded-full shadow-lg lightbox dark:shadow-gray-800 dark:bg-slate-900 dark:text-white">
                                         <i class="inline-flex items-center justify-center text-2xl ri-play-line"></i>
                                     </a>
                                 </div>
@@ -108,7 +108,7 @@
             </div>
         </div>
 
-        <div class="absolute bottom-0 start-0 end-0 sm:h-2/3 h-4/5 bg-gradient-to-b from-indigo-500 to-indigo-600">
+        <div class="absolute bottom-0 start-0 end-0 sm:h-2/3 h-4/5 bg-gradient-to-b from-blue-500 to-blue-600">
         </div>
     </section>
 
@@ -130,7 +130,7 @@
                                 class="w-24 h-24 rounded-full shadow-md dark:shadow-gray-800" alt="">
 
                             <div class="mt-4 content">
-                                <a href="" class="block text-lg font-medium hover:text-indigo-600">Ronny
+                                <a href="" class="block text-lg font-medium hover:text-blue-600">Ronny
                                     Jofra</a>
                                 <span class="block text-slate-400">C.E.O.</span>
 
@@ -138,16 +138,16 @@
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="facebook" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="instagram" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="twitter" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="linkedin" class="w-4 h-4"></i></a></li>
                                 </ul><!--end icon-->
                             </div>
@@ -161,7 +161,7 @@
                                 class="w-24 h-24 rounded-full shadow-md dark:shadow-gray-800" alt="">
 
                             <div class="mt-4 content">
-                                <a href="" class="block text-lg font-medium hover:text-indigo-600">Aliana
+                                <a href="" class="block text-lg font-medium hover:text-blue-600">Aliana
                                     Rosy</a>
                                 <span class="block text-slate-400">HR</span>
 
@@ -169,16 +169,16 @@
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="facebook" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="instagram" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="twitter" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="linkedin" class="w-4 h-4"></i></a></li>
                                 </ul><!--end icon-->
                             </div>
@@ -192,7 +192,7 @@
                                 class="w-24 h-24 rounded-full shadow-md dark:shadow-gray-800" alt="">
 
                             <div class="mt-4 content">
-                                <a href="" class="block text-lg font-medium hover:text-indigo-600">Sofia
+                                <a href="" class="block text-lg font-medium hover:text-blue-600">Sofia
                                     Razaq</a>
                                 <span class="block text-slate-400">C.O.O.</span>
 
@@ -200,16 +200,16 @@
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="facebook" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="instagram" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="twitter" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="linkedin" class="w-4 h-4"></i></a></li>
                                 </ul><!--end icon-->
                             </div>
@@ -223,7 +223,7 @@
                                 class="w-24 h-24 rounded-full shadow-md dark:shadow-gray-800" alt="">
 
                             <div class="mt-4 content">
-                                <a href="" class="block text-lg font-medium hover:text-indigo-600">Micheal
+                                <a href="" class="block text-lg font-medium hover:text-blue-600">Micheal
                                     Carlo</a>
                                 <span class="block text-slate-400">Director</span>
 
@@ -231,16 +231,16 @@
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="facebook" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="instagram" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="twitter" class="w-4 h-4"></i></a></li>
                                     <li class="inline"><a href=""
-                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"><i
+                                            class="inline-flex items-center justify-center w-8 h-8 text-base tracking-wide text-center align-middle duration-500 border border-gray-100 rounded-md dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-600 hover:bg-blue-600 hover:text-white"><i
                                                 data-feather="linkedin" class="w-4 h-4"></i></a></li>
                                 </ul><!--end icon-->
                             </div>
@@ -268,7 +268,7 @@
                                     and
                                     readability of the typefaces (typography), or the distribution of text on the page
                                     consists of a more or less random series of words or syllables. "</p>
-                                <h6 class="mt-3 font-semibold text-indigo-600">- Thomas Israel</h6>
+                                <h6 class="mt-3 font-semibold text-blue-600">- Thomas Israel</h6>
                             </div>
 
                             <div class="text-center tiny-slide">
@@ -279,7 +279,7 @@
                                     and
                                     readability of the typefaces (typography), or the distribution of text on the page
                                     consists of a more or less random series of words or syllables. "</p>
-                                <h6 class="mt-3 font-semibold text-indigo-600">- Carl Oliver</h6>
+                                <h6 class="mt-3 font-semibold text-blue-600">- Carl Oliver</h6>
                             </div>
 
                             <div class="text-center tiny-slide">
@@ -290,7 +290,7 @@
                                     and
                                     readability of the typefaces (typography), or the distribution of text on the page
                                     consists of a more or less random series of words or syllables. "</p>
-                                <h6 class="mt-3 font-semibold text-indigo-600">- Barbara McIntosh</h6>
+                                <h6 class="mt-3 font-semibold text-blue-600">- Barbara McIntosh</h6>
                             </div>
 
                             <div class="text-center tiny-slide">
@@ -301,7 +301,7 @@
                                     and
                                     readability of the typefaces (typography), or the distribution of text on the page
                                     consists of a more or less random series of words or syllables. "</p>
-                                <h6 class="mt-3 font-semibold text-indigo-600">- Jill Webb</h6>
+                                <h6 class="mt-3 font-semibold text-blue-600">- Jill Webb</h6>
                             </div>
 
                             <div class="text-center tiny-slide">
@@ -312,7 +312,7 @@
                                     and
                                     readability of the typefaces (typography), or the distribution of text on the page
                                     consists of a more or less random series of words or syllables. "</p>
-                                <h6 class="mt-3 font-semibold text-indigo-600">- Dean Tolle</h6>
+                                <h6 class="mt-3 font-semibold text-blue-600">- Dean Tolle</h6>
                             </div>
 
                             <div class="text-center tiny-slide">
@@ -323,7 +323,7 @@
                                     and
                                     readability of the typefaces (typography), or the distribution of text on the page
                                     consists of a more or less random series of words or syllables. "</p>
-                                <h6 class="mt-3 font-semibold text-indigo-600">- Christa Smith</h6>
+                                <h6 class="mt-3 font-semibold text-blue-600">- Christa Smith</h6>
                             </div>
                         </div>
                     </div>

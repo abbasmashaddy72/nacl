@@ -8,7 +8,7 @@
 
             <div class="mt-6">
                 <a href="{{ $common_settings->CTAButtonURL }}"
-                    class="inline-block px-5 py-2 mt-4 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700"><i
+                    class="inline-block px-5 py-2 mt-4 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700"><i
                         class="uil uil-phone"></i> {{ $common_settings->CTAButtonLabel }}</a>
             </div>
         </div>

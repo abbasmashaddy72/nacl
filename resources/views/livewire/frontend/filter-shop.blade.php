@@ -9,7 +9,7 @@
                                 <label for="searchname" class="hidden font-semibold"></label>
                                 <div class="relative">
                                     <input type="text" wire:model.live='search'
-                                        class="w-full h-10 py-2 pl-10 pr-4 bg-transparent border border-gray-200 rounded outline-none form-input dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
+                                        class="w-full h-10 py-2 pl-10 pr-4 bg-transparent border border-gray-200 rounded outline-none form-input dark:bg-slate-900 dark:text-slate-200 focus:border-blue-600 dark:border-gray-800 dark:focus:border-blue-600 focus:ring-0"
                                         placeholder="Search" />
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                         <i class="text-gray-900 dark:text-white ri-search-line"></i>
@@ -61,7 +61,7 @@
                     <div class="lg:col-span-3 md:col-span-4 md:text-end">
                         <label class="hidden font-semibold"></label>
                         <select wire:model.live="sortBy"
-                            class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-select form-input dark:bg-slate-900 dark:text-slate-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0">
+                            class="w-full h-10 px-3 py-2 bg-transparent border border-gray-200 rounded outline-none form-select form-input dark:bg-slate-900 dark:text-slate-200 focus:border-blue-600 dark:border-gray-800 dark:focus:border-blue-600 focus:ring-0">
                             <option selected value="latest">Latest</option>
                             <option value="featured">Featured</option>
                             <option value="low-to-high">Low To High</option>
@@ -95,7 +95,7 @@
 
                             <div class="mt-4">
                                 <a href="shop-item-detail.html"
-                                    class="text-lg font-semibold hover:text-indigo-600">{{ $product->name }}</a>
+                                    class="text-lg font-semibold hover:text-blue-600">{{ $product->name }}</a>
                                 <div class="flex items-center justify-between mt-1">
                                     <p class="text-green-600">${{ $product->price }}</p>
                                 </div>
@@ -109,6 +109,6 @@
             </div>
         </div>
     @else
-        <div class="text-3xl font-bold text-center">Comming Soon</div>
+        <div class="text-3xl font-bold text-center">Coming Soon</div>
     @endif
 </div>

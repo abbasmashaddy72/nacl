@@ -40,18 +40,11 @@ class CommonData extends SettingsPage
                             ->constrained(true)
                             ->visibility(true)
                             ->required(),
-                        CuratorPicker::make('favicon')
-                            ->label('Favicon')
-                            ->lazyLoad()
-                            ->listDisplay()
-                            ->constrained(true)
-                            ->visibility(true)
-                            ->required(),
                         Textarea::make('companyShortDescription')
                             ->label('Company Short Description')
                             ->required()
                             ->columnSpanFull(),
-                    ])->columns(3),
+                    ])->columns(2),
 
                     Forms\Components\Section::make('Call to Action')->schema([
                         TextInput::make('CTATopTitle')

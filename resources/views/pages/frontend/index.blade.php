@@ -78,7 +78,7 @@
 
                         <div class="mt-4">
                             <a href=""
-                                class="inline-block w-full px-5 py-2 text-base tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">
+                                class="inline-block w-full px-5 py-2 text-base tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700">
                                 Book Now
                             </a>
                         </div>
@@ -94,9 +94,9 @@
                             {{ $settings->card2Message }}</p>
                         <div class="mt-4">
                             <a href="{{ $settings->card2ButtonURL }}"
-                                class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">{{ $settings->card2ButtonLabel }}</a>
+                                class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700">{{ $settings->card2ButtonLabel }}</a>
                             <a href="#!" data-type="youtube" data-id="{{ $settings->card2YoutubeId }}"
-                                class="inline-flex items-center justify-center m-1 text-base tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border-indigo-600 rounded-full h-9 w-9 hover:bg-indigo-700 hover:border-indigo-700 lightbox">
+                                class="inline-flex items-center justify-center m-1 text-base tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border-blue-600 rounded-full h-9 w-9 hover:bg-blue-700 hover:border-blue-700 lightbox">
                                 <i data-feather="video" class="w-4 h-4"></i></a><span
                                 class="font-semibold align-middle ms-1">Watch Now</span>
                         </div>
@@ -139,7 +139,7 @@
                                         class="w-16 h-16 rounded-full shadow-md md:ms-auto dark:shadow-gray-800"
                                         :media="(int) $sport->images[0]" />
                                     <div class="order-2 mt-2 md:order-1">
-                                        <div class="text-xl font-semibold font-head-ebgaramond hover:text-indigo-600">
+                                        <div class="text-xl font-semibold font-head-ebgaramond hover:text-blue-600">
                                             {{ $sport->name }}
                                         </div>
                                         <p class="mt-3 text-slate-400">{{ $sport->short_description }}</p>
@@ -160,7 +160,7 @@
                                     <x-curator-glider class="w-16 h-16 rounded-full shadow-md dark:shadow-gray-800"
                                         :media="(int) $sport->images[0]" />
                                     <div class="mt-2">
-                                        <div class="text-xl font-semibold font-head-ebgaramond hover:text-indigo-600">
+                                        <div class="text-xl font-semibold font-head-ebgaramond hover:text-blue-600">
                                             The
                                             {{ $sport->name }}
                                         </div>
@@ -193,7 +193,7 @@
                             <x-curator-glider class="w-16 h-16 rounded-full shadow-md dark:shadow-gray-800"
                                 :media="(int) $item['image']" />
                             <div class="flex-1 ms-3">
-                                <div class="text-xl font-semibold font-head-ebgaramond hover:text-indigo-600">
+                                <div class="text-xl font-semibold font-head-ebgaramond hover:text-blue-600">
                                     {{ $item['title'] }}</div>
                                 <p class="mt-3 text-slate-400">{{ $item['message'] }}</p>
                             </div>
@@ -203,7 +203,7 @@
 
                 <div class="mt-8">
                     <a href="{{ route('book-slot') }}"
-                        class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-indigo-600 border border-indigo-600 rounded-md hover:bg-indigo-700 hover:border-indigo-700">
+                        class="inline-block px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700">
                         {{ __('Book Slot') }}
                         <i class="uil uil-arrow-right"></i></a>
                 </div>
@@ -235,7 +235,7 @@
                                     </div>
 
                                     <div class="mt-3 content">
-                                        <div class="text-lg font-semibold duration-500 hover:text-indigo-600">
+                                        <div class="text-lg font-semibold duration-500 hover:text-blue-600">
                                             {{ $category->name }}</div>
                                         <p class="text-slate-400">{{ $category->short_description }}</p>
                                     </div>
@@ -245,7 +245,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="text-3xl font-bold text-center">Comming Soon</div>
+                <div class="text-3xl font-bold text-center">Coming Soon</div>
             @endif
         </div>
     </section>

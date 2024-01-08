@@ -13,6 +13,7 @@ class LaneBooking extends Model
 
     protected $fillable = [
         'sport_id',
+        'slot_id',
         'customer_id',
         'name',
         'contact_number',
@@ -38,6 +39,11 @@ class LaneBooking extends Model
     public function sport(): BelongsTo
     {
         return $this->belongsTo(Sport::class);
+    }
+
+    public function slot(): BelongsTo
+    {
+        return $this->belongsTo(Slot::class);
     }
 
     public function customer(): BelongsTo

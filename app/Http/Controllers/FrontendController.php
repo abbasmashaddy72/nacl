@@ -35,7 +35,7 @@ class FrontendController extends Controller
 
     public function laneRental(LanePage $settings)
     {
-        view()->share('title', 'Lane Rental');
+        view()->share('title', 'Cricket Lane Rental');
         $faqs = Faq::limit(10)->get();
 
         return view('pages.frontend.laneRental', compact([
