@@ -323,25 +323,35 @@ try {
 /*********************/
 /* Dark & Light Mode */
 /*********************/
+
 try {
+    const htmlTag = document.getElementsByTagName("html")[0];
+    const storedTheme = localStorage.getItem("theme");
+
+    if (storedTheme === "dark") {
+        htmlTag.classList.add("dark");
+    } else {
+        htmlTag.classList.remove("dark");
+    }
+
     function changeTheme(e) {
         e.preventDefault();
-        const htmlTag = document.getElementsByTagName("html")[0];
+        const isDarkMode = htmlTag.classList.contains("dark");
+        const newTheme = isDarkMode ? "light" : "dark";
 
-        if (htmlTag.className.includes("dark")) {
-            htmlTag.className = "light";
-        } else {
-            htmlTag.className = "dark";
-        }
+        htmlTag.classList.toggle("dark", !isDarkMode);
+        localStorage.setItem("theme", newTheme);
+        console.log(`Theme set to ${newTheme}`);
     }
 
     const switcher = document.getElementById("theme-mode");
     switcher?.addEventListener("click", changeTheme);
 
     const chk = document.getElementById("chk");
-
-    chk.addEventListener("change", changeTheme);
-} catch (err) {}
+    chk?.addEventListener("change", changeTheme);
+} catch (err) {
+    console.error("Error:", err);
+}
 
 /*********************/
 /* LTR & RTL Mode */
@@ -360,3 +370,9 @@ try {
     const switcherRtl = document.getElementById("switchRtl");
     switcherRtl?.addEventListener("click", changeLayout);
 } catch (err) {}
+
+// AutoFocus Fix
+const autofocusElement = document.querySelector("[autofocus]");
+if (autofocusElement) {
+    autofocusElement.scrollIntoView({ behavior: "smooth", block: "center" });
+}

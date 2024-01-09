@@ -1,6 +1,6 @@
 <x-guest-layout>
-
-    <section class="relative flex items-center py-24 pb-0 overflow-hidden md:h-3/6" id="home">
+    <div class="absolute inset-0 z-20 bg-gradient-to-t from-transparent to-black h-1/3"></div>
+    <section class="relative flex items-center py-24 overflow-hidden md:h-3/6" id="home">
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 @foreach ($settings->sliders as $slider)
@@ -50,7 +50,7 @@
             <div class="grid md:grid-cols-12 grid-col-1 items-center gap-[30px]">
                 <div class="order-2 lg:col-span-5 md:col-span-6 md:order-1">
                     <div
-                        class="p-6 overflow-hidden rounded-md shadow dark:shadow-gray-800 bg-gray-50 dark:bg-slate-800 bg-opacity-90 dark:bg-opacity-90">
+                        class="p-6 overflow-hidden rounded-md shadow-lg dark:shadow-gray-800 bg-gray-50 dark:bg-slate-800 bg-opacity-90 dark:bg-opacity-90">
                         <x-curator-glider :media="(int) $common_settings->lightLogo" class="w-auto h-32 mx-auto" />
                         <h5 class="mt-3 text-2xl font-semibold text-center">{{ config('app.name', 'Laravel') }} Launch
                             Date</h5>
@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <a href=""
+                            <a href="{{ route('book-slot') }}"
                                 class="inline-block w-full px-5 py-2 text-base tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 hover:border-blue-700">
                                 Book Now
                             </a>
@@ -86,11 +86,11 @@
                 </div>
 
                 <div
-                    class="order-1 py-8 rounded-md bg-gray-50 dark:bg-slate-800 bg-opacity-90 dark:bg-opacity-90 lg:col-span-7 md:col-span-6 md:order-2">
+                    class="order-1 p-6 overflow-hidden rounded-md shadow-lg dark:shadow-gray-800 bg-gray-50 dark:bg-slate-800 bg-opacity-90 dark:bg-opacity-90 lg:col-span-7 md:col-span-6 md:order-2">
                     <div class="lg:ms-10">
                         <h4 class="my-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
                             {{ $settings->card2Title }}</h4>
-                        <p class="mx-auto mb-3 whitespace-pre-line text-slate-400 para-desc">
+                        <p class="mx-auto mb-3 whitespace-pre-line text-slate-600 dark:text-slate-400 para-desc">
                             {{ $settings->card2Message }}</p>
                         <div class="mt-4">
                             <a href="{{ $settings->card2ButtonURL }}"
@@ -123,10 +123,10 @@
     <section class="relative py-16 mb-8 md:py-24">
         <div class="container relative">
             <div class="grid grid-cols-1 pb-8 text-center">
-                <h3 class="mb-4 text-3xl font-medium leading-normal md:text-4xl md:leading-normal font-head-ebgaramond">
+                <h3 class="mb-4 text-3xl font-medium leading-normal md:text-4xl md:leading-normal">
                     {{ $settings->welcomeTitle }}
                 </h3>
-                <p class="max-w-xl mx-auto text-slate-400">{{ $settings->welcomeMessage }}</p>
+                <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400">{{ $settings->welcomeMessage }}</p>
             </div>
 
             <div class="grid lg:grid-cols-12 md:grid-cols-12 grid-cols-1 mt-8 gap-[30px] items-center">
@@ -134,39 +134,43 @@
                     <div class="grid grid-cols-1 gap-[30px]">
                         @foreach ($sports as $sport)
                             @if ($loop->odd)
-                                <div class="duration-500 group md:text-end text-start">
+                                <a class="duration-500 group md:text-end text-start"
+                                    href="{{ route('sports') . '#' . Str::slug($sport->name) }}">
                                     <x-curator-glider
                                         class="w-16 h-16 rounded-full shadow-md md:ms-auto dark:shadow-gray-800"
                                         :media="(int) $sport->images[0]" />
                                     <div class="order-2 mt-2 md:order-1">
-                                        <div class="text-xl font-semibold font-head-ebgaramond hover:text-blue-600">
+                                        <div class="text-xl font-semibold hover:text-blue-600">
                                             {{ $sport->name }}
                                         </div>
-                                        <p class="mt-3 text-slate-400">{{ $sport->short_description }}</p>
+                                        <p class="mt-3 text-slate-600 dark:text-slate-400">
+                                            {{ $sport->short_description }}</p>
                                     </div>
-                                </div>
+                                </a>
                             @endif
                         @endforeach
                     </div>
                 </div>
                 <div class="order-1 lg:col-span-4 md:col-span-12 lg:order-2">
-                    <x-curator-glider class="object-cover mx-auto lg:w-auto md:w-80 aspect-[2/3]" :media="$settings->welcomeImage" />
+                    <x-curator-glider class="object-cover mx-auto lg:w-auto md:w-80 aspect-[2/3] rounded-lg"
+                        :media="$settings->welcomeImage" />
                 </div>
                 <div class="order-3 lg:col-span-4 md:col-span-6">
                     <div class="grid grid-cols-1 gap-[30px]">
                         @foreach ($sports as $sport)
                             @if ($loop->even)
-                                <div class="duration-500 group">
+                                <a class="duration-500 group"
+                                    href="{{ route('sports') . '#' . Str::slug($sport->name) }}">
                                     <x-curator-glider class="w-16 h-16 rounded-full shadow-md dark:shadow-gray-800"
                                         :media="(int) $sport->images[0]" />
                                     <div class="mt-2">
-                                        <div class="text-xl font-semibold font-head-ebgaramond hover:text-blue-600">
-                                            The
+                                        <div class="text-xl font-semibold group-hover:text-blue-600">
                                             {{ $sport->name }}
                                         </div>
-                                        <p class="mt-3 text-slate-400">{{ $sport->short_description }}</p>
+                                        <p class="mt-3 text-slate-600 dark:text-slate-400">
+                                            {{ $sport->short_description }}</p>
                                     </div>
-                                </div>
+                                </a>
                             @endif
                         @endforeach
                     </div>
@@ -178,14 +182,14 @@
     <div class="container relative mt-16 md:mt-24">
         <div class="grid md:grid-cols-2 gap-[30px] items-center">
             <div class="">
-                <x-curator-glider class="rounded shadow dark:shadow-gray-800 aspect-[3/4]" :media="$settings->videoRecordingImage" />
+                <x-curator-glider class="rounded-lg shadow dark:shadow-gray-800 aspect-[3/4]" :media="$settings->videoRecordingImage" />
             </div>
 
             <div class="lg:ms-8">
-                <h4
-                    class="mb-4 text-3xl font-medium leading-normal md:text-4xl md:leading-normal font-head-ebgaramond">
+                <h4 class="mb-4 text-3xl font-medium leading-normal md:text-4xl md:leading-normal">
                     {{ $settings->videoRecordingTitle }}</h4>
-                <p class="max-w-xl mx-auto text-slate-400">{{ $settings->videoRecordingMessage }}</p>
+                <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400">{{ $settings->videoRecordingMessage }}
+                </p>
 
                 <div class="grid grid-cols-1 gap-[30px] mt-6">
                     @foreach ($settings->videoRecordingPoints as $item)
@@ -193,9 +197,9 @@
                             <x-curator-glider class="w-16 h-16 rounded-full shadow-md dark:shadow-gray-800"
                                 :media="(int) $item['image']" />
                             <div class="flex-1 ms-3">
-                                <div class="text-xl font-semibold font-head-ebgaramond hover:text-blue-600">
+                                <div class="text-xl font-semibold">
                                     {{ $item['title'] }}</div>
-                                <p class="mt-3 text-slate-400">{{ $item['message'] }}</p>
+                                <p class="mt-3 text-slate-600 dark:text-slate-400">{{ $item['message'] }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -217,27 +221,27 @@
                 <h3 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
                     {{ $settings->shopSectionTitle }}
                 </h3>
-                <p class="max-w-xl mx-auto text-slate-400">{{ $settings->shopSectionMessage }}</p>
+                <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400">{{ $settings->shopSectionMessage }}</p>
             </div>
 
             @if (count($categories) > 0)
                 <div class="grid md:grid-cols-12 grid-cols-1 mt-8 gap-[30px]">
                     @foreach ($categories as $category)
                         <div class="lg:col-span-3 md:col-span-6">
-                            <a href="">
+                            <a href="{{ route('shop') }}">
                                 <div class="text-center group">
                                     <div
                                         class="relative inline-block mx-auto overflow-hidden rounded-full shadow-md h-52 w-52 dark:shadow-gray-800">
-                                        <x-curator-glider class="object-cover w-full h-full" :media="$category->image" />
-                                        <div
-                                            class="absolute inset-0 duration-500 rounded-full opacity-0 bg-gradient-to-b from-transparent to-black h-52 w-52 group-hover:opacity-100">
-                                        </div>
+                                        <x-curator-glider
+                                            class="object-cover w-full h-full transition duration-500 hover:scale-125"
+                                            :media="$category->image" />
                                     </div>
 
                                     <div class="mt-3 content">
                                         <div class="text-lg font-semibold duration-500 hover:text-blue-600">
                                             {{ $category->name }}</div>
-                                        <p class="text-slate-400">{{ $category->short_description }}</p>
+                                        <p class="text-slate-600 dark:text-slate-400">
+                                            {{ $category->short_description }}</p>
                                     </div>
                                 </div>
                             </a>

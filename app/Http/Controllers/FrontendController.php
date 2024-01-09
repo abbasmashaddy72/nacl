@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Faq;
+use App\Models\Page;
 use App\Models\Sport;
-use App\Settings\AboutPage;
-use App\Settings\CommonSettings;
-use App\Settings\ContactUsPage;
+use App\Models\Category;
 use App\Settings\HomePage;
 use App\Settings\LanePage;
 use App\Settings\ShopPage;
+use App\Settings\AboutPage;
 use App\Settings\SportPage;
+use Illuminate\Http\Request;
+use App\Settings\ContactUsPage;
+use App\Settings\CommonSettings;
 use App\Settings\TrainingVideoPage;
 
 class FrontendController extends Controller
@@ -99,21 +101,14 @@ class FrontendController extends Controller
         return view('pages.frontend.bookSlot');
     }
 
-    public function termsAndConditions()
+    public function page(Page $slug)
     {
-        view()->share('title', 'Terms And Conditions');
-        return view('pages.frontend.termsAndConditions');
-    }
+        $data = $slug;
 
-    public function privacyPolicies()
-    {
-        view()->share('title', 'Privacy Policies');
-        return view('pages.frontend.privacyPolicies');
-    }
+        view()->share('title', $data->title);
 
-    public function returnAndRefunds()
-    {
-        view()->share('title', 'Return And Refunds');
-        return view('pages.frontend.returnAndRefunds');
+        return view('pages.frontend.page', compact([
+            'data'
+        ]));
     }
 }

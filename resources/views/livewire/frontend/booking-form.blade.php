@@ -1,6 +1,8 @@
 <div class="max-w-screen-md p-8 mx-auto bg-white rounded-lg shadow-lg dark:bg-gray-800">
     <form wire:submit.prevent="submitForm">
-        <h1 class="mb-8 text-4xl font-bold text-center text-white">Book Your Slot</h1>
+        <h1 class="mb-8 text-4xl font-bold text-center text-black dark:text-white">
+            Book Your Slot
+        </h1>
 
         <div class="mb-8">
             <p class="mb-4 text-xl font-bold">Select Sport</p>
@@ -9,9 +11,8 @@
                     <label for="{{ $sport->id }}" class="cursor-pointer">
                         <div
                             class="py-2 px-4 rounded-full
-                        {{ $selectedSport == $sport->id ? 'bg-blue-500 text-white' : 'bg-white text-blue-500' }}
-                        dark:{{ $selectedSport == $sport->id ? 'bg-blue-600 text-white' : 'bg-gray-700 text-white' }}
-                        hover:bg-blue-700 hover:text-white border border-blue-500 transition duration-300">
+                            {{ $selectedSport == $sport->id ? 'bg-blue-500 text-white' : 'bg-blue-600/5 text-blue-500 dark:bg-gray-700 dark:text-white' }}
+                            hover:bg-blue-700 hover:text-white border border-blue-500 transition duration-300">
                             <input type="radio" id="{{ $sport->id }}" name="selectedSport"
                                 value="{{ $sport->id }}" wire:model.live='selectedSport' wire:click='updateLane'
                                 class="hidden">
@@ -32,8 +33,7 @@
                         wire:model.live="selectedSlot" wire:click="generateSlots" value="{{ $availableSlot->id }}">
                     <label
                         class="p-4 rounded-md
-                    {{ $selectedSlot == $availableSlot->id ? 'bg-blue-500 text-white' : 'bg-white text-blue-500' }}
-                    dark:{{ $selectedSlot == $availableSlot->id ? 'bg-blue-600 text-white' : 'bg-gray-700 text-white' }}
+                    {{ $selectedSlot == $availableSlot->id ? 'bg-blue-500 text-white' : 'bg-blue-600/5 text-blue-500 dark:bg-gray-700 dark:text-white' }}
                     hover:bg-blue-700 hover:text-white border border-blue-500 transition duration-300 cursor-pointer"
                         for="radio_{{ $availableSlot->id }}">
                         <span class="text-sm font-semibold uppercase">{{ $availableSlot->name }}</span>
@@ -99,8 +99,7 @@
                             wire:model="selectedTimes.{{ $item }}" class="hidden">
                         <button type="button"
                             class="p-3 rounded-lg
-                                {{ isset($selectedTimes[$item]) && $selectedTimes[$item] ? 'bg-blue-500 text-white' : 'bg-white text-blue-500' }}
-                        dark:{{ isset($selectedTimes[$item]) && $selectedTimes[$item] ? 'bg-blue-600 text-white' : 'bg-gray-700 text-white' }}
+                                {{ isset($selectedTimes[$item]) && $selectedTimes[$item] ? 'bg-blue-500 text-white' : 'bg-blue-600/5 text-blue-500 dark:bg-gray-700 dark:text-white' }}
                         hover:bg-blue-700 hover:text-white border border-blue-500 transition duration-300"
                             wire:click="$toggle('selectedTimes.{{ $item }}')">
                             {{ $item }}
@@ -123,27 +122,23 @@
         @guest('customer')
             <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Type of User</h3>
             <ul
-                class="items-center w-full mb-8 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-                    <div class="flex items-center ps-3">
-                        <input id="horizontal-list-radio-license" type="radio" value="('customer')" name="typeOfUser"
+                class="flex w-full mb-8 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <li class="w-full border-b border-r dark:border-gray-600">
+                    <div class="flex items-center p-3">
+                        <input id="horizontal-list-radio-license" type="radio" value="guest" name="typeOfUser"
                             wire:model.live='typeOfUser'
-                            class="w-4 h-4 text-blue-600 bg-blue-600 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            class="w-4 h-4 text-blue-600 border-gray-300 cursor-pointer focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                         <label for="horizontal-list-radio-license"
-                            class="w-full py-3 text-sm font-medium text-gray-900 cursor-pointer ms-2 dark:text-gray-300">
-                            Guest User
-                        </label>
+                            class="ml-2 text-sm font-medium cursor-pointer dark:text-gray-300">Guest User</label>
                     </div>
                 </li>
-                <li class="w-full dark:border-gray-600">
-                    <div class="flex items-center ps-3">
+                <li class="w-full">
+                    <div class="flex items-center p-3">
                         <input id="horizontal-list-radio-passport" type="radio" value="login" name="typeOfUser"
                             wire:model.live='typeOfUser'
-                            class="w-4 h-4 text-blue-600 bg-blue-600 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            class="w-4 h-4 text-blue-600 border-gray-300 cursor-pointer focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                         <label for="horizontal-list-radio-passport"
-                            class="w-full py-3 text-sm font-medium text-gray-900 cursor-pointer ms-2 dark:text-gray-300">
-                            Login / Register
-                        </label>
+                            class="ml-2 text-sm font-medium cursor-pointer dark:text-gray-300">Login / Register</label>
                     </div>
                 </li>
             </ul>

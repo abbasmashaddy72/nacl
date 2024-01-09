@@ -18,7 +18,7 @@
                         <h3 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
                             {{ $settings->aboutUsTitle }}</h3>
 
-                        <p class="max-w-xl text-slate-400">{{ $settings->aboutUsMessage }}</p>
+                        <p class="max-w-xl text-slate-600 dark:text-slate-400">{{ $settings->aboutUsMessage }}</p>
 
                         <div class="mt-6">
                             <a href="{{ $settings->aboutUsButtonURL }}"
@@ -67,7 +67,8 @@
                 <h3 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
                     {{ $settings->aboutUsKeyFeatureTitle }}</h3>
 
-                <p class="max-w-xl mx-auto text-slate-400">{{ $settings->aboutUsKeyFeatureMessage }}</p>
+                <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400">{{ $settings->aboutUsKeyFeatureMessage }}
+                </p>
             </div>
 
             <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px] mt-8">
@@ -119,7 +120,8 @@
                     <h3 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
                         {{ $settings->aboutUsTeamSectionTitle }}</h3>
 
-                    <p class="max-w-xl mx-auto text-slate-400">{{ $settings->aboutUsTeamSectionMessage }}</p>
+                    <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400">
+                        {{ $settings->aboutUsTeamSectionMessage }}</p>
                 </div>
 
                 <div class="grid md:grid-cols-12 grid-cols-1 mt-8 gap-[30px]">
@@ -132,9 +134,10 @@
                             <div class="mt-4 content">
                                 <a href="" class="block text-lg font-medium hover:text-blue-600">Ronny
                                     Jofra</a>
-                                <span class="block text-slate-400">C.E.O.</span>
+                                <span class="block text-slate-600 dark:text-slate-400">C.E.O.</span>
 
-                                <p class="mt-4 text-slate-400">If the distribution of letters and 'words' is random</p>
+                                <p class="mt-4 text-slate-600 dark:text-slate-400">If the distribution of letters and
+                                    'words' is random</p>
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
@@ -163,9 +166,10 @@
                             <div class="mt-4 content">
                                 <a href="" class="block text-lg font-medium hover:text-blue-600">Aliana
                                     Rosy</a>
-                                <span class="block text-slate-400">HR</span>
+                                <span class="block text-slate-600 dark:text-slate-400">HR</span>
 
-                                <p class="mt-4 text-slate-400">If the distribution of letters and 'words' is random</p>
+                                <p class="mt-4 text-slate-600 dark:text-slate-400">If the distribution of letters and
+                                    'words' is random</p>
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
@@ -194,9 +198,10 @@
                             <div class="mt-4 content">
                                 <a href="" class="block text-lg font-medium hover:text-blue-600">Sofia
                                     Razaq</a>
-                                <span class="block text-slate-400">C.O.O.</span>
+                                <span class="block text-slate-600 dark:text-slate-400">C.O.O.</span>
 
-                                <p class="mt-4 text-slate-400">If the distribution of letters and 'words' is random</p>
+                                <p class="mt-4 text-slate-600 dark:text-slate-400">If the distribution of letters and
+                                    'words' is random</p>
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
@@ -225,9 +230,10 @@
                             <div class="mt-4 content">
                                 <a href="" class="block text-lg font-medium hover:text-blue-600">Micheal
                                     Carlo</a>
-                                <span class="block text-slate-400">Director</span>
+                                <span class="block text-slate-600 dark:text-slate-400">Director</span>
 
-                                <p class="mt-4 text-slate-400">If the distribution of letters and 'words' is random</p>
+                                <p class="mt-4 text-slate-600 dark:text-slate-400">If the distribution of letters and
+                                    'words' is random</p>
 
                                 <ul class="mt-4 list-none">
                                     <li class="inline"><a href=""
@@ -262,7 +268,8 @@
                         <div class="tiny-single-item">
                             <div class="text-center tiny-slide">
                                 <img src="assets/images/client/amazon.svg" class="h-6 mx-auto" alt="">
-                                <p class="mt-6 text-slate-400">" If the distribution of letters and 'words' is random,
+                                <p class="mt-6 text-slate-600 dark:text-slate-400">" If the distribution of letters and
+                                    'words' is random,
                                     the
                                     reader will not be distracted from making a neutral judgement on the visual impact
                                     and
@@ -273,7 +280,8 @@
 
                             <div class="text-center tiny-slide">
                                 <img src="assets/images/client/google.svg" class="h-6 mx-auto" alt="">
-                                <p class="mt-6 text-slate-400">" If the distribution of letters and 'words' is random,
+                                <p class="mt-6 text-slate-600 dark:text-slate-400">" If the distribution of letters and
+                                    'words' is random,
                                     the
                                     reader will not be distracted from making a neutral judgement on the visual impact
                                     and
@@ -284,7 +292,8 @@
 
                             <div class="text-center tiny-slide">
                                 <img src="assets/images/client/lenovo.svg" class="h-6 mx-auto" alt="">
-                                <p class="mt-6 text-slate-400">" If the distribution of letters and 'words' is random,
+                                <p class="mt-6 text-slate-600 dark:text-slate-400">" If the distribution of letters and
+                                    'words' is random,
                                     the
                                     reader will not be distracted from making a neutral judgement on the visual impact
                                     and
@@ -295,7 +304,8 @@
 
                             <div class="text-center tiny-slide">
                                 <img src="assets/images/client/paypal.svg" class="h-6 mx-auto" alt="">
-                                <p class="mt-6 text-slate-400">" If the distribution of letters and 'words' is random,
+                                <p class="mt-6 text-slate-600 dark:text-slate-400">" If the distribution of letters and
+                                    'words' is random,
                                     the
                                     reader will not be distracted from making a neutral judgement on the visual impact
                                     and
@@ -306,7 +316,8 @@
 
                             <div class="text-center tiny-slide">
                                 <img src="assets/images/client/shopify.svg" class="h-6 mx-auto" alt="">
-                                <p class="mt-6 text-slate-400">" If the distribution of letters and 'words' is random,
+                                <p class="mt-6 text-slate-600 dark:text-slate-400">" If the distribution of letters and
+                                    'words' is random,
                                     the
                                     reader will not be distracted from making a neutral judgement on the visual impact
                                     and
@@ -317,7 +328,8 @@
 
                             <div class="text-center tiny-slide">
                                 <img src="assets/images/client/spotify.svg" class="h-6 mx-auto" alt="">
-                                <p class="mt-6 text-slate-400">" If the distribution of letters and 'words' is random,
+                                <p class="mt-6 text-slate-600 dark:text-slate-400">" If the distribution of letters and
+                                    'words' is random,
                                     the
                                     reader will not be distracted from making a neutral judgement on the visual impact
                                     and

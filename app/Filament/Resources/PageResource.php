@@ -64,7 +64,7 @@ class PageResource extends Resource
                                 $set('slug', Str::slug($state));
                             }),
 
-                        TipTapEditor::component(),
+                        TipTapEditor::component('content'),
                     ]),
                     Tabs\Tab::make(__('SEO'))->schema([
                         Hidden::make('user_id')

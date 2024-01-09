@@ -11,6 +11,6 @@ class SportSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Sport::factory(rand(20, 50))->create();
+        \App\Models\Sport::factory(6)->create();
     }
 }

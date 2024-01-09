@@ -11,18 +11,6 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Brand::create([
-            'name' => 'Apple',
-            'slug' => 'apple',
-            'url' => 'https://www.apple.com',
-            'description' => 'Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, and online services.',
-        ]);
-
-        \App\Models\Brand::create([
-            'name' => 'Samsung',
-            'slug' => 'samsung',
-            'url' => 'https://www.samsung.com',
-            'description' => 'Samsung is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul. It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol.',
-        ]);
+        \App\Models\Brand::factory(5)->create();
     }
 }

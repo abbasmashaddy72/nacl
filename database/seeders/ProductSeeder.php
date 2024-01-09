@@ -46,31 +46,18 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        // populate products by brand, category, and name
+        $brands = \App\Models\Brand::all();
 
-        foreach (self::SAMPLE_MAP as $brandSlug => $categories) {
-            // get brand
-            $brand = \App\Models\Brand::where('slug', $brandSlug)->first();
+        foreach ($brands as $brand) {
+            $products = \App\Models\Product::factory(rand(2, 5))->create([
+                'brand_id' => $brand->id,
+            ]);
 
-            foreach ($categories as $categorySlug => $products) {
-                // get category
-                $category = \App\Models\Category::where('slug', $categorySlug)->first();
+            // Attach random categories to each product
+            $categories = \App\Models\Category::inRandomOrder()->limit(rand(1, 3))->get();
 
-                foreach ($products as $productName) {
-
-                    $product = \App\Models\Product::factory()->create([
-                        'name' => $productName,
-                        'brand_id' => $brand->id,
-                        'slug' => \Illuminate\Support\Str::slug($productName),
-                        'sku' => \Illuminate\Support\Str::slug($productName),
-                        'images' => array_map(fn () => rand(1, 10), range(1, rand(2, 5))),
-                        'description' => $productName . '. Description.',
-                        // add random timestamp from beginning of this year
-                        'created_at' => now()->startOfYear()->addDays(rand(0, 365)),
-                    ]);
-
-                    $product->categories()->attach($category);
-                }
+            foreach ($products as $product) {
+                $product->categories()->attach($categories->pluck('id')->toArray());
             }
         }
     }

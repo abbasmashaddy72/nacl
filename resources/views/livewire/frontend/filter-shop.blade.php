@@ -32,7 +32,8 @@
                                 @foreach ($featuredProducts as $featuredProduct)
                                     <div class="block mt-2">
                                         <span class="flex items-center">
-                                            <x-curator-glider class="w-12 rounded shadow dark:shadow-gray-800"
+                                            <x-curator-glider
+                                                class="object-cover w-12 rounded shadow dark:shadow-gray-800 aspect-video"
                                                 :media="(int) $featuredProduct->images[0]" />
                                             <span class="ms-3">
                                                 <span class="block font-semibold">{{ $featuredProduct->name }}</span>
@@ -70,21 +71,18 @@
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
+                <div class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3 md:grid-cols-2">
                     @foreach ($products as $product)
-                        <div class="group">
+                        <div
+                            class="p-4 rounded-md shadow-lg group dark:shadow-gray-800 bg-gray-50 dark:bg-slate-800 bg-opacity-90 dark:bg-opacity-90">
                             <div
-                                class="relative overflow-hidden duration-500 rounded-md shadow dark:shadow-gray-800 group-hover:shadow-lg group-hover:dark:shadow-gray-800">
-                                <x-curator-glider :media="(int) $product->images[0]" />
+                                class="relative overflow-hidden duration-500 rounded-lg shadow dark:shadow-gray-800 group-hover:shadow-lg group-hover:dark:shadow-gray-800">
+                                <x-curator-glider class="transition duration-500 hover:scale-125" :media="(int) $product->images[0]" />
 
-                                <div class="absolute duration-500 -bottom-20 group-hover:bottom-3 start-3 end-3">
-                                    <a href="shop-cart.html"
-                                        class="inline-block w-full px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 border rounded-md bg-slate-900 border-slate-900">Add
-                                        to Cart</a>
-                                </div>
                                 @if ($product->is_featured)
                                     <ul class="list-none absolute top-[10px] start-4">
-                                        <li><a href="javascript:void(0)"
+                                        <li>
+                                            <a href="javascript:void(0)"
                                                 class="bg-orange-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5">
                                                 {{ __('Featured') }}
                                             </a>
@@ -100,6 +98,10 @@
                                     <p class="text-green-600">${{ $product->price }}</p>
                                 </div>
                             </div>
+
+                            <a href="#"
+                                class="inline-block w-full px-5 py-2 text-base font-semibold tracking-wide text-center text-white align-middle duration-500 bg-blue-600 border border-blue-600 rounded-md">Add
+                                to Cart</a>
                         </div>
                     @endforeach
                 </div>

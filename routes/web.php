@@ -22,15 +22,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     // Route::get('blog/{slug}', 'FrontendController@blog')->name('blog');
     // Route::get('blog-categories', 'FrontendController@blog-categories')->name('blog-categories');
     // Route::get('blog-category/{slug}', 'FrontendController@blog-category')->name('blog-category');
-    // Route::get('page/{slug}', 'FrontendController@page')->name('page');
+    Route::get('page/{slug}', 'FrontendController@page')->name('page');
     Route::get('lane-rental', 'FrontendController@laneRental')->name('lane-rental');
     Route::get('training-video', 'FrontendController@trainingVideo')->name('training-video');
     Route::get('about-us', 'FrontendController@aboutUs')->name('about-us');
     Route::get('contact-us', 'FrontendController@contactUs')->name('contact-us');
     Route::get('book-slot', 'FrontendController@bookSlot')->name('book-slot');
-    Route::get('terms-and-conditions', 'FrontendController@termsAndConditions')->name('terms-and-conditions');
-    Route::get('privacy-policies', 'FrontendController@privacyPolicies')->name('privacy-policies');
-    Route::get('return-and-refunds', 'FrontendController@returnAndRefunds')->name('return-and-refunds');
 
     // Route::get('stripe/pay', 'StripePaymentController@index')->name('stripe.pay');
     // Route::get('stripe/token', 'StripePaymentController@payment_process_3d')->name('stripe.token');

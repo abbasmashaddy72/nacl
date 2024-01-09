@@ -8,7 +8,7 @@
                     <div class="relative p-6 md:p-8">
                         <h5 class="my-5 text-xl font-semibold">{{ $item['title'] }}</h5>
 
-                        <p class="text-slate-400">{{ $item['message'] }}</p>
+                        <p class="text-slate-600 dark:text-slate-400">{{ $item['message'] }}</p>
 
                         @if (!$loop->last)
                             <span
@@ -24,7 +24,8 @@
                 <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                     <div class="order-1 md:col-span-6 md:order-2">
                         <div class="lg:ms-8">
-                            <x-curator-glider class="aspect-[3/4] object-cover" :media="$settings->descriptionSectionImage" />
+                            <x-curator-glider class="aspect-[3/4] object-cover rounded-lg shadow-lg shadow-gray-600"
+                                :media="$settings->descriptionSectionImage" />
                         </div>
                     </div>
 
@@ -34,10 +35,10 @@
                                 {{ $settings->descriptionSectionTitle }}
                             </h3>
 
-                            <div class="max-w-xl whitespace-pre-wrap text-slate-400">
+                            <div class="max-w-xl whitespace-pre-wrap text-slate-600 dark:text-slate-400">
                                 {{ $settings->descriptionSectionMessage }}</div>
 
-                            <ul class="my-6 list-none text-slate-400">
+                            <ul class="my-6 list-none text-slate-600 dark:text-slate-400">
                                 @foreach ($settings->descriptionSectionPoints as $item)
                                     <li class="flex mb-1"><i
                                             class="text-xl text-blue-600 ri-checkbox-circle-line me-2"></i>
@@ -58,7 +59,7 @@
             <div class="grid items-end grid-cols-1 pb-8">
                 <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
                     {{ $settings->trainingVideoTitle }}</h3>
-                <p class="max-w-xl text-slate-400">{{ $settings->trainingVideoMessage }}</p>
+                <p class="max-w-xl text-slate-600 dark:text-slate-400">{{ $settings->trainingVideoMessage }}</p>
             </div>
         </div>
 
@@ -72,8 +73,8 @@
                         <div class="tiny-slide">
                             <div class="relative block mx-2 overflow-hidden duration-500 rounded-md group">
                                 <a href="{{ asset('/storage/' . $image->path) }}"
-                                    class="duration-500 lightbox group-hover:scale-105" title="">
-                                    <x-curator-glider class="" :media="$item" />
+                                    class="duration-500 lightbox group-hover:scale-110" title="">
+                                    <x-curator-glider class="object-cover aspect-video" :media="$item" />
                                 </a>
                             </div>
                         </div>
@@ -88,7 +89,7 @@
                     {{ $settings->testimonialTitle }}
                 </h3>
 
-                <p class="max-w-xl mx-auto text-slate-400">{{ $settings->testimonialMessage }}</p>
+                <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400">{{ $settings->testimonialMessage }}</p>
             </div>
 
             <div class="grid grid-cols-1 mt-8">
@@ -98,7 +99,8 @@
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
                                 <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
-                                <p class="text-slate-400">" It seems that only fragments of the original text remain in
+                                <p class="text-slate-600 dark:text-slate-400">" It seems that only fragments of the
+                                    original text remain in
                                     the Lorem Ipsum texts used today. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
                                     <li class="inline"><i class="mdi mdi-star"></i></li>
@@ -113,7 +115,7 @@
                                 <img src="assets/images/client/01.jpg" class="mx-auto rounded-full shadow-md h-14 w-14"
                                     alt="">
                                 <h6 class="mt-2 font-semibold">Calvin Carlo</h6>
-                                <span class="text-sm text-slate-400">Manager</span>
+                                <span class="text-sm text-slate-600 dark:text-slate-400">Manager</span>
                             </div>
                         </div>
                     </div>
@@ -123,7 +125,8 @@
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
                                 <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
-                                <p class="text-slate-400">" The most well-known dummy text is the 'Lorem Ipsum', which
+                                <p class="text-slate-600 dark:text-slate-400">" The most well-known dummy text is the
+                                    'Lorem Ipsum', which
                                     is said to have originated in the 16th century. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
                                     <li class="inline"><i class="mdi mdi-star"></i></li>
@@ -138,7 +141,7 @@
                                 <img src="assets/images/client/02.jpg" class="mx-auto rounded-full shadow-md h-14 w-14"
                                     alt="">
                                 <h6 class="mt-2 font-semibold">Christa Smith</h6>
-                                <span class="text-sm text-slate-400">Manager</span>
+                                <span class="text-sm text-slate-600 dark:text-slate-400">Manager</span>
                             </div>
                         </div>
                     </div>
@@ -148,7 +151,8 @@
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
                                 <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
-                                <p class="text-slate-400">" One disadvantage of Lorum Ipsum is that in Latin certain
+                                <p class="text-slate-600 dark:text-slate-400">" One disadvantage of Lorum Ipsum is that
+                                    in Latin certain
                                     letters appear more frequently than others. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
                                     <li class="inline"><i class="mdi mdi-star"></i></li>
@@ -163,7 +167,7 @@
                                 <img src="assets/images/client/03.jpg"
                                     class="mx-auto rounded-full shadow-md h-14 w-14" alt="">
                                 <h6 class="mt-2 font-semibold">Jemina CLone</h6>
-                                <span class="text-sm text-slate-400">Manager</span>
+                                <span class="text-sm text-slate-600 dark:text-slate-400">Manager</span>
                             </div>
                         </div>
                     </div>
@@ -173,7 +177,8 @@
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
                                 <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
-                                <p class="text-slate-400">" Thus, Lorem Ipsum has only limited suitability as a visual
+                                <p class="text-slate-600 dark:text-slate-400">" Thus, Lorem Ipsum has only limited
+                                    suitability as a visual
                                     filler for German texts. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
                                     <li class="inline"><i class="mdi mdi-star"></i></li>
@@ -188,7 +193,7 @@
                                 <img src="assets/images/client/04.jpg"
                                     class="mx-auto rounded-full shadow-md h-14 w-14" alt="">
                                 <h6 class="mt-2 font-semibold">Smith Vodka</h6>
-                                <span class="text-sm text-slate-400">Manager</span>
+                                <span class="text-sm text-slate-600 dark:text-slate-400">Manager</span>
                             </div>
                         </div>
                     </div>
@@ -198,7 +203,8 @@
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
                                 <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
-                                <p class="text-slate-400">" There is now an abundance of readable dummy texts. These
+                                <p class="text-slate-600 dark:text-slate-400">" There is now an abundance of readable
+                                    dummy texts. These
                                     are usually used when a text is required. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
                                     <li class="inline"><i class="mdi mdi-star"></i></li>
@@ -213,7 +219,7 @@
                                 <img src="assets/images/client/05.jpg"
                                     class="mx-auto rounded-full shadow-md h-14 w-14" alt="">
                                 <h6 class="mt-2 font-semibold">Cristino Murfi</h6>
-                                <span class="text-sm text-slate-400">Manager</span>
+                                <span class="text-sm text-slate-600 dark:text-slate-400">Manager</span>
                             </div>
                         </div>
                     </div>
@@ -223,7 +229,8 @@
                             <div
                                 class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900 before:content-[''] before:absolute before:start-1/2 before:-bottom-[4px] before:box-border before:border-8 before:rotate-[45deg] before:border-t-transparent before:border-e-white dark:before:border-e-slate-900 before:border-b-white dark:before:border-b-slate-900 before:border-s-transparent before:shadow-testi dark:before:shadow-gray-700 before:origin-top-left">
                                 <i class="text-blue-600 mdi mdi-format-quote-open mdi-48px"></i>
-                                <p class="text-slate-400">" According to most sources, Lorum Ipsum can be traced back
+                                <p class="text-slate-600 dark:text-slate-400">" According to most sources, Lorum Ipsum
+                                    can be traced back
                                     to a text composed by Cicero. "</p>
                                 <ul class="mt-3 mb-0 list-none text-amber-400">
                                     <li class="inline"><i class="mdi mdi-star"></i></li>
@@ -238,7 +245,7 @@
                                 <img src="assets/images/client/06.jpg"
                                     class="mx-auto rounded-full shadow-md h-14 w-14" alt="">
                                 <h6 class="mt-2 font-semibold">Cristino Murfi</h6>
-                                <span class="text-sm text-slate-400">Manager</span>
+                                <span class="text-sm text-slate-600 dark:text-slate-400">Manager</span>
                             </div>
                         </div>
                     </div>

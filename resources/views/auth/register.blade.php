@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="flex items-center md:h-screen py-36">
+    <section class="flex items-center py-36">
         <div class="absolute inset-0 bg-gradient-to-t from-transparent to-black"></div>
         <div class="container relative">
             <div class="flex justify-center">

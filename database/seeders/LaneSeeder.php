@@ -11,6 +11,6 @@ class LaneSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Lane::factory(rand(20, 50))->create();
+        \App\Models\Lane::factory(10)->create();
     }
 }

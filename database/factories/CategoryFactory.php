@@ -19,6 +19,7 @@ class CategoryFactory extends Factory
         return [
             'name' => fake()->word,
             'slug' => fake()->slug,
+            'image' => rand(2, 20),
             'parent_id' => null,
             'is_visible' => fake()->boolean,
             'description' => fake()->paragraph,

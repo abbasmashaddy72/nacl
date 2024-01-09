@@ -63,7 +63,6 @@ class FilterShop extends Component
 
         // Fetch featured products (customize this logic based on your requirements)
         $this->featuredProducts = Product::where('is_featured', true)->limit(5)->get();
-
         return view('livewire.frontend.filter-shop', compact([
             'products',
         ]));

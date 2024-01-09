@@ -4,7 +4,7 @@
             <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">
                 {{ $common_settings->CTATopTitle }}</h3>
 
-            <p class="max-w-xl mx-auto text-slate-400">{{ $common_settings->CTAMessage }}</p>
+            <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400">{{ $common_settings->CTAMessage }}</p>
 
             <div class="mt-6">
                 <a href="{{ $common_settings->CTAButtonURL }}"

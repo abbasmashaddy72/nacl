@@ -9,7 +9,7 @@
                             <div class="flex">
                                 <div
                                     class="flex align-middle justify-center items-center min-w-[56px] h-[56px] bg-blue-600/5 border-2 border-blue-600/20 text-blue-600 rounded-lg text-xl shadow-sm dark:shadow-gray-800">
-                                    <x-curator-glider class="object-cover w-full h-full" :media="$item['image']" />
+                                    <x-curator-glider class="object-cover w-full h-full rounded-lg" :media="$item['image']" />
                                 </div>
 
                                 <div class="content ms-6">
@@ -39,30 +39,32 @@
                     </h3>
                 </div>
 
-                <div id="accordion-collapse" data-accordion="collapse"
-                    class="grid md:grid-cols-2 grid-cols-1 mt-8 md:gap-[30px]">
+                <div id="accordion-collapse" data-accordion="collapse" class="grid gap-4 md:grid-cols-2">
                     @foreach ($faqs as $faq)
-                        <div class="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
-                            <h2 class="text-base font-semibold" id="accordion-collapse-heading-{{ $loop->index }}">
-                                <button type="button"
-                                    class="flex items-center justify-between w-full p-5 font-medium text-start"
-                                    data-accordion-target="#accordion-collapse-body-{{ $loop->index }}"
-                                    aria-expanded="true" aria-controls="accordion-collapse-body-{{ $loop->index }}">
-                                    <span>{{ $faq->question }}</span>
-                                    <svg data-accordion-icon class="w-4 h-4 rotate-180 shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div id="accordion-collapse-body-{{ $loop->index }}" class="hidden"
-                                aria-labelledby="accordion-collapse-heading-{{ $loop->index }}">
-                                <div class="p-5">
-                                    <p class="text-slate-400 dark:text-gray-400">
-                                        {!! $faq->question !!}
-                                    </p>
+                        <div class="w-full md:w-auto">
+                            <div class="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
+                                <h2 class="text-base font-semibold" id="accordion-collapse-heading-{{ $loop->index }}">
+                                    <button type="button"
+                                        class="flex items-center justify-between w-full p-5 font-medium text-start"
+                                        data-accordion-target="#accordion-collapse-body-{{ $loop->index }}"
+                                        aria-expanded="true"
+                                        aria-controls="accordion-collapse-body-{{ $loop->index }}">
+                                        <span>{{ $faq->question }}</span>
+                                        <svg data-accordion-icon class="w-4 h-4 rotate-180 shrink-0" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </h2>
+                                <div id="accordion-collapse-body-{{ $loop->index }}" class="hidden"
+                                    aria-labelledby="accordion-collapse-heading-{{ $loop->index }}">
+                                    <div class="p-5">
+                                        <p class="text-slate-600 dark:text-slate-400">
+                                            {!! $faq->question !!}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,128 @@
+.content blockquote {
+    @apply block mb-4 ml-10 pl-4 border-l-4 border-gray-500;
+}
+
+.content strong,
+.content b {
+    @apply font-bold;
+}
+
+.content i,
+.content address {
+    @apply italic;
+}
+
+/* heading elements */
+.content h1 {
+    @apply text-2xl font-bold mb-2;
+}
+
+.content h2 {
+    @apply text-xl font-bold mb-2;
+}
+
+.content h3 {
+    @apply text-lg font-bold mb-4;
+}
+
+.content h4 {
+    @apply text-base font-bold mb-6;
+}
+
+.content h5 {
+    @apply text-sm font-bold mb-8;
+}
+
+.content h6 {
+    @apply text-xs font-bold mb-12;
+}
+
+/* tables */
+.content table {
+    @apply border-collapse border-spacing-2 border-gray-500;
+}
+
+.content .table table td {
+    @apply border border-gray-500;
+}
+
+.content thead {
+    @apply table-header-group;
+}
+
+.content tbody {
+    @apply table-row-group;
+}
+
+.content tfoot {
+    @apply table-footer-group;
+}
+
+/* for tables without table section elements (can happen with XHTML or dynamically created tables) */
+.content table > tr {
+    @apply table-row;
+}
+
+.content col {
+    @apply table-column;
+}
+
+.content colgroup {
+    @apply table-column-group;
+}
+
+.content tr {
+    @apply table-row;
+}
+
+.content td,
+.content th {
+    @apply table-cell;
+}
+
+.content th {
+    @apply font-bold;
+}
+
+.content caption {
+    @apply table-caption text-center;
+}
+
+/* lists */
+.content ul,
+.content menu,
+.content dir {
+    @apply block list-disc mb-4 pl-10;
+}
+
+.content ol {
+    @apply block list-decimal mb-4 pl-10;
+}
+
+.content li {
+    @apply list-inside;
+}
+
+.content ::marker {
+    @apply whitespace-pre;
+}
+
+.content ul ul,
+.content ol ul {
+    @apply list-disc;
+}
+
+.content ol ol ul,
+.content ol ul ul,
+.content ul ol ul,
+.content ul ul ul {
+    @apply list-item;
+}
+
+.content a:any-link {
+    @apply text-blue-600 underline;
+}
+
+.content a:any-link:active {
+    @apply text-red-600;
+}
