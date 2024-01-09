@@ -61,7 +61,7 @@
 - Booking Slot Sports Selection Centered - **Done**
 - Date Selection To be Replaced
 - Min Max Player in Helper Area for No of Players - **Done**
-- Light Mode Color Issue
+- Light Mode Color Issue - **Done**
 - Saving Data Functionality Pending - **Done**
 - Need to change Lane Section with booking Lane Section to change Description and Images where Book Slot will be at left and Lane Data wil lbe at right or vice versa
 
@@ -127,4 +127,3 @@
 - Add New on Selecting Fields
 - Impersonation For Users - **Done**
 - Orders total_price is showing null
-- Need to change Lane Section with booking Lane Section to change Description and Images where Book Slot will be at left and Lane Data wil lbe at right or vice versa

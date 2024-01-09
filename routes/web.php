@@ -29,10 +29,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('contact-us', 'FrontendController@contactUs')->name('contact-us');
     Route::get('book-slot', 'FrontendController@bookSlot')->name('book-slot');
 
-    // Route::get('stripe/pay', 'StripePaymentController@index')->name('stripe.pay');
-    // Route::get('stripe/token', 'StripePaymentController@payment_process_3d')->name('stripe.token');
-    Route::get('stripe/success', 'StripePaymentController@success')->name('stripe.success');
-    Route::get('stripe/cancel', 'StripePaymentController@cancel')->name('stripe.cancel');
+    Route::post('payment/webhook', 'StripePaymentController@webhook')->name('stripe.webhook');
+    Route::get('payment/success', 'StripePaymentController@success')->name('stripe.success');
+    Route::get('payment/cancel', 'StripePaymentController@cancel')->name('stripe.cancel');
 });
 
 Route::middleware(['auth:customer', 'verified'])->group(function () {

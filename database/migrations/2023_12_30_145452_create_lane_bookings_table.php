@@ -21,10 +21,11 @@ return new class extends Migration
             $table->decimal('advance_amount', 8, 2);
             $table->decimal('total_amount', 8, 2);
             $table->decimal('refund_amount', 8, 2)->default(0);
-            $table->enum('amount_status', ['paid', 'partialPaid', 'due', 'refund', 'partialRefund']);
+            $table->enum('amount_status', ['paid', 'partialPaid', 'unPaid', 'refund', 'partialRefund']);
             $table->dateTime('start_date_time');
             $table->dateTime('end_date_time');
             $table->enum('status', ['open', 'booked', 'closed', 'canceled']);
+            $table->string('session_id')->nullable();
             $table->timestamps();
         });
     }

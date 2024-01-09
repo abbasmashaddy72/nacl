@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Settings\CommonSettings;
+use App\Traits\StripePaymentTrait;
+
 class StripePaymentController extends Controller
 {
-    public function success()
-    {
-        dd('Success');
-    }
+    use StripePaymentTrait;
 
-    public function cancel()
+    public function __construct(CommonSettings $settings)
     {
-        dd('Cancelled');
+        view()->share('common_settings', $settings);
     }
 }

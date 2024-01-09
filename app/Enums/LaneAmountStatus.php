@@ -10,7 +10,7 @@ enum LaneAmountStatus: string
 
     case Paid = 'paid';
     case PartialPaid = 'partialPaid';
-    case Due = 'due';
+    case UnPaid = 'unPaid';
     case Refund = 'refund';
     case PartialRefund = 'partialRefund';
 }

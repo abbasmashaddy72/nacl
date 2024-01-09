@@ -20,7 +20,7 @@ class LaneBookingFactory extends Factory
      */
     public function definition(): array
     {
-        $amountStatus = fake()->randomElement(['paid', 'partialPaid', 'due', 'refund', 'partialRefund']);
+        $amountStatus = fake()->randomElement(['paid', 'partialPaid', 'unPaid', 'refund', 'partialRefund']);
         $startDate = fake()->dateTimeBetween('-1 week', '+1 week');
         $startTime = $startDate->format('H:i:s');
 

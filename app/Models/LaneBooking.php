@@ -24,6 +24,7 @@ class LaneBooking extends Model
         'start_date_time',
         'end_date_time',
         'status',
+        'session_id',
     ];
 
     protected $casts = [

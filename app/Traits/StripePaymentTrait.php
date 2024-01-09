@@ -2,64 +2,123 @@
 
 namespace App\Traits;
 
-use Stripe\Stripe;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 trait StripePaymentTrait
 {
-    // private $stripe;
-    // private $endpoint_secret;
-
-    public function __construct()
+    public function checkout($lineItems, $modelName, $statusType, $bookingId)
     {
-        Stripe::setApiKey(config('stripe.stripe_secret_key'));
-        // new StripeClient(config('stripe.stripe_publish_key'));
-        // $this->endpoint_secret = config('stripe.stripe_webhook_secret');
+        \Stripe\Stripe::setApiKey(config('stripe.stripe_secret_key'));
+
+        $session = \Stripe\Checkout\Session::create([
+            'line_items' => $lineItems,
+            'mode' => 'payment',
+            'success_url' => route('stripe.success', ['model' => $modelName, 'statusType' => $statusType], true) . "&session_id={CHECKOUT_SESSION_ID}",
+            'cancel_url' => route('stripe.cancel', [], true),
+        ]);
+
+        $model = '\\App\\Models\\' . $modelName;
+
+        $order = $model::findOrFail($bookingId);
+        $order->{$statusType} = 'unPaid';
+        $order->session_id = $session->id;
+        $order->save();
+
+        return redirect()->away($session->url);
     }
 
-    // public function web_go_hooks()
-    // {
-    //     // Log::info("11211-------");
-    //     $payload = @file_get_contents('php://input');
-    //     $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
-    //     $event = null;
-    //     //  Log::info("payload----" . $payload);
+    public function success(Request $request)
+    {
+        view()->share('title', 'Payment Success');
 
-    //     try {
-    //         $event = \Stripe\Webhook::constructEvent(
-    //             $payload,
-    //             $sig_header,
-    //             $this->endpoint_secret
-    //         );
-    //     } catch (\UnexpectedValueException $e) {
-    //         // Invalid payload
-    //         //  Log::info("UnexpectedValueException" . $e);
-    //         http_response_code(400);
-    //         exit();
-    //     } catch (\Stripe\Exception\SignatureVerificationException $e) {
-    //         // Invalid signature
-    //         //    Log::info("SignatureVerificationException" . $e);
-    //         http_response_code(400);
-    //         exit();
-    //     }
-    //     //   Log::info("event---->" . $event);
-    //     // Handle the checkout.session.completed event
-    //     if ($event->type == 'checkout.session.completed') {
-    //         $session = $event->data->object;
-    //         // Log::info("event->data->object---->" . $session);
-    //         $metadata = $session["metadata"];
-    //         $order_num = $metadata->order_num;
-    //         $user_token = $metadata->user_token;
-    //         //  Log::info("order_id---->" . $order_num);
-    //         $map = [];
-    //         $map["status"] = 1;
-    //         $map["updated_at"] = Carbon::now();
-    //         $whereMap = [];
-    //         $whereMap["user_token"] = $user_token;
-    //         $whereMap["id"] = $order_num;
-    //         // Order::where($whereMap)->update($map);
-    //     }
+        \Stripe\Stripe::setApiKey(config('stripe.stripe_secret_key'));
 
+        $sessionId = $request->query('session_id');
 
-    //     http_response_code(200);
-    // }
+        try {
+            $session = \Stripe\Checkout\Session::retrieve($sessionId);
+            if (!$session) {
+                dd($session);
+                throw new NotFoundHttpException;
+            }
+
+            $model = '\\App\\Models\\' . $request->query('model');
+
+            $order = $model::where('session_id', $session->id)->first();
+
+            if (!$order) {
+                dd($order);
+                throw new NotFoundHttpException();
+            }
+            if ($order->{$request->query('statusType')} === 'unPaid') {
+                $order->{$request->query('statusType')} = 'paid';
+                $order->save();
+            }
+
+            return view('pages.frontend.stripe.success');
+        } catch (\Exception $e) {
+            dd($e);
+            throw new NotFoundHttpException();
+        }
+    }
+
+    public function cancel()
+    {
+        view()->share('title', 'Payment Cancelled');
+
+        return view('pages.frontend.stripe.cancel');
+    }
+
+    public function webhook()
+    {
+        $endpoint_secret = config('stripe.stripe_webhook_secret');
+
+        $payload = @file_get_contents('php://input');
+        $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
+        $event = null;
+
+        try {
+            $event = \Stripe\Webhook::constructEvent(
+                $payload,
+                $sig_header,
+                $endpoint_secret
+            );
+        } catch (\UnexpectedValueException $e) {
+            // Invalid payload
+            return response('', 400);
+        } catch (\Stripe\Exception\SignatureVerificationException $e) {
+            // Invalid signature
+            return response('', 400);
+        }
+
+        // Handle the event
+        switch ($event->type) {
+            case 'checkout.session.completed':
+                $session = $event->data->object;
+                $urlComponents = parse_url($session->success_url);
+
+                if (!$urlComponents || !isset($urlComponents['query'])) {
+                    return response('Invalid success URL', 400);
+                }
+
+                parse_str($urlComponents['query'], $queryParams);
+                $statusType = $queryParams['statusType'] ?? null;
+                $model = $queryParams['model'] ?? null;
+
+                $model = '\\App\\Models\\' . $model;
+                $order = $model::where('session_id', $session->id)->first();
+                if ($order && $order->{$statusType} === 'unPaid') {
+                    $order->{$statusType} = 'paid';
+                    $order->save();
+                    // Send email to customer
+                }
+
+                // ... handle other event types
+            default:
+                echo 'Received unknown event type ' . $event->type;
+        }
+
+        return response('', 200);
+    }
 }

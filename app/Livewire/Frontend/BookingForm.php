@@ -4,14 +4,15 @@ namespace App\Livewire\Frontend;
 
 use App\Models\LaneBooking;
 use Carbon\Carbon;
-use Stripe\Stripe;
 use App\Models\Slot;
 use App\Models\Sport;
+use App\Traits\StripePaymentTrait;
 use Livewire\Component;
-use Stripe\Checkout\Session;
 
 class BookingForm extends Component
 {
+    use StripePaymentTrait;
+
     public $sports;
     public $selectedSport;
     public $availableSlots = [];
@@ -149,31 +150,23 @@ class BookingForm extends Component
             'advance_amount' => 0,
             'total_amount' => $this->currentPrice,
             'refund_amount' => 0,
-            'amount_status' => 'due',
+            'amount_status' => 'unPaid',
             'start_date_time' => $this->selectedDate . ' ' . date("H:i:s", $minTimestamp),
             'end_date_time' => $this->selectedDate . ' ' . date("H:i:s", $maxTimestamp),
             'status' => 'open',
         ]);
 
-        Stripe::setApiKey(config('stripe.stripe_secret_key'));
-
-        $checkout_session = Session::create([
-            // 'payment_method_types' => ['card', 'wallet'],
-            'line_items' => [[
-                'price_data' => [
-                    'currency' => 'usd',
-                    'product_data' => [
-                        'name' => 'Lane Booking',
-                    ],
-                    'unit_amount' => $this->currentPrice * 100,
+        $lineItems[] = [
+            'price_data' => [
+                'currency' => 'usd',
+                'product_data' => [
+                    'name' => 'Lane Booking',
                 ],
-                'quantity' => 1,
-            ]],
-            'mode' => 'payment',
-            'success_url' => route('stripe.success'),
-            'cancel_url' => route('stripe.cancel'),
-        ]);
+                'unit_amount' => $this->currentPrice * 100,
+            ],
+            'quantity' => 1,
+        ];
 
-        return redirect()->away($checkout_session->url);
+        $this->checkout($lineItems, 'LaneBooking', 'amount_status', $laneBooking->id);
     }
 }
